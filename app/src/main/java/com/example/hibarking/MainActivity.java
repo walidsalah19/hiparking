@@ -1,13 +1,16 @@
 package com.example.hibarking;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.hibarking.google_map.MapsFragment;
 import com.example.hibarking.user_acess.login;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -17,11 +20,12 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private FirebaseAuth auth;
     private FirebaseUser firebaseUser;
-
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        toolpar_intialize();
         firebase_tool_intialize();
         check_user_acess();
         start_google_maps();
@@ -32,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         //
         // +check_user_acess();
+    }
+    private void toolpar_intialize() {
+        toolbar=findViewById(R.id.appbar_main);
+        setSupportActionBar(toolbar);
     }
 
     private void firebase_tool_intialize()
@@ -51,8 +59,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private void start_google_maps()
     {
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.replace(R.id.main_framelayout,new MapFragment()).commit();
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.main_framelayout, new MapsFragment()).commit();
+
 
     }
 }
