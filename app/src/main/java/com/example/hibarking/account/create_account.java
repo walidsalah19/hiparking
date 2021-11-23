@@ -55,7 +55,7 @@ public class create_account extends AppCompatActivity {
     private void dateofcreation()
     {
         Calendar calendar=Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YY,MM,DD");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY,MM,dd");
         date_of_creation=simpleDateFormat.format(calendar.getTime());
     }
     private void getemail()

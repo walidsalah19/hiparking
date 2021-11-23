@@ -29,6 +29,7 @@
         android:id="@+id/cardview"
         app:cardCornerRadius="10dp"
         android:layout_margin="10dp"
+        android:layout_marginBottom="20dp"
         app:cardBackgroundColor="@color/white"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"

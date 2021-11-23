@@ -30,7 +30,7 @@ public class add_data_to_firebase {
     private void put_data_in_firebase()
     {
         reference= FirebaseDatabase.getInstance().getReference("user_data");
-        reference.push().setValue(create).addOnCompleteListener(new OnCompleteListener<Void>() {
+        reference.child(create.getUser_id()).setValue(create).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful())
