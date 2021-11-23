@@ -93,7 +93,7 @@
                 android:layout_margin="10dp"
                 android:id="@+id/email_edittext"
                 android:textColor="@color/black"
-                android:textColorHint="@color/black"
+                android:textColorHint="@color/text_color"
                 android:paddingStart="10dp"
                 android:background="@drawable/edittext_shape"
                 android:padding="5dp"

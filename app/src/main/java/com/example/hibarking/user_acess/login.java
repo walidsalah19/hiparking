@@ -89,7 +89,7 @@ public class login extends AppCompatActivity {
     {
        email_login=findViewById(R.id.email_edittext);
        password_login=findViewById(R.id.email_password_text);
-       username=email_login.getText().toString();
-       password=password_login.getText().toString();
+       username=email_login.getText().toString().trim();
+       password=password_login.getText().toString().trim();
     }
 }
