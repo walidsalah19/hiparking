@@ -3,9 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <item
     android:id="@+id/navigation_menu_profile"
-    android:title="profile"
+    android:title="Profile"
     android:orderInCategory="100"
-    android:icon="@drawable/ic_baseline_home_24"
-    app:showAsAction="ifRoom">
+    android:icon="@drawable/ic_person">
 </item>
+    <item
+        android:title="Hiring"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_houses">
+    </item>
+    <item
+        android:title="Emergency"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_emergency">
+    </item>
+    <item
+        android:title="Contact us"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_phone">
+    </item>
+    <item
+        android:title="Setting"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_settings">
+    </item>
+    <item
+        android:title="Logout"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_baseline_logout_24">
+    </item>
 </menu>
