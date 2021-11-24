@@ -35,6 +35,7 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 public class MapsFragment extends Fragment {
@@ -59,8 +60,9 @@ public class MapsFragment extends Fragment {
         public void onMapReady(GoogleMap googleMap) {
             mMap = googleMap;
             if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)&&locationpermassion) {
-                getdeviceLocation();
                 get_my_location();
+
+
             }
         }
     };
@@ -81,6 +83,7 @@ public class MapsFragment extends Fragment {
             mapFragment.getMapAsync(callback);
         locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
         provider = locationManager.getBestProvider(new Criteria(), false);
+        FusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
         checkLocationPermission();
     }
 
@@ -93,14 +96,7 @@ public class MapsFragment extends Fragment {
         }
         else
         {
-            try {
-                Thread.sleep(2000);
-                mapFragment.getMapAsync(callback);
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
+            mapFragment.getMapAsync(callback);
         }
     }
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
@@ -151,21 +147,14 @@ public class MapsFragment extends Fragment {
     }
     private void getdeviceLocation()
     {
-        FusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+
         try {
-
-            Task location=FusedLocationClient.getLastLocation();
-            location.addOnCompleteListener(new OnCompleteListener() {
+            FusedLocationClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
                 @Override
-                public void onComplete(@NonNull Task task) {
-                    if (task.isSuccessful())
+                public void onSuccess(Location location) {
+                    if (location !=null )
                     {
-                        add_location_zoom_in_map(task);
-
-                    }
-                    else
-                    {
-                        Toast.makeText(getActivity(), "can't get the location", Toast.LENGTH_SHORT).show();
+                        add_location_zoom_in_map(location);
                     }
                 }
             });
@@ -174,12 +163,12 @@ public class MapsFragment extends Fragment {
             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-    private void add_location_zoom_in_map(Task task)
+    private void add_location_zoom_in_map(Location currentLocation)
     {
-        Location currentLocation=(Location) task.getResult();
+        //Location currentLocation=(Location) task.getResult();
         LatLng location = new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude() );
         mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
-       // mMap.addMarker(new MarkerOptions().position(location).title("you"));*/
+        //mMap.addMarker(new MarkerOptions().position(location).title("you"));
         mMap.getMinZoomLevel();
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 20));
         mMap.animateCamera(CameraUpdateFactory.zoomIn());
@@ -212,10 +201,13 @@ public class MapsFragment extends Fragment {
     }
     private void get_my_location()
     {
+
         if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
         mMap.setMyLocationEnabled(true);
+        getdeviceLocation();
+
     }
 
     private void turnGPSOn(){

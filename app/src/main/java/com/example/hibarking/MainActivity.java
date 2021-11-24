@@ -1,7 +1,9 @@
 package com.example.hibarking;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.FragmentTransaction;
 import android.content.Intent;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseUser firebaseUser;
     private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +37,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        //
-        // +check_user_acess();
+        check_user_acess();
     }
     private void toolpar_intialize() {
         toolbar=findViewById(R.id.appbar_main);
+        drawerLayout=(DrawerLayout) findViewById(R.id.drowerlayout);
         setSupportActionBar(toolbar);
+        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.close,R.string.open);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
     }
 
     private void firebase_tool_intialize()
