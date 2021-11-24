@@ -29,6 +29,7 @@
     </item>
     <item
         android:title="Logout"
+        android:id="@+id/navigation_logout"
         android:orderInCategory="100"
         android:icon="@drawable/ic_baseline_logout_24">
     </item>
