@@ -10,7 +10,8 @@
     <item
         android:title="Hiring"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_houses">
+        android:icon="@drawable/ic_houses"
+        app:showAsAction="ifRoom">
     </item>
     <item
         android:title="Emergency"
