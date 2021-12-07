@@ -21,7 +21,7 @@
                 <ImageView
                     android:id="@+id/imageView9"
                     android:layout_width="match_parent"
-                    android:layout_height="161dp"
+                    android:layout_height="110dp"
                     android:background="@drawable/ic_tilt" />
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -45,7 +45,7 @@
 
                     >
             <androidx.appcompat.widget.AppCompatButton
-                android:layout_height="68dp"
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:id="@+id/phone_login"
@@ -89,35 +89,39 @@
                 </LinearLayout>
 
             <EditText
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:id="@+id/email_edittext"
                 android:textColor="@color/black"
-                android:textColorHint="@color/text_color"
-                android:paddingStart="10dp"
+                android:textColorHint="@android:color/darker_gray"
                 android:background="@drawable/edittext_shape"
                 android:padding="5dp"
                 android:inputType="textEmailAddress"
                 android:drawablePadding="10dp"
                 android:drawableStart="@drawable/ic_baseline_email_24"
-                android:hint="email...."
+                android:hint=" Enter email"
                 android:ems="10"/>
 
             <EditText
-                android:layout_height="69dp"
+                android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:id="@+id/email_password_text"
                 android:textColor="@color/black"
                 android:inputType="textPassword"
-                android:textColorHint="@color/text_color"
-                android:hint="password"
+
+                android:textColorHint="@android:color/darker_gray"
+                android:hint="Enter password"
+
+  
                 android:paddingStart="10dp"
                 android:drawablePadding="10dp"
                 android:background="@drawable/edittext_shape"
                 android:padding="5dp"
-                android:drawableStart="@drawable/ic_baseline_lock_24"
+
+                android:drawableStart="@drawable/ic_lock"
+
                 android:ems="10"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -132,7 +136,7 @@
                 android:text="login"/>
 
             <TextView
-                android:layout_height="27dp"
+                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:layout_margin="10dp"
                 android:id="@+id/new_account"
@@ -142,7 +146,7 @@
                 android:text="create new account ?"/>
 
             <TextView
-                android:layout_height="27dp"
+                android:layout_height="wrap_content"
                 android:layout_width="189dp"
                 android:layout_margin="10dp"
                 android:id="@+id/forgit_password"

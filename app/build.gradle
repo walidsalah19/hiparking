@@ -4,11 +4,11 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.example.hibarking"
-        minSdkVersion 19
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
