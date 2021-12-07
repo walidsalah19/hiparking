@@ -60,6 +60,8 @@
             android:textColor="@color/black"
             android:textColorHint="@color/text_color"
             android:textSize="18sp" />
+  
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -79,8 +81,14 @@
         android:textColorHint="@color/text_color"
         android:layout_below="@id/email_registration"
         android:background="@drawable/edittext_shape"
+
         android:textSize="18sp"
         android:padding="10dp"
+=======
+   
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+      
+
         android:layout_margin="10dp"/>
 </LinearLayout>
     <LinearLayout
@@ -94,6 +102,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
         android:textColor="@color/black"
         android:inputType="textPassword"
         android:hint="confirm password"

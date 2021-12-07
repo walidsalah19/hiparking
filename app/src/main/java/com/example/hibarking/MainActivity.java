@@ -1,5 +1,6 @@
 package com.example.hibarking;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,11 +9,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.hibarking.google_map.MapsFragment;
 import com.example.hibarking.user_acess.login;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -28,10 +32,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //create
         toolpar_intialize();
         firebase_tool_intialize();
         check_user_acess();
         start_google_maps();
+        navigation_items();
     }
 
     @Override
@@ -70,4 +76,10 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+   private void navigation_items()
+   {
+       NavigationView navigationView=(NavigationView) findViewById(R.id.nav_view);
+       navigation_class_item n=new navigation_class_item(navigationView,this);
+   }
 }
