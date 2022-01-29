@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".payment_package.payment_faragment"
+    tools:ignore="MissingClass">
+
+    <!-- TODO: Update blank fragment layout -->
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.fevziomurtekin.payview.Payview
+        android:id="@+id/payview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardAnimationType="vertical"
+        app:cardBgColor="@color/grean"
+        app:cardCvErrorText="You must enter 3-digit characters"
+        app:cardCvTextSize="14"
+        app:cardExpiredErrorText="Your card has expired. Please enter the usage date correctly."
+        app:cardFgColor="@android:color/white"
+        app:cardMonthErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"
+        app:cardMonthTextSize="13"
+        app:cardNameHelperText="Enter to name on Your Card."
+        app:cardNameTextSize="15"
+        app:cardNoTextSize="14"
+        app:cardNumberHelperText="Enter your 16-digit card number."
+        app:cardTextColor="@color/grean"
+        app:cardYearErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '99'"
+        app:cardYearTextSize="13" />
+</RelativeLayout>
+
+</FrameLayout>

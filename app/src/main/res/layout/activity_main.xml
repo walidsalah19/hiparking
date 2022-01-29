@@ -13,6 +13,7 @@
         layout="@layout/main_appbar_map"
         >
     </include>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -23,4 +24,5 @@
         app:menu="@menu/navigation_menu"
         android:background="@color/lite_grean"
           />
+
 </androidx.drawerlayout.widget.DrawerLayout>

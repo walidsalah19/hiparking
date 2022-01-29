@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".bottom_sheet_package.booking_fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardMaxElevation="@dimen/_10sdp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_45sdp"
+                android:id="@+id/booking_driver_name"
+                android:hint="name"
+                android:textColorHint="@color/text_color"
+                android:textColor="@color/black"
+                android:background="@drawable/edittext_shape"
+                android:padding="@dimen/_15sdp"
+
+                android:layout_margin="@dimen/_10sdp"
+                android:layout_alignParentTop="true"
+
+                />
+            <LinearLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_below="@id/booking_driver_name"
+                android:id="@+id/time_layout">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:layout_weight="1"
+               android:text="Duration"
+               android:textSize="@dimen/_18sdp"
+               android:textColor="@color/black"
+               android:gravity="center"
+
+               >
+           </TextView>
+            <EditText
+                android:id="@+id/duration_booking_driver"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:inputType="time"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:background="@drawable/edittext_shape"
+                />
+            </LinearLayout>
+            <LinearLayout android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_below="@id/time_layout"
+                android:id="@+id/date_layout">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Date "
+                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:id="@+id/date_booking_driver"
+                    android:background="@drawable/button_shape"
+                    >
+                </TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="time"
+                    android:textSize="@dimen/_18sdp"
+                    android:gravity="center"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:id="@+id/time_booking_driver"
+                    android:background="@drawable/button_shape"
+                    android:textColor="@color/black"
+                    >
+                </TextView>
+
+
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date_layout"
+                android:background="@drawable/button_shape"
+                android:layout_margin="@dimen/_10sdp"
+                android:text="book"
+                android:textSize="@dimen/_18sdp"
+                android:textColor="@color/black"
+
+                >
+            </androidx.appcompat.widget.AppCompatButton>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</FrameLayout>

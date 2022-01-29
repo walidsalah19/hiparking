@@ -19,11 +19,11 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/create_account_image"
-        android:layout_width="114dp"
-        android:layout_height="112dp"
+        android:layout_width="@dimen/_114sdp"
+        android:layout_height="@dimen/_112sdp"
         android:src="@drawable/profile_image"
         app:civ_border_color="@color/grean"
-        app:civ_border_width="2dp"
+        app:civ_border_width="@dimen/_2sdp"
         app:layout_constraintBottom_toBottomOf="@id/imageView"
         app:layout_constraintHorizontal_bias="0.196"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -33,31 +33,35 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="10dp"
-        app:cardCornerRadius="10dp"
-        android:layout_margin="10dp"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_margin="@dimen/_10sdp"
         app:cardBackgroundColor="@color/white"
-        app:cardMaxElevation="12dp"
+        app:cardMaxElevation="@dimen/_12sdp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
         app:layout_constraintTop_toBottomOf="@id/create_account_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
+            android:padding="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             >
         <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_45sdp"
         android:id="@+id/create_account_username"
         android:hint="name"
             android:textColorHint="@color/text_color"
         android:textColor="@color/black"
-        android:textSize="20dp"
         android:background="@drawable/edittext_shape"
-        android:layout_margin="10dp"
-        android:padding="15dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:padding="@dimen/_15sdp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -65,82 +69,79 @@
     </EditText>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_45sdp"
         android:id="@+id/create_account_id"
         android:hint="id"
         android:textColorHint="@color/text_color"
         android:textColor="@color/black"
-        android:textSize="20dp"
         android:background="@drawable/edittext_shape"
-        android:layout_margin="10dp"
-        android:padding="15dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:padding="@dimen/_15sdp"
         app:layout_constraintTop_toBottomOf="@id/create_account_username"
         >
     </EditText>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_45sdp"
         android:id="@+id/create_account_phone"
         android:hint="phone number"
         android:textColorHint="@color/text_color"
         android:textColor="@color/black"
-        android:textSize="20dp"
         android:inputType="phone"
         android:background="@drawable/edittext_shape"
-        android:layout_margin="10dp"
-        android:padding="15dp"
+        android:layout_margin="@dimen/_10sdp"
+        android:padding="@dimen/_15sdp"
         app:layout_constraintTop_toBottomOf="@id/create_account_id"
         >
     </EditText>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_45sdp"
         android:id="@+id/create_account_licence"
         android:hint="Licence"
         android:textColorHint="@color/text_color"
         android:textColor="@color/black"
-        android:textSize="20dp"
         android:inputType="phone"
         android:background="@drawable/edittext_shape"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/_10sdp"
         android:padding="15dp"
         app:layout_constraintTop_toBottomOf="@id/create_account_phone"
         >
     </EditText>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/create_account_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/button_shape"
-        android:padding="15dp"
-        android:text="create"
-        android:textSize="20dp"
-        app:layout_constraintRight_toLeftOf="@id/cancel_account_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/create_account_licence">
-    </androidx.appcompat.widget.AppCompatButton>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/create_account_btn"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_36sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/button_shape"
+                android:padding="@dimen/_10sdp"
+                android:text="create"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/cancel_account_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/create_account_licence">
+            </androidx.appcompat.widget.AppCompatButton>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/cancel_account_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:layout_marginLeft="116dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="72dp"
-        android:background="@drawable/button_shape"
-        android:padding="15dp"
-        android:text="cancel"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/create_account_btn"
-        app:layout_constraintTop_toBottomOf="@id/create_account_licence">
-    </androidx.appcompat.widget.AppCompatButton>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cancel_account_btn"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_margin="@dimen/_30sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_28sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/button_shape"
+                android:padding="@dimen/_10sdp"
+                android:text="cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/create_account_btn"
+                app:layout_constraintTop_toBottomOf="@id/create_account_licence">
+            </androidx.appcompat.widget.AppCompatButton>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

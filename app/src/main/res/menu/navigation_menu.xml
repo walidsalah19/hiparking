@@ -8,21 +8,25 @@
     android:icon="@drawable/ic_person">
 </item>
     <item
-        android:title="Hiring"
+        android:id="@+id/navigation_menu_mechanical"
+        android:title="mechanical"
         android:orderInCategory="100"
         android:icon="@drawable/ic_houses">
     </item>
     <item
+        android:id="@+id/navigation_menu_Emergency"
         android:title="Emergency"
         android:orderInCategory="100"
         android:icon="@drawable/ic_emergency">
     </item>
     <item
+        android:id="@+id/navigation_menu_contact"
         android:title="Contact us"
         android:orderInCategory="100"
         android:icon="@drawable/ic_phone">
     </item>
     <item
+        android:id="@+id/navigation_menu_setting"
         android:title="Setting"
         android:orderInCategory="100"
         android:icon="@drawable/ic_settings">
