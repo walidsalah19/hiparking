@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.22552083333333334" />
         <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.22552083333333334" />
         <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_emergency.xml" value="0.22552083333333334" />
         <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_houses.xml" value="0.22552083333333334" />
@@ -11,7 +12,8 @@
         <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_phone.xml" value="0.22552083333333334" />
         <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_settings.xml" value="0.22552083333333334" />
         <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_create_account.xml" value="0.209375" />
-        <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_login_activity.xml" value="0.25" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_login_activity.xml" value="0.2" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_registration.xml" value="0.209375" />
         <entry key="..\:/project/hibarking/app/src/main/res/menu/navigation_menu.xml" value="0.209375" />
       </map>
     </option>
