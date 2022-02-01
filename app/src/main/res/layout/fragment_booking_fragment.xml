@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".bottom_sheet_package.booking_fragment">
+    tools:context=".booking_package.booking_fragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -43,32 +43,73 @@
                 />
             <LinearLayout android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_below="@id/booking_driver_name"
-                android:id="@+id/time_layout">
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="match_parent"
-               android:layout_weight="1"
-               android:text="Duration"
-               android:textSize="@dimen/_18sdp"
-               android:textColor="@color/black"
-               android:gravity="center"
+                android:id="@+id/time_layout"
+                android:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
 
-               >
-           </TextView>
-            <EditText
-                android:id="@+id/duration_booking_driver"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:inputType="time"
-                android:layout_weight="1"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                android:gravity="center"
-                android:background="@drawable/edittext_shape"
-                />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/permenent_redio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="permanent"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/radioButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Non permanent"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        />
+                </RadioGroup>
+            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:orientation="horizontal"
+                    android:visibility="invisible"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Duration"
+                        android:textSize="@dimen/_18sdp"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+
+                        >
+                    </TextView>
+                    <EditText
+                        android:id="@+id/duration_booking_driver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:ems="10"
+                        android:inputType="time"
+                        android:layout_weight="1"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:background="@drawable/edittext_shape"
+                        />
+                </LinearLayout>
+
+
+
             </LinearLayout>
             <LinearLayout android:layout_height="wrap_content"
                 android:layout_width="match_parent"
@@ -116,6 +157,7 @@
 
                 >
             </androidx.appcompat.widget.AppCompatButton>
+
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

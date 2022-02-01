@@ -1,80 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".user_acess.login"
     android:orientation="vertical"
-    tools:context=".user_acess.login">
+    android:background="@color/white"
+     >
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_131sdp"
-            android:background="@drawable/ic_tilt" />
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_20sdp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="@dimen/_10sdp"
-            app:cardElevation="@dimen/_10sdp"
-            app:cardMaxElevation="@dimen/_10sdp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
-
-            >
 
             <LinearLayout
-                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_below="@+id/imageView_view"
+                android:layout_width="match_parent"
                 android:orientation="vertical"
-                android:padding="@dimen/_10sdp"
-
                 >
 
-<<<<<<< HEAD
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/phone_login"
-=======
+
                 <ImageView
                     android:id="@+id/imageView9"
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
                     android:background="@drawable/ic_tilt" />
                 <androidx.cardview.widget.CardView
->>>>>>> 6e56a4ad481f0c3d22ec3acf284852789e4a80f3
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/button_shape"
-                    android:drawableLeft="@drawable/ic_baseline_phone_android_24"
-                    android:paddingStart="@dimen/_20sdp"
-                    android:text="phone login"
-                    android:textColor="#101010"
-                    android:textSize="@dimen/_16sdp" />
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardMaxElevation="12dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="@color/white"
 
+                    >
                 <LinearLayout
                     android:layout_width="match_parent"
-<<<<<<< HEAD
-=======
                     android:layout_height="match_parent"
                     android:padding="10dp"
                     android:orientation="vertical"
@@ -94,103 +57,37 @@
                 android:paddingStart="20dp"
                 android:drawableLeft="@drawable/ic_baseline_phone_android_24"/>
                 <LinearLayout
->>>>>>> 6e56a4ad481f0c3d22ec3acf284852789e4a80f3
                     android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
                     android:orientation="horizontal">
-
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_2sdp"
-                        android:layout_gravity="center"
+                        android:layout_height="2dp"
+                        android:background="@color/grean"
                         android:layout_weight="1"
-                        android:background="@color/grean">
+                        android:layout_gravity="center"
+                        >
                     </View>
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
+                        android:textSize="20dp"
                         android:text="OR"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_16sdp"></TextView>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/_2sdp"
-                        android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:background="@color/grean"></View>
+                        android:gravity="center"
+                        >
+                    </TextView>
+                   <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/grean"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        >
+                    </View>
                 </LinearLayout>
 
-<<<<<<< HEAD
-                <EditText
-                    android:id="@+id/email_edittext"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/edittext_shape"
-                    android:drawableStart="@drawable/ic_baseline_email_24"
-                    android:drawablePadding="@dimen/_10sdp"
-                    android:ems="10"
-                    android:hint="email...."
-                    android:inputType="textEmailAddress"
-                    android:padding="@dimen/_5sdp"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/text_color" />
-
-                <EditText
-                    android:id="@+id/email_password_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/edittext_shape"
-                    android:drawableStart="@drawable/ic_baseline_lock_24"
-                    android:drawablePadding="@dimen/_10sdp"
-                    android:ems="10"
-                    android:hint="password"
-                    android:inputType="textPassword"
-                    android:padding="@dimen/_5sdp"
-                    android:paddingStart="@dimen/_10sdp"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/text_color" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/email_login"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_40sdp"
-                    android:layout_gravity="center"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:background="@drawable/button_shape"
-                    android:text="login"
-                    android:textColor="#101010"
-                    android:textSize="@dimen/_16sdp" />
-
-                <TextView
-                    android:id="@+id/new_account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="@dimen/_27sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:gravity="center"
-                    android:text="create new account ?"
-                    android:textColor="@color/grean"
-                    android:textSize="@dimen/_16sdp" />
-
-                <TextView
-                    android:id="@+id/forgit_password"
-                    android:layout_width="@dimen/_189sdp"
-                    android:layout_height="@dimen/_27sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:text="forget password ?"
-                    android:textColor="@color/grean"
-
-                    android:textSize="@dimen/_16sdp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
             <EditText
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
@@ -260,4 +157,3 @@
                 </androidx.cardview.widget.CardView>
         </LinearLayout>
 </LinearLayout>
->>>>>>> 6e56a4ad481f0c3d22ec3acf284852789e4a80f3

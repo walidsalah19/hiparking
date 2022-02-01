@@ -51,11 +51,12 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/edittext_shape"
-            android:ems="10"
-            android:drawablePadding="5dp"
             android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="5dp"
+            android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/text_color"
@@ -68,28 +69,26 @@
     android:orientation="horizontal"
     android:id="@+id/password"
     android:layout_below="@id/email_registration">
+
     <EditText
         android:id="@+id/password_registration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:textColor="@color/black"
-        android:inputType="textPassword"
-        android:hint="password"
-        android:drawablePadding="5dp"
-        android:drawableStart="@drawable/ic_lock"
-        android:textColorHint="@color/text_color"
         android:layout_below="@id/email_registration"
+        android:layout_margin="10dp"
         android:background="@drawable/edittext_shape"
+        android:drawableStart="@drawable/ic_lock"
 
-        android:textSize="18sp"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+
         android:padding="10dp"
-=======
-   
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-      
-
-        android:layout_margin="10dp"/>
+        android:textColor="@color/black"
+        android:textColorHint="@color/text_color"
+        android:textSize="18sp"
+        tools:ignore="TouchTargetSizeCheck" />
 </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -97,52 +96,30 @@
         android:orientation="horizontal"
         android:id="@+id/confirm"
         android:layout_below="@id/password">
-    <EditText
-        android:id="@+id/confirm_registration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:drawableStart="@drawable/ic_baseline_lock_24"
-        android:textColor="@color/black"
-        android:inputType="textPassword"
-        android:hint="confirm password"
-        android:drawableStart="@drawable/ic_lock"
-        android:textColorHint="@color/text_color"
-        android:drawablePadding="5dp"
-        android:layout_below="@id/password_registration"
-        android:background="@drawable/edittext_shape"
-        android:textSize="18sp"
-        android:padding="10dp"
-        android:layout_margin="10dp"/>
+
+        <EditText
+            android:id="@+id/confirm_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password_registration"
+            android:layout_margin="10dp"
+            android:background="@drawable/edittext_shape"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="confirm password"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/text_color"
+            android:textSize="18sp" />
     </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/registration"
             android:layout_width="wrap_content"
-<<<<<<< HEAD
-            android:layout_height="@dimen/_53sdp"
-            android:layout_below="@id/confirm"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button_shape"
-            android:padding="10dp"
-            android:text="registration"
-            android:textSize="20dp" />
-
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="have account ?"
-        android:textSize="20dp"
-        android:textColor="@color/grean"
-        android:id="@+id/have_account"
-        android:layout_margin="10dp"
-
-            android:layout_below="@id/registration"
-
-           >
-        </TextView>
-=======
             android:layout_height="wrap_content"
             android:layout_below="@id/confirm"
             android:layout_centerHorizontal="true"
@@ -167,7 +144,6 @@
             android:text="have account ?"
             android:textColor="@color/grean"
             android:textSize="18sp" />
->>>>>>> 6e56a4ad481f0c3d22ec3acf284852789e4a80f3
 
     </RelativeLayout>
     </androidx.cardview.widget.CardView>

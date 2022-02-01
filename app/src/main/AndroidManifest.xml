@@ -41,8 +41,9 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
         <activity android:name=".account.create_account" />
+        <activity android:name=".garage_manager.main_garage" />
+        <activity android:name=".mechanical.main_mechanical" />
         <activity android:name=".user_acess.registration" />
         <activity android:name=".user_acess.login" />
         <activity android:name=".Splash">

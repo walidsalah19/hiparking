@@ -14,11 +14,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.hibarking.bottom_sheet_package.booking_fragment;
+import com.example.hibarking.account.create_account;
+import com.example.hibarking.booking_package.booking_fragment;
 import com.example.hibarking.chating.chating;
 import com.example.hibarking.google_map.MapsFragment;
 import com.example.hibarking.user_acess.login;
+import com.example.hibarking.user_mechanical.add_mechanical_data;
 import com.example.hibarking.user_mechanical.mechanical_user;
+import com.example.hibarking.user_mechanical.view_customer_data;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -83,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void start_google_maps() {
 
-        getSupportFragmentManager().beginTransaction()
+       getSupportFragmentManager().beginTransaction()
                 .add(R.id.main_framelayout, new MapsFragment()).commit();
 
     }

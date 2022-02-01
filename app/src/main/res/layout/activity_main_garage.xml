@@ -5,26 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:id="@+id/drowerlayout">
+    tools:context=".garage_manager.main_garage">
+
     <include
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        layout="@layout/main_appbar_map"
+        layout="@layout/main_garge_menu"
         >
     </include>
-
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/g_nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
-        app:menu="@menu/navigation_menu"
-        app:itemTextColor="@color/black"
-        android:background="@color/white"
-        app:itemIconTint="@color/black"
-          />
+        app:menu="@menu/garage_navigation_menu"
+        android:background="@color/lite_grean"
+        />
 
 </androidx.drawerlayout.widget.DrawerLayout>

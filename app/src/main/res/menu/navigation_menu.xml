@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <item
     android:id="@+id/navigation_menu_profile"
     android:title="Profile"
     android:orderInCategory="100"
     android:icon="@drawable/ic_person">
+
 </item>
     <item
         android:id="@+id/navigation_menu_mechanical"
         android:title="mechanical"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_houses"
-        app:showAsAction="ifRoom">
+        android:icon="@drawable/ic_sharp_build_24"
+        >
     </item>
     <item
         android:id="@+id/navigation_menu_Emergency"
