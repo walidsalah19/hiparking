@@ -27,8 +27,6 @@ public class registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        //uuuu
-
         registration_method();
 
     }
@@ -51,25 +49,29 @@ public class registration extends AppCompatActivity {
         email_string=editText_email.getText().toString().trim();
         password_string=editText_password.getText().toString().trim();
         conferm_string=editText_confirm_password.getText().toString().trim();
-        if(TextUtils.isEmpty(email_string)||TextUtils.isEmpty(password_string)||TextUtils.isEmpty(conferm_string))
-        {
-            Toast.makeText(this, "Please Enter Your Data Correctly", Toast.LENGTH_SHORT).show();
-        }
-        else if(password_string.length()<8)
-        {
-            Toast.makeText(this, "You'r password should be more than 8 character", Toast.LENGTH_SHORT).show();
-        }
-        else if(! password_string.equals(conferm_string))
-        {
-            Toast.makeText(this, "Password not match", Toast.LENGTH_SHORT).show();
-        }
 
-        else
-        {
-            sining(email_string,password_string);
-        }
+
     }
+     private void check_usename_password(String email_string,String password_string ,String conferm_string)
+     {
+         if(TextUtils.isEmpty(email_string)||TextUtils.isEmpty(password_string)||TextUtils.isEmpty(conferm_string))
+         {
+             Toast.makeText(this, "Please Enter Your Data Correctly", Toast.LENGTH_SHORT).show();
+         }
+         else if(password_string.length()<8)
+         {
+             Toast.makeText(this, "You'r password should be more than 8 character", Toast.LENGTH_SHORT).show();
+         }
+         else if(! password_string.equals(conferm_string))
+         {
+             Toast.makeText(this, "Password not match", Toast.LENGTH_SHORT).show();
+         }
 
+         else
+         {
+             sining(email_string,password_string);
+         }
+     }
     private void sining(String email_string, String password_string) {
 
         auth=FirebaseAuth.getInstance();

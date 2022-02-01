@@ -56,6 +56,7 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@android:color/darker_gray"
@@ -88,12 +89,14 @@
 
                 android:textSize="18sp" />
         </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/confirm"
         android:layout_below="@id/password">
+
     <EditText
         android:id="@+id/confirm_registration"
         android:layout_width="match_parent"
@@ -110,6 +113,8 @@
         android:textSize="18sp"
         android:padding="10dp"
         android:layout_margin="10dp"/>
+
+
     </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -120,8 +125,12 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
+
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
+
+            android:textColor="@color/white"
+           
             android:background="@drawable/button_shape"
             android:text="Register"
             android:textColor="@color/white"

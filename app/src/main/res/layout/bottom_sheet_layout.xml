@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="50dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:orientation="vertical">
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="50dp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:gravity="center"
+        />
+    <RelativeLayout android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/name_layout">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Garage Name"
+                android:textColor="@color/grean"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_20sdp"
+                />
+
+            <TextView
+                android:id="@+id/bottomsheet_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="name"
+                android:gravity="center"
+                android:textColor="@color/grean"
+                android:textSize="@dimen/_20sdp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/space_layout"
+            android:layout_below="@id/name_layout">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.4"
+                android:text="empty Space "
+                android:textColor="@color/grean"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_20sdp"
+                />
+
+            <TextView
+                android:id="@+id/bottomsheet_apace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="No space "
+                android:gravity="center"
+                android:textColor="@color/grean"
+                android:textSize="@dimen/_20sdp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/destination_layout"
+            android:layout_below="@id/space_layout">
+
+            <TextView
+                android:id="@+id/destination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Destination"
+                android:textColor="@color/grean"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_20sdp"
+                />
+
+            <TextView
+                android:id="@+id/bottomsheet_destination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="00 km"
+                android:gravity="center"
+                android:textColor="@color/grean"
+                android:textSize="@dimen/_20sdp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/rate_layout"
+            android:layout_below="@id/destination_layout">
+
+            <TextView
+                android:id="@+id/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Rate"
+                android:textColor="@color/grean"
+                android:paddingStart="@dimen/_10sdp"
+                android:textSize="@dimen/_20sdp"
+                />
+
+            <TextView
+                android:id="@+id/bottomsheet_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:gravity="center"
+                android:textColor="@color/grean"
+                android:textSize="@dimen/_20sdp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_below="@id/rate_layout"
+            android:id="@+id/book_layout">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/user_main_booking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:text="book"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,31 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/circl_imag_navigation_head"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:src="@drawable/profile_image"
-        app:civ_border_color="@color/grean"
-        app:civ_border_width="2dp"/>
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/first"
+        android:orientation="horizontal"
+        android:background="@color/grean">
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:id="@+id/second"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/first">
+    </LinearLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/grean"
+        android:layout_margin="20dp"
+        android:id="@+id/circl_imag"
+        android:src="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/first"
+        app:layout_constraintBottom_toTopOf="@id/second"
+        >
+    </de.hdodenhof.circleimageview.CircleImageView>
+<de.hdodenhof.circleimageview.CircleImageView
+    android:layout_width="110dp"
+    android:layout_height="110dp"
+    android:src="@drawable/profile"
+    app:civ_border_width="1dp"
+    app:civ_border_color="@color/grean"
+    android:layout_margin="25dp"
+    android:id="@+id/circl_imag_navigation_head"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/first"
+    app:layout_constraintBottom_toTopOf="@id/second"
+    >
+</de.hdodenhof.circleimageview.CircleImageView>
+
+
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/circl_imag_navigation_head"
         android:text="user name"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@id/second"
+        app:layout_constraintLeft_toRightOf="@id/circl_imag"
         >
     </TextView>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -214,4 +214,5 @@ public class MapsFragment extends Fragment {
         Intent intent=new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
         getActivity().startActivity(intent);
         }
+
 }

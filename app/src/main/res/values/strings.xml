@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HiBarking</string>
+    <string name="app_name">HiParking</string>
     <string name="title_activity_maps">Map</string>
     <string name="close">close</string>
     <string name="open">open</string>
