@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/appbar_main"
         android:background="@color/grean"
+        app:titleTextColor="@color/white"
         />
+
     <FrameLayout
+        android:id="@+id/main_framelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/main_framelayout"
-        android:layout_below="@id/appbar_main"
-        >
+        android:layout_below="@id/appbar_main">
+
     </FrameLayout>
 </RelativeLayout>
