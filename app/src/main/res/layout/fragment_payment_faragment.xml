@@ -20,7 +20,7 @@
         app:cardCvErrorText="You must enter 3-digit characters"
         app:cardCvTextSize="14"
         app:cardExpiredErrorText="Your card has expired. Please enter the usage date correctly."
-        app:cardFgColor="@android:color/white"
+        app:cardFgColor="@color/ic_launcher_background"
         app:cardMonthErrorText="You must enter 2-digit characters and you'll enter to number the most digit-value is '12'"
         app:cardMonthTextSize="13"
         app:cardNameHelperText="Enter to name on Your Card."
