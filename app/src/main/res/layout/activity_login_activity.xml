@@ -51,7 +51,7 @@
                 android:id="@+id/phone_login"
                 android:layout_gravity="center"
                 android:textSize="20dp"
-                android:textColor="#101010"
+                android:textColor="@color/white"
                 android:text="phone login"
                 android:background="@drawable/button_shape"
                 android:paddingStart="20dp"
@@ -127,7 +127,7 @@
                 android:layout_margin="10dp"
                 android:id="@+id/email_login"
                 android:layout_gravity="center"
-                android:textColor="#101010"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 android:background="@drawable/button_shape"
                 android:text="login"/>

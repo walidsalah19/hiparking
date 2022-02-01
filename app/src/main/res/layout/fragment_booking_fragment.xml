@@ -122,7 +122,7 @@
                     android:layout_weight="1"
                     android:text="Date "
                     android:textSize="@dimen/_18sdp"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:gravity="center"
                     android:layout_margin="@dimen/_10sdp"
                     android:id="@+id/date_booking_driver"
@@ -139,7 +139,7 @@
                     android:layout_margin="@dimen/_10sdp"
                     android:id="@+id/time_booking_driver"
                     android:background="@drawable/button_shape"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     >
                 </TextView>
 
@@ -153,7 +153,7 @@
                 android:layout_margin="@dimen/_10sdp"
                 android:text="book"
                 android:textSize="@dimen/_18sdp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
 
                 >
             </androidx.appcompat.widget.AppCompatButton>

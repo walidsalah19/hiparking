@@ -15,6 +15,7 @@
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/appbar_main"
         android:background="@color/grean"
+        app:titleTextColor="@color/white"
         />
     <FrameLayout
         android:layout_below="@id/appbar_main"

@@ -34,7 +34,7 @@
             android:layout_margin="@dimen/_10sdp"
             android:text="Call"
             android:textSize="@dimen/_18sdp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
 
             >
         </androidx.appcompat.widget.AppCompatButton>
@@ -47,7 +47,7 @@
             android:text="Chat"
             android:layout_below="@id/user_call_mechanicl"
             android:textSize="@dimen/_18sdp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
 
             >
         </androidx.appcompat.widget.AppCompatButton>
