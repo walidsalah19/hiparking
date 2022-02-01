@@ -2,6 +2,12 @@
 <menu
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/parking"
+        android:title="Parking"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_parking">
+    </item>
 <item
     android:id="@+id/navigation_menu_profile"
     android:title="Profile"
@@ -10,6 +16,7 @@
 
 </item>
     <item
+
         android:id="@+id/navigation_menu_mechanical"
         android:title="mechanical"
         android:orderInCategory="100"
@@ -18,6 +25,7 @@
     </item>
     <item
         android:id="@+id/navigation_menu_Emergency"
+
         android:title="Emergency"
         android:orderInCategory="100"
         android:icon="@drawable/ic_emergency">

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardCornerRadius="50dp"
+            android:background="@color/grean"
+            android:layout_gravity="start"
+            android:elevation="8dp"
+            app:cardElevation="10dp"
+            >
+            <ImageView
+                android:id="@+id/image_pro"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/ic_person"
+                android:scaleType="fitXY"
+               />
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/pr_name"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="20sp"
+                android:layout_marginBottom="2dp"
+                android:textAlignment="viewStart"
+                android:text="User name"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/pr_id"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="2dp"
+                android:textAlignment="viewStart"
+                android:text="ID : 235635638537843"
+                android:gravity="start"
+                android:textColor="@android:color/darker_gray"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_person"/>
+            </FrameLayout>
+            <TextView
+                android:id="@+id/pr_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID : 255886386346473"
+                android:maxLines="1"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_email_24"/>
+            </FrameLayout>
+            <TextView
+                android:id="@+id/pr_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email : mousdddddtafa03@gmail.com"
+                android:textSize="18sp"
+                android:maxLines="1"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:forceHasOverlappingRendering="true"
+               />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_phone"/>
+            </FrameLayout>
+            <TextView
+                android:id="@+id/pr_web"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone : +201159088197"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_car"/>
+            </FrameLayout>
+            <TextView
+                android:id="@+id/pr_license"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Car ID : 131|ABDS"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_lock"/>
+            </FrameLayout>
+            <TextView
+                android:id="@+id/pr_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password : 23#@jhj^hdjk"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_car"/>
+            </FrameLayout>
+            <TextView
+                android:id="@+id/pr_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Join in :25/nov/2022"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:textSize="18sp"
+               />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+
+</LinearLayout>
