@@ -1,6 +1,4 @@
-package com.example.hibarking.account;
-
-import android.text.Editable;
+package com.example.hibarking.driver.user_account;
 
 public class create_account_class {
     private String user_name ,phone_number,user_id,license,id_card_number,email, dataofcreation;

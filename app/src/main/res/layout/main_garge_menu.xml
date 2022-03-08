@@ -5,18 +5,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/g_echanical_drowerlayout">
-    <include
+    android:id="@+id/g_echanical_drowerlayout"
+    android:background="@color/white">
+    <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/main_appbar_map"
-        android:id="@+id/g_include_tool_bar"
-        >
-    </include>
-
-    <androidx.recyclerview.widget.RecyclerView
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/garage_manager_appbar_main"
+        android:background="@color/grean"
+        app:titleTextColor="@color/white"
+        />
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/g_include_tool_bar"
+        android:id="@+id/grarage_manager_frameLayout"
+        android:layout_below="@id/garage_manager_appbar_main">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+            android:id="@+id/grarage_manager_recyclerView"
         />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        app:fabSize="normal"
+        android:id="@+id/add_new_garage"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_15sdp"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/grean"
+        />
+        </RelativeLayout>
+    </FrameLayout>
+
 </RelativeLayout>

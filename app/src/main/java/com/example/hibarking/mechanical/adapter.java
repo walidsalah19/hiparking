@@ -10,17 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hibarking.R;
+import com.example.hibarking.garage_manager.show_garage_info;
 
 import java.util.ArrayList;
 
 
 public class adapter extends RecyclerView.Adapter<adapter.helper>{
-    Context context ;
     ArrayList<String> arrayList;
     main_mechanical main;
-    public adapter(Context context, ArrayList<String> ArrayList,main_mechanical ma)
+    public adapter( ArrayList<String> ArrayList,main_mechanical ma)
     {
-        this.context = context;
         this.arrayList = ArrayList;
         this.main = ma;
     }
@@ -38,7 +37,7 @@ public class adapter extends RecyclerView.Adapter<adapter.helper>{
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              // main.getSupportFragmentManager().beginTransaction()
+                main.getSupportFragmentManager().beginTransaction().replace(R.id.machanical_framelayout,new view_customer_data()).addToBackStack(null).commitAllowingStateLoss();
             }
         });
     }

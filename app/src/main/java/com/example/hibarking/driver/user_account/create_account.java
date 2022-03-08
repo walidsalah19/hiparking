@@ -1,6 +1,5 @@
-package com.example.hibarking.account;
+package com.example.hibarking.driver.user_account;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,11 +11,7 @@ import android.widget.Toast;
 
 import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -33,12 +28,11 @@ public class create_account extends AppCompatActivity {
         setContentView(R.layout.activity_create_account);
         intialize();
                 create_account_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                 chick_user_data();
-            }
-        });
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(create_account.this, MainActivity.class));
+                    }
+                });
     }
     private void intialize()
     {
@@ -47,9 +41,9 @@ public class create_account extends AppCompatActivity {
         phone_number=findViewById(R.id.create_account_phone);
         license=findViewById(R.id.create_account_licence);
         create_account_btn=findViewById(R.id.create_account_btn);
-        dateofcreation();
+       /* dateofcreation();
         getemail();
-        get_app_id();
+        get_app_id();*/
 
     }
     private void dateofcreation()

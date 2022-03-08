@@ -10,6 +10,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/textview_shap"
     android:textSize="18sp"
+    android:padding="@dimen/_5sdp"
+    android:textColor="@color/grean"
     android:id="@+id/mechanical_recycler_customer_name">
 </TextView>
 </LinearLayout>

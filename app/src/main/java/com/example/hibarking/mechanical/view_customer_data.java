@@ -1,4 +1,4 @@
-package com.example.hibarking.Fragments;
+package com.example.hibarking.mechanical;
 
 import android.os.Bundle;
 
@@ -10,17 +10,21 @@ import android.view.ViewGroup;
 
 import com.example.hibarking.R;
 
-public class ProfileFragment extends Fragment {
+
+public class view_customer_data extends Fragment {
+
 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_view_customer_data, container, false);
     }
 }

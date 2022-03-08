@@ -5,7 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mechanical.main_mechanical">
+    tools:context=".mechanical.main_mechanical"
+    android:id="@+id/mechanical_drawer"
+    android:background="@color/white">
 
     <include
         android:layout_width="match_parent"
@@ -21,7 +23,9 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/mechanical_navigation_menu"
-        android:background="@color/lite_grean"
+        android:background="@color/white"
+        app:itemTextColor="@color/grean"
+        app:itemIconTint="@color/grean"
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -41,10 +41,13 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-        <activity android:name=".account.create_account" />
-        <activity android:name=".garage_manager.main_garage" />
+        <activity android:name=".garage_manager.main_garage_manager" />
         <activity android:name=".mechanical.main_mechanical" />
         <activity android:name=".user_acess.registration" />
+        <activity android:name=".driver.user_account.create_account" />
+        <activity android:name=".mechanical.add_mechanical_data" />
+        <activity android:name=".garage_manager.AddGarageManData" />
+
         <activity android:name=".user_acess.login" />
         <activity android:name=".Splash">
             <intent-filter>

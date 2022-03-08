@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".garage_manager.main_garage">
+    tools:context=".garage_manager.main_garage_manager"
+    android:id="@+id/garage_manager_drawer">
 
     <include
         android:layout_width="match_parent"
@@ -21,7 +22,11 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/garage_navigation_menu"
-        android:background="@color/lite_grean"
+        android:background="@color/white"
+        app:itemTextColor="@color/black"
+        app:itemIconTint="@color/grean"
+
         />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

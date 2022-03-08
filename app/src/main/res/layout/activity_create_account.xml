@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".account.create_account"
+    tools:context=".driver.user_account.create_account"
     android:background="@color/white">
 
     <ImageView
@@ -145,8 +145,11 @@
                 android:background="@drawable/button_shape"
                 android:padding="15dp"
                 android:text="create"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/create_account_btn"
+                app:layout_constraintTop_toBottomOf="@id/create_account_licence"
                 android:textColor="@color/white"
-                android:textSize="18dp"
+                android:textSize="18dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/cancel_account_btn"

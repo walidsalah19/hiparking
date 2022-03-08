@@ -1,4 +1,4 @@
-package com.example.hibarking.account;
+package com.example.hibarking.driver.user_account;
 
 import android.content.Context;
 import android.content.Intent;
@@ -6,15 +6,10 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 
 import com.example.hibarking.MainActivity;
-import com.example.hibarking.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 public class add_data_to_firebase {
     private DatabaseReference reference;

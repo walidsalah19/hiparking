@@ -147,18 +147,21 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
+                            android:id="@+id/driver"
                             android:textColor="@android:color/darker_gray"
                             android:text="Driver"/>
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Mechanic"
+                            android:id="@+id/mechanical"
                             android:textColor="@android:color/darker_gray"
                             android:layout_marginStart="5dp"/>
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Garages"
+                            android:text="Garage manager"
+                            android:id="@+id/garage_manager"
                             android:textColor="@android:color/darker_gray"
                             android:layout_marginStart="5dp"/>
                     </RadioGroup>

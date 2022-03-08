@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".booking_package.booking_fragment">
+    tools:context=".driver.booking_package.booking_fragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -68,7 +68,7 @@
                         />
 
                     <RadioButton
-                        android:id="@+id/radioButton4"
+                        android:id="@+id/nonpermenent_redio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Non permanent"
@@ -81,6 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:orientation="horizontal"
+                    android:id="@+id/duration_layout"
                     android:visibility="invisible"
                     >
                     <TextView
@@ -91,7 +92,7 @@
                         android:textSize="@dimen/_18sdp"
                         android:textColor="@color/black"
                         android:gravity="center"
-
+                        android:padding="@dimen/_5sdp"
                         >
                     </TextView>
                     <EditText
@@ -104,6 +105,7 @@
                         android:textColor="@color/black"
                         android:textSize="18dp"
                         android:gravity="center"
+                        android:padding="@dimen/_5sdp"
                         android:background="@drawable/edittext_shape"
                         />
                 </LinearLayout>

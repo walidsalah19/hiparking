@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
@@ -15,22 +14,15 @@ import android.view.MenuItem;
 import android.view.View;
 
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Switch;
 
-import com.example.hibarking.Fragments.AddGarageManData;
-import com.example.hibarking.Fragments.ProfileFragment;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.hibarking.account.create_account;
-import com.example.hibarking.booking_package.booking_fragment;
 import com.example.hibarking.chating.chating;
-import com.example.hibarking.google_map.MapsFragment;
+import com.example.hibarking.driver.booking_package.booking_fragment;
+import com.example.hibarking.driver.google_map.MapsFragment;
+import com.example.hibarking.driver.user_mechanical.mechanical_user;
 import com.example.hibarking.user_acess.login;
-import com.example.hibarking.user_mechanical.add_mechanical_data;
-import com.example.hibarking.user_mechanical.mechanical_user;
-import com.example.hibarking.user_mechanical.view_customer_data;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -55,40 +47,6 @@ public class MainActivity extends AppCompatActivity {
         intialization_tool();
         //check_user_acess();
         start_google_maps();
-
-
-        NavigationView navigationView=(NavigationView) findViewById(R.id.nav_view);
-        Menu menuNav = navigationView.getMenu();
-        MenuItem logout=menuNav.findItem(R.id.navigation_logout);
-        logout.setChecked(true).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                auth.signOut();
-                startActivity(new Intent(MainActivity.this, login.class));
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-            }
-        });
-        MenuItem profile = menuNav.findItem(R.id.navigation_menu_profile);
-        profile.setChecked(true).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, new ProfileFragment()).addToBackStack(null).commit();
-                //getSupportFragmentManager().beginTransaction().add(R.id.main_framelayout,new AddGarageManData()).commit();
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-            }
-        });
-        MenuItem parking = menuNav.findItem(R.id.parking);
-        parking.setChecked(true).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                start_google_maps();
-                drawerLayout.closeDrawer(GravityCompat.START);
-                return true;
-            }
-        });
-
         navigation_items();
         booking_buttom_method();
 
@@ -99,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-       // check_user_acess();
+       //check_user_acess();
     }
 
     private void toolpar_intialize() {
@@ -192,5 +150,4 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 }
