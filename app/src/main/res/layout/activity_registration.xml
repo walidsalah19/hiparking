@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".user_acess.registration"
-    android:background="@color/white">
+    android:background="?attr/background_color">
 
     <ImageView
         android:id="@+id/imageView_view"
@@ -30,7 +30,7 @@
         app:cardCornerRadius="10dp"
         android:layout_margin="10dp"
         android:layout_marginBottom="20dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="?attr/background_color"
         app:cardMaxElevation="12dp"
         app:cardPreventCornerOverlap="true"
         app:cardUseCompatPadding="true"
@@ -57,7 +57,7 @@
             android:hint="Email"
             android:inputType="textPersonName"
             android:padding="10dp"
-            android:textColor="@color/black"
+            android:textColor="?attr/text_color"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="18sp" />
 
@@ -83,7 +83,7 @@
                 android:inputType="textPassword"
                 android:padding="10dp"
 
-                android:textColor="@color/black"
+                android:textColor="?attr/text_color"
                 android:textColorHint="@android:color/darker_gray"
 
                 android:textSize="18sp" />
@@ -99,7 +99,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textColor="@color/black"
+        android:textColor="?attr/text_color"
         android:inputType="textPassword"
         android:hint="confirm password"
         android:drawableStart="@drawable/ic_lock"

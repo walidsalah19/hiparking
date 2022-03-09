@@ -7,7 +7,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context=".user_acess.login"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="?attr/background_color"
      >
 
 
@@ -15,6 +15,7 @@
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
+                android:background="?attr/background_color"
                 >
 
 
@@ -33,7 +34,7 @@
                     app:cardMaxElevation="12dp"
                     app:cardPreventCornerOverlap="true"
                     app:cardUseCompatPadding="true"
-                    app:cardBackgroundColor="@color/white"
+                    app:cardBackgroundColor="?attr/background_color"
 
                     >
                 <LinearLayout
@@ -63,7 +64,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
-                        android:background="@color/grean"
+                        android:background="?attr/background_green"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         >
@@ -81,7 +82,7 @@
                    <View
                         android:layout_width="match_parent"
                         android:layout_height="2dp"
-                        android:background="@color/grean"
+                       android:background="?attr/background_green"
                         android:layout_weight="1"
                         android:layout_gravity="center"
                         >
@@ -93,10 +94,10 @@
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:id="@+id/email_edittext"
-                android:textColor="@color/black"
+                android:textColor="?attr/text_color"
                 android:textColorHint="@android:color/darker_gray"
                 android:background="@drawable/edittext_shape"
-                android:padding="5dp"
+                android:padding="10dp"
                 android:paddingStart="10dp"
                 android:inputType="textEmailAddress"
                 android:drawablePadding="10dp"
@@ -109,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_margin="10dp"
                 android:id="@+id/email_password_text"
-                android:textColor="@color/black"
+                android:textColor="?attr/text_color"
                 android:inputType="textPassword"
 
                 android:textColorHint="@android:color/darker_gray"
@@ -119,7 +120,7 @@
                 android:paddingStart="10dp"
                 android:drawablePadding="10dp"
                 android:background="@drawable/edittext_shape"
-                android:padding="5dp"
+                android:padding="10dp"
 
                 android:drawableStart="@drawable/ic_lock"
 

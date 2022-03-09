@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="?attr/background_color"
     android:id="@+id/drowerlayout">
     <include
         android:layout_width="match_parent"
@@ -22,6 +23,8 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/navigation_menu"
-        android:background="@color/lite_grean"
+        android:background="?attr/background_color"
+        app:itemTextColor="?attr/text_color"
+        app:itemIconTint="?attr/background_green"
           />
 </androidx.drawerlayout.widget.DrawerLayout>

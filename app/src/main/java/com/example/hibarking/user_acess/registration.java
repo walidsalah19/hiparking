@@ -2,6 +2,7 @@ package com.example.hibarking.user_acess;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +26,11 @@ public class registration extends AppCompatActivity {
     private FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.Theme_Dark);
+        }else {
+            setTheme(R.style.Theme_Light);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         //uuuu
@@ -57,7 +63,7 @@ public class registration extends AppCompatActivity {
         }
         else if(password_string.length()<8)
         {
-            Toast.makeText(this, "You'r password should be more than 8 character", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Your password should be more than 8 character", Toast.LENGTH_SHORT).show();
         }
         else if(! password_string.equals(conferm_string))
         {

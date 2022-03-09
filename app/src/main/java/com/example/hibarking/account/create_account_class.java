@@ -1,18 +1,12 @@
 package com.example.hibarking.account;
 
+import android.net.Uri;
 import android.text.Editable;
 
 public class create_account_class {
-    private String user_name ,phone_number,user_id,license,id_card_number,email, dataofcreation;
+    String user_name ,phone_number,user_id,license,id_card_number,email, dataofcreation , image_uri;
 
-    public create_account_class(String user_name, String phone_number, String user_id, String license, String id_card_number, String email, String dataofcreation) {
-        this.user_name = user_name;
-        this.phone_number = phone_number;
-        this.user_id = user_id;
-        this.license = license;
-        this.id_card_number = id_card_number;
-        this.email = email;
-        this.dataofcreation = dataofcreation;
+    public create_account_class() {
     }
 
     public String getUser_name() {
@@ -41,5 +35,41 @@ public class create_account_class {
 
     public String getDataofcreation() {
         return dataofcreation;
+    }
+
+    public String getImage() {
+        return image_uri;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
+    }
+
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public void setLicense(String license) {
+        this.license = license;
+    }
+
+    public void setId_card_number(String id_card_number) {
+        this.id_card_number = id_card_number;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setDataofcreation(String dataofcreation) {
+        this.dataofcreation = dataofcreation;
+    }
+
+    public void setImage_uri(String image_uri) {
+        this.image_uri = image_uri;
     }
 }

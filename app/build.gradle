@@ -57,5 +57,7 @@ dependencies {
     //scale
     implementation "com.intuit.sdp:sdp-android:1.0.6"
     implementation "com.intuit.ssp:ssp-android:1.0.6"
+
+    implementation 'com.squareup.picasso:picasso:2.8'
 }
 apply plugin: 'com.google.gms.google-services'
