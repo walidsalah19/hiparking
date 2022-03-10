@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/parking"
+        android:title="Parking"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_parking">
+    </item>
+    <item
+    android:id="@+id/navigation_menu_profile"
+    android:title="Profile"
+    android:orderInCategory="100"
+    android:icon="@drawable/ic_person">
+    </item>
+    <item
+        android:id="@+id/navigation_menu_mechanical"
+        android:title="Mechanical"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_mechanical">
+    </item>
+    <item
+        android:id="@+id/navigation_menu_Emergency"
+        android:title="Emergency"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_emergency">
+    </item>
+    <item
+        android:id="@+id/navigation_menu_contact"
+        android:title="Contact us"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_phone">
+    </item>
+    <item
+        android:id="@+id/navigation_menu_setting"
+        android:title="Setting"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_settings">
+    </item>
+    <item
+        android:title="Logout"
+        android:id="@+id/navigation_logout"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_baseline_logout_24">
+    </item>
+</menu>

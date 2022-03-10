@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/background_color"
+    tools:context=".Fragments.ContactFragment">
+
+   <EditText
+       android:id="@+id/text_contact_et"
+       android:layout_width="match_parent"
+       android:layout_height="@dimen/_200sdp"
+       android:textColor="?attr/text_color"
+       android:layout_margin="@dimen/_10sdp"
+       android:gravity="start"
+       android:padding="5dp"
+       android:background="@drawable/edittext_shape"
+       android:textSize="@dimen/_16ssp"/>
+
+   <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/send_contact_btn"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/text_contact_et"
+       android:layout_centerHorizontal="true"
+       android:layout_marginTop="@dimen/_5sdp"
+       android:background="@drawable/button_shape"
+       android:padding="15dp"
+       android:text="Send"
+       android:textAllCaps="false"
+       android:textColor="@color/white"
+       android:textSize="18sp" />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user_acess.registration"
+    android:background="?attr/background_color">
+
+    <ImageView
+        android:id="@+id/imageView_view"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/image_registration" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/create_account_image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_launcher_foreground"
+        app:civ_border_color="@color/grean"
+        app:civ_border_width="1dp"
+        android:layout_above="@id/cardview"
+        android:layout_alignParentRight="true"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        android:id="@+id/cardview"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="?attr/background_color"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        android:layout_below="@+id/imageView_view"
+        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        >
+
+        <EditText
+            android:id="@+id/email_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittext_shape"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textColor="?attr/text_color"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="18sp" />
+
+
+        <LinearLayout
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email_registration"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/password_registration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/email_registration"
+                android:layout_margin="10dp"
+                android:background="@drawable/edittext_shape"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:hint="password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+
+                android:textColor="?attr/text_color"
+                android:textColorHint="@android:color/darker_gray"
+
+                android:textSize="18sp" />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/confirm"
+        android:layout_below="@id/password">
+    <EditText
+        android:id="@+id/confirm_registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="?attr/text_color"
+        android:inputType="textPassword"
+        android:hint="confirm password"
+        android:drawableStart="@drawable/ic_lock"
+        android:textColorHint="@android:color/darker_gray"
+        android:drawablePadding="5dp"
+        android:layout_below="@id/password_registration"
+        android:background="@drawable/edittext_shape"
+        android:textSize="18sp"
+        android:padding="10dp"
+        android:layout_margin="10dp"/>
+    </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/confirm"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_shape"
+            android:text="Register"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+
+        <RadioGroup
+            android:id="@+id/radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/registration"
+            >
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="@android:color/darker_gray"
+                android:text="Driver"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mechanic"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginStart="5dp"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Garages"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginStart="5dp"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radio"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Do you have account ?  Login"
+            android:textColor="@color/grean"
+            />
+
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

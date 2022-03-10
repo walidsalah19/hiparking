@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/background_color"
+    tools:context=".Fragments.SettingFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/background_color"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/account_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Account"
+            android:layout_marginTop="10dp"
+            android:textColor="?attr/text_color"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            app:drawableStartCompat="@drawable/ic_person_black" />
+        <View
+            android:id="@+id/view1"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:background="@android:color/darker_gray"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_height="@dimen/_1sdp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_forward" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Change Password"
+                android:textSize="@dimen/_16ssp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                app:drawableEndCompat="@drawable/ic_arrow_forward" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="App"
+            android:textColor="?attr/text_color"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            app:drawableStartCompat="@drawable/ic_tune" />
+        <View
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:background="@android:color/darker_gray"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_height="@dimen/_1sdp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dark Mode"
+                    android:layout_weight="3"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginHorizontal="@dimen/_5sdp" />
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/check1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"/>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notifications"
+                    android:layout_weight="3"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginHorizontal="@dimen/_5sdp" />
+                <androidx.appcompat.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_marginEnd="@dimen/_5sdp"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="More"
+            android:textColor="?attr/text_color"
+            android:textSize="@dimen/_16ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:drawablePadding="@dimen/_10sdp"
+            app:drawableStartCompat="@drawable/ic_baseline_read_more_24" />
+        <View
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_width="match_parent"
+            android:background="@android:color/darker_gray"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_height="@dimen/_1sdp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="language"
+                android:layout_weight="3"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/_16ssp"
+                android:drawableEnd="@drawable/ic_arrow_forward"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_5sdp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</ScrollView>

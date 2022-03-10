@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "671969723525",
+    "project_id": "hibarking-15fbb",
+    "storage_bucket": "hibarking-15fbb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671969723525:android:ea82b1b63f82c1719555ec",
+        "android_client_info": {
+          "package_name": "com.example.hibarking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "671969723525-94op4ispskf8392v5hmbh4o7ck5qd9vh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hibarking",
+            "certificate_hash": "005e7d8f63eeda637f04775bf6e2f13df6d4e432"
+          }
+        },
+        {
+          "client_id": "671969723525-ksogjrj387qqr09e1tbigh2561r3vfa9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuYy5xMixaIvAlEPhwR47GO8MMARNQYPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "671969723525-ksogjrj387qqr09e1tbigh2561r3vfa9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
