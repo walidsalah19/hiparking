@@ -42,7 +42,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".account.create_account" />
+        <activity android:name=".driver.user_account.create_account" />
         <activity android:name=".user_acess.registration" />
         <activity android:name=".user_acess.login" />
         <activity android:name=".Splash"

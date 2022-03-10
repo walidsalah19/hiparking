@@ -1,7 +1,4 @@
-package com.example.hibarking.account;
-
-import android.net.Uri;
-import android.text.Editable;
+package com.example.hibarking.driver.user_account;
 
 public class create_account_class {
     String user_name ,phone_number,user_id,license,id_card_number,email, dataofcreation , image_uri;

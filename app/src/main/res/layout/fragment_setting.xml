@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="?attr/background_color"
-    tools:context=".Fragments.SettingFragment">
+    tools:context=".driver.profile.Fragments.SettingFragment">
 
     <LinearLayout
         android:layout_width="match_parent"

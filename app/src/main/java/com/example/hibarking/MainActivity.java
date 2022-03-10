@@ -17,12 +17,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.hibarking.Fragments.ContactFragment;
-import com.example.hibarking.Fragments.EmergancyFragment;
-import com.example.hibarking.Fragments.ProfileFragment;
-import com.example.hibarking.Fragments.SettingFragment;
-import com.example.hibarking.account.create_account;
-import com.example.hibarking.google_map.MapsFragment;
+import com.example.hibarking.driver.profile.Fragments.ContactFragment;
+import com.example.hibarking.driver.profile.Fragments.EmergancyFragment;
+import com.example.hibarking.driver.profile.ProfileFragment;
+import com.example.hibarking.driver.profile.Fragments.SettingFragment;
+import com.example.hibarking.driver.user_account.create_account;
+import com.example.hibarking.driver.google_map.MapsFragment;
 import com.example.hibarking.user_acess.login;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

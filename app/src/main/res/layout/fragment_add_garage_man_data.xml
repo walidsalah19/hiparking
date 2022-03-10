@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="?attr/background_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.AddGarageManData">
+    tools:context=".driver.profile.Fragments.AddGarageManData">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

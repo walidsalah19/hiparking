@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background_color"
-    tools:context=".Fragments.ContactFragment">
+    tools:context=".driver.profile.Fragments.ContactFragment">
 
    <EditText
        android:id="@+id/text_contact_et"
