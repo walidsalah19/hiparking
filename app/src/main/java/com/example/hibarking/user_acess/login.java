@@ -10,11 +10,14 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
+import com.example.hibarking.garage_manager.main_garage_manager;
+import com.example.hibarking.mechanical.main_mechanical;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -31,6 +34,7 @@ public class login extends AppCompatActivity {
     private FirebaseAuth auth;
     private DatabaseReference reference;
     private String username,password;
+    private RadioButton driver,mechanical,garage_manager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
@@ -40,16 +44,37 @@ public class login extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
-        login_Button_method();
+       login_Button_method();
         registration_method();
 
     }
+    private void catagories()
+    {
+        driver=findViewById(R.id.driver);
+        mechanical=findViewById(R.id.mechanical);
+        garage_manager=findViewById(R.id.garage_manager);
+        if(driver.isChecked())
+        {
+            startActivity(new Intent(this,MainActivity.class));
+        }
+        else if (mechanical.isChecked())
+        {
+            startActivity(new Intent(this, main_mechanical.class));
+        }
+        else if (garage_manager.isChecked())
+        {
+            startActivity(new Intent(this, main_garage_manager.class));
+        }
+    }
+
+
     private void login_Button_method() {
-        login_btn=findViewById(R.id.email_login);
+        login_btn=(Button) findViewById(R.id.email_login);
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login_method();
+               // login_method();
+                catagories();
             }
         });
     }

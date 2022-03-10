@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".user_acess.registration"
     android:background="?attr/background_color">
+    android:id="@+id/registration_layout">
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
     <ImageView
         android:id="@+id/imageView_view"
@@ -56,6 +64,7 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:padding="10dp"
             android:textColor="?attr/text_color"
             android:textColorHint="@android:color/darker_gray"
@@ -88,12 +97,14 @@
 
                 android:textSize="18sp" />
         </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:id="@+id/confirm"
         android:layout_below="@id/password">
+
     <EditText
         android:id="@+id/confirm_registration"
         android:layout_width="match_parent"
@@ -110,6 +121,8 @@
         android:textSize="18sp"
         android:padding="10dp"
         android:layout_margin="10dp"/>
+
+
     </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatButton
@@ -120,11 +133,14 @@
             android:layout_centerHorizontal="true"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
+
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
+
+            android:textColor="@color/white"
+           
             android:background="@drawable/button_shape"
             android:text="Register"
-            android:textColor="@color/white"
             android:textAllCaps="false"
             android:textSize="18sp" />
 
@@ -133,27 +149,32 @@
             android:id="@+id/radio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_below="@+id/registration"
-            >
+            android:orientation="horizontal">
+
             <RadioButton
+                android:id="@+id/r_driver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:textColor="@android:color/darker_gray"
-                android:text="Driver"/>
+                android:text="Driver"
+                android:textColor="@android:color/darker_gray" />
+
             <RadioButton
+                android:id="@+id/r_mechanical"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:text="Mechanic"
-                android:textColor="@android:color/darker_gray"
-                android:layout_marginStart="5dp"/>
+                android:textColor="@android:color/darker_gray" />
+
             <RadioButton
+                android:id="@+id/r_garage_manager"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Garages"
-                android:textColor="@android:color/darker_gray"
-                android:layout_marginStart="5dp"/>
+                android:layout_marginStart="5dp"
+                android:text="Garage manager"
+                android:textColor="@android:color/darker_gray" />
         </RadioGroup>
 
         <TextView
@@ -170,5 +191,6 @@
 
     </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
 </RelativeLayout>

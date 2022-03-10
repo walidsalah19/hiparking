@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hibarking">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -13,8 +12,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
+
     <supports-screens
         android:anyDensity="true"
         android:largeScreens="true"
@@ -30,6 +31,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Light">
 
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -43,7 +45,12 @@
             android:value="@string/google_maps_key" />
 
         <activity android:name=".driver.user_account.create_account" />
+
         <activity android:name=".user_acess.registration" />
+        <activity android:name=".driver.user_account.create_account" />
+        <activity android:name=".mechanical.add_mechanical_data" />
+        <activity android:name=".garage_manager.AddGarageManData" />
+
         <activity android:name=".user_acess.login" />
         <activity android:name=".Splash"
             android:exported="true">

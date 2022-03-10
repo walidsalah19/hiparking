@@ -7,6 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".driver.profile.Fragments.AddGarageManData">
 
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -34,19 +35,12 @@
                     android:src="@drawable/ic_person"
                     app:civ_border_color="@color/grean"
                     app:civ_border_width="2dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_margin="15dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     />
-
-
-
-
-
-
                 <TextView
-                    android:id="@+id/add_event_title"
+                    android:id="@+id/add_manager_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -58,7 +52,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/card3" />
 
                 <EditText
-                    android:id="@+id/add_mechanical_username"
+                    android:id="@+id/add_garage_manager_username"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -68,7 +62,7 @@
                     android:padding="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/add_event_title"
+                    app:layout_constraintTop_toBottomOf="@+id/add_manager_title"
                     tools:ignore="SpeakableTextPresentCheck" />
 
 
@@ -77,15 +71,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
                     android:text="National id "
                     android:textColor="?attr/text_color"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/add_mechanical_username" />
+                    app:layout_constraintTop_toBottomOf="@+id/add_garage_manager_username" />
 
                 <EditText
-                    android:id="@+id/add_mechanical_national_id"
+                    android:id="@+id/add_manager_national_id"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -93,6 +86,7 @@
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/edittext_shape"
                     android:padding="8dp"
+                    android:inputType="number"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/national_id"
@@ -108,10 +102,10 @@
                     android:textColor="?attr/text_color"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/add_mechanical_national_id" />
+                    app:layout_constraintTop_toBottomOf="@+id/add_manager_national_id" />
 
                 <EditText
-                    android:id="@+id/add_mechanical_national_phone"
+                    android:id="@+id/add_manager_phone"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -137,21 +131,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/add_mechanical_national_phone" />
 
-                <EditText
-                    android:id="@+id/add_credit_card"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/edittext_shape"
-                    android:inputType="phone"
-                    android:padding="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardGaManager"
-                    tools:ignore="SpeakableTextPresentCheck"
-                    android:importantForAutofill="no" />
+
 
                 <TextView
                     android:id="@+id/add_licence"
@@ -163,10 +143,10 @@
                     android:textColor="?attr/text_color"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/add_credit_card" />
+                    app:layout_constraintTop_toBottomOf="@+id/add_manager_phone" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/add_mechanical_licence_paper"
+                    android:id="@+id/add_garage_manager_licence_paper"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="24dp"
@@ -183,15 +163,15 @@
                     tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/add_garage_manager_info"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:layout_marginTop="@dimen/_20sdp"
                     android:background="@drawable/button_shape"
                     android:text="add"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_18sdp"
-                    app:layout_constraintTop_toBottomOf="@id/add_mechanical_licence_paper"/>
+                    app:layout_constraintTop_toBottomOf="@+id/add_garage_manager_licence_paper" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

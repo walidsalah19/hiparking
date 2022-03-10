@@ -10,8 +10,10 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
 import com.example.hibarking.driver.user_account.create_account;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,6 +25,10 @@ public class registration extends AppCompatActivity {
     private Button registration;
     private EditText editText_email,editText_password,editText_confirm_password;
     private FirebaseAuth auth;
+    private String emailpattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    private String  passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{4,}$";
+    private String email_string,password_string;
+    private RadioButton driver,mechanical,garage_manager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
@@ -32,18 +38,18 @@ public class registration extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        //uuuu
-
         registration_method();
 
     }
+
     private void registration_method()
     {
        registration=findViewById(R.id.registration);
        registration.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               get_user_data();
+              // get_user_data();
+               go_to_create_account();
            }
        });
     }
@@ -52,30 +58,50 @@ public class registration extends AppCompatActivity {
         editText_email=findViewById(R.id.email_registration);
         editText_password=findViewById(R.id.password_registration);
         editText_confirm_password=findViewById(R.id.confirm_registration);
-        String email_string,password_string,conferm_string;
-        email_string=editText_email.getText().toString().trim();
-        password_string=editText_password.getText().toString().trim();
-        conferm_string=editText_confirm_password.getText().toString().trim();
-        if(TextUtils.isEmpty(email_string)||TextUtils.isEmpty(password_string)||TextUtils.isEmpty(conferm_string))
-        {
-            Toast.makeText(this, "Please Enter Your Data Correctly", Toast.LENGTH_SHORT).show();
-        }
-        else if(password_string.length()<8)
+        email_string=editText_email.getText().toString();
+        password_string=editText_password.getText().toString();
+        check_email();
+    }
+    private void check_email()
+    {
+        if (TextUtils.isEmpty(editText_email.getText()))
         {
             Toast.makeText(this, "Your password should be more than 8 character", Toast.LENGTH_SHORT).show();
         }
-        else if(! password_string.equals(conferm_string))
+        else if(!editText_email.getText().toString().matches(emailpattern))
         {
-            Toast.makeText(this, "Password not match", Toast.LENGTH_SHORT).show();
+            editText_email.setError("Email must valid Contain @ like ola@gmail.com");
         }
-
         else
         {
-            sining(email_string,password_string);
+            check_usename_password();
         }
     }
+     private void check_usename_password()
+     {
+         if(TextUtils.isEmpty(editText_password.getText())||TextUtils.isEmpty(editText_confirm_password.getText()))
+         {
+             Toast.makeText(this, "Please Enter Your Data Correctly", Toast.LENGTH_SHORT).show();
+         }
+         else if(editText_password.getText().length()<8)
+         {
+             Toast.makeText(this, "You'r password should be more than 8 character", Toast.LENGTH_SHORT).show();
+         }
+         else if(editText_password.getText().toString().matches(passwordPattern))
+         {
+             Toast.makeText(this, "You'r password should contain small , large character and number ", Toast.LENGTH_SHORT).show();
+         }
+         else if(! editText_password.getText().equals(editText_confirm_password.getText()))
+         {
+             editText_confirm_password.setError("not match the password ");
+         }
 
-    private void sining(String email_string, String password_string) {
+         else
+         {
+             sining();
+         }
+     }
+    private void sining() {
 
         auth=FirebaseAuth.getInstance();
         auth.createUserWithEmailAndPassword(email_string, password_string)
@@ -85,16 +111,26 @@ public class registration extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     Toast.makeText(registration.this, "You Create new account", Toast.LENGTH_SHORT).show();
-                    go_to_create_account(email_string);
+                    go_to_create_account();
                 }
             }
         });
     }
-    private void go_to_create_account(String email)
+    private void go_to_create_account()
     {
-        Intent account=new Intent(this,create_account.class);
-        account.putExtra("email",email);
-        startActivity(account);
+        driver=findViewById(R.id.r_driver);
+        mechanical=findViewById(R.id.r_mechanical);
+        garage_manager=findViewById(R.id.r_garage_manager);
+         if (driver.isChecked()) {
+             startActivity(new Intent(this,create_account.class));
+         }
+        else if (mechanical.isChecked()) {
+             startActivity(new Intent(this,add_mechanical_data.class));
+        }
+        else if(garage_manager.isChecked())
+         {
+             startActivity(new Intent(this,AddGarageManData.class));
+         }
     }
 
 

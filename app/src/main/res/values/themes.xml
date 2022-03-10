@@ -17,6 +17,12 @@
         <item name="text_color">#000000</item>
         <item name="background_green">#30a852</item>
         <item name="background_design">#92e3a9</item>
+
+    </style>
+    <style name="CircularDeterminateProgressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/circle</item>
+
     </style>
 
 </resources>

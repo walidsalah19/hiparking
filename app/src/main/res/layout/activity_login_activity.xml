@@ -51,7 +51,9 @@
                 android:layout_margin="10dp"
                 android:id="@+id/phone_login"
                 android:layout_gravity="center"
+
                 android:textSize="18sp"
+
                 android:textColor="@color/white"
                 android:text="phone login"
                 android:background="@drawable/button_shape"
@@ -112,11 +114,8 @@
                 android:id="@+id/email_password_text"
                 android:textColor="?attr/text_color"
                 android:inputType="textPassword"
-
-                android:textColorHint="@android:color/darker_gray"
+                android:textColorHint="@color/text_color"
                 android:hint="Enter password"
-
-  
                 android:paddingStart="10dp"
                 android:drawablePadding="10dp"
                 android:background="@drawable/edittext_shape"
@@ -133,7 +132,9 @@
                 android:id="@+id/email_login"
                 android:layout_gravity="center"
                 android:textColor="@color/white"
+
                 android:textSize="18sp"
+
                 android:background="@drawable/button_shape"
                 android:text="login"/>
 
@@ -147,18 +148,21 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
+                            android:id="@+id/driver"
                             android:textColor="@android:color/darker_gray"
                             android:text="Driver"/>
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Mechanic"
+                            android:id="@+id/mechanical"
                             android:textColor="@android:color/darker_gray"
                             android:layout_marginStart="5dp"/>
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Garages"
+                            android:text="Garage manager"
+                            android:id="@+id/garage_manager"
                             android:textColor="@android:color/darker_gray"
                             android:layout_marginStart="5dp"/>
                     </RadioGroup>

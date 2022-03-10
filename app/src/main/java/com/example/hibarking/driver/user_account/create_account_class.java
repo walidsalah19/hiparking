@@ -69,4 +69,5 @@ public class create_account_class {
     public void setImage_uri(String image_uri) {
         this.image_uri = image_uri;
     }
+
 }

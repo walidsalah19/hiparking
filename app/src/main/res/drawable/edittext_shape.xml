@@ -4,6 +4,7 @@
     <corners android:radius="10dp">
     </corners>
     <stroke android:color="?attr/background_green"
+
         android:width="2dp">
     </stroke>
     <solid android:color="@android:color/transparent"/>

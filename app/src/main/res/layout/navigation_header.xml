@@ -49,6 +49,7 @@
 
     <TextView
         android:id="@+id/user_name"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/circl_imag_navigation_head"
@@ -56,6 +57,7 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:layout_marginStart="@dimen/_5sdp"
+
         app:layout_constraintBottom_toTopOf="@id/second"
         app:layout_constraintLeft_toRightOf="@id/circl_imag"
         >

@@ -26,5 +26,7 @@
         android:background="?attr/background_color"
         app:itemTextColor="?attr/text_color"
         app:itemIconTint="?attr/background_green"
+
           />
+
 </androidx.drawerlayout.widget.DrawerLayout>

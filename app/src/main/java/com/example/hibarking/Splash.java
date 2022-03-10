@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
+import com.example.hibarking.garage_manager.main_garage_manager;
 import com.example.hibarking.user_acess.login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,8 +32,10 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(Splash.this,MainActivity.class);
+                Intent mainIntent = new Intent(Splash.this, login.class);
                 Splash.this.startActivity(mainIntent);
+
+
                 Splash.this.finish();
             }
         }, 4000);
