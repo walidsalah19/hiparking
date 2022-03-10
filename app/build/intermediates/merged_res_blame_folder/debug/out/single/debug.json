@@ -1,0 +1,266 @@
+[
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_edittext_shape_profile.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\edittext_shape_profile.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_menu.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_menu.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_textview_shap.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\textview_shap.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_tilt.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_tilt.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_logout_24.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_baseline_logout_24.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_mechanical.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_mechanical.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_parking.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_parking.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_contact.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\fragment_contact.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_tune.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_tune.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_registration.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\activity_registration.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_houses.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_houses.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_car.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_car.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_edittext_shape.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\edittext_shape.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit_green.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_edit_green.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_luizclas.jpg.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\luizclas.jpg"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_settings.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_settings.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_lock_24.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_baseline_lock_24.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_maps.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\fragment_maps.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_phone.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_phone.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_registration.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\image_registration.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_curve.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_curve.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person_black.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_person_black.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_create_account.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\activity_create_account.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\raw_barking_.json.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\raw\\barking_.json"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_home_24.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_baseline_home_24.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_add_garage_man_data.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\fragment_add_garage_man_data.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_create_24.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_baseline_create_24.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_shape.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\button_shape.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_emergancy.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\fragment_emergancy.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_phone_android_24.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_baseline_phone_android_24.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_profile.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\fragment_profile.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_edit.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_edit.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_person.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_read_more_24.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_baseline_read_more_24.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigation_menu.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\menu\\navigation_menu.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_navigation_header.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\navigation_header.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login_activity.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\activity_login_activity.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_contact.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_contact.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frameshape.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\frameshape.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_email_24.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_baseline_email_24.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pexels.jpg.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\pexels.jpg"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_emergency.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_emergency.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_main_appbar_map.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\main_appbar_map.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\raw_parking_dark.json.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\raw\\parking_dark.json"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_lock.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_lock.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_profile_image.webp.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable-v24\\profile_image.webp"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_add.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow_forward.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\ic_arrow_forward.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_setting.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\layout\\fragment_setting.xml"
+    },
+    {
+        "merged": "E:\\project\\hibarking\\app\\build\\intermediates\\res\\merged\\debug\\drawable_framecircle.xml.flat",
+        "source": "E:\\project\\hibarking\\app\\src\\main\\res\\drawable\\framecircle.xml"
+    }
+]
