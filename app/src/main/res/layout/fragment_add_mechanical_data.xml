@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".mechanical.add_mechanical_data"
+    android:background="@color/white">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/_10sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_10sdp"
+                android:background="@drawable/button_shape"
+
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:padding="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="end|bottom"
+                        android:layout_margin="10dp"
+                        android:background="@android:color/darker_gray"
+                        app:cardCornerRadius="12.5dp"
+                        app:layout_constraintEnd_toEndOf="@id/mechanical_image"
+                        app:layout_constraintBottom_toBottomOf="@id/mechanical_image"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@android:color/darker_gray"
+                            android:src="@drawable/ic_baseline_add_24"
+                            android:contentDescription="TODO" />
+                    </androidx.cardview.widget.CardView>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/mechanical_image"
+                        layout_constraintTop_toTopOf="parent"
+                        android:layout_width="150dp"
+                        android:layout_height="112dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:src="@drawable/profile"
+                        app:civ_border_color="@color/grean"
+                        app:civ_border_width="1dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteY="١٣dp" />
+                <TextView
+                    android:id="@+id/add_event_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="mechanical name"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mechanical_image" />
+
+                <EditText
+                    android:id="@+id/add_mechanical_username"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginTop="8dp"
+                    android:padding="8dp"
+                    android:background="@drawable/edittext_shape"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/add_event_title" />
+
+
+                <TextView
+                    android:id="@+id/national_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="National id "
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/add_mechanical_username" />
+                    <EditText
+                        android:id="@+id/add_mechanical_national_id"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="8dp"
+                        android:background="@drawable/edittext_shape"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/national_id" />
+                    <TextView
+                        android:id="@+id/phone_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Phone "
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/add_mechanical_national_id" />
+                    <EditText
+                        android:id="@+id/add_mechanical_national_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="8dp"
+                        android:inputType="phone"
+                        android:background="@drawable/edittext_shape"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/phone_add" />
+                    <TextView
+                        android:id="@+id/add_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Location "
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/add_mechanical_national_phone" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/add_mechanical_location"
+                        android:layout_width="150dp"
+                        android:layout_height="39dp"
+                        android:layout_marginEnd="24dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="5dp"
+                        android:textAlignment="viewStart"
+                        android:background="@drawable/button_shape"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/add_location"
+                        app:srcCompat="@drawable/ic_baseline_my_location_24" />
+
+                    <TextView
+                        android:id="@+id/add_licence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Licence paper "
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/add_mechanical_location" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/add_mechanical_licence_paper"
+                        android:layout_width="150dp"
+                        android:layout_height="39dp"
+                        android:layout_marginEnd="24dp"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="5dp"
+                        android:textAlignment="viewStart"
+                        android:background="@drawable/button_shape"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/add_licence"
+                        app:srcCompat="@drawable/ic_baseline_contact_page_24" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:background="@drawable/button_shape"
+                           android:textColor="@color/white"
+                           android:textSize="@dimen/_18sdp"
+                           android:text="add"
+                           android:id="@+id/add_mechanical_data"
+                           app:layout_constraintTop_toBottomOf="@id/add_mechanical_licence_paper"
+                           android:layout_marginTop="@dimen/_20sdp"
+                           android:layout_margin="@dimen/_10sdp">
+                       </androidx.appcompat.widget.AppCompatButton>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+            <ProgressBar
+                android:id="@+id/mec_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_marginVertical="10dp"
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</FrameLayout>

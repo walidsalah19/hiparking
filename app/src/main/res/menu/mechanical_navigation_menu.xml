@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item
+        android:id="@+id/m_navigation_customer"
+        android:title="Drivers"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_mechanical">
+    </item>
+    <item
+        android:id="@+id/m_navigation_profile"
+        android:title="Profile"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_person">
+    </item>
+    <item
+        android:title="Emergency"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_emergency"
+        android:id="@+id/m_navigation_emergency">
+    </item>
+    <item
+        android:title="Contact us"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_phone"
+        android:id="@+id/m_navigation_contact">
+    </item>
+    <item
+        android:title="Rating"
+        android:orderInCategory="100"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:id="@+id/m_navigation_rating"
+        >
+    </item>
+    <item
+        android:title="Setting"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_settings"
+        android:id="@+id/m_navigation_setting"
+        >
+    </item>
+    <item
+        android:title="Logout"
+        android:id="@+id/m_navigation_logout"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_baseline_logout_24">
+    </item>
+
+</menu>

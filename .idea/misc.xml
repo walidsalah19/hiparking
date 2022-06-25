@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/button_shape.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/edittext_shape.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/edittext_shape_profile.xml" value="0.1445" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/framecircle.xml" value="0.176" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/frameshape.xml" value="0.176" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_add.xml" value="0.1455" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_contact_page_24.xml" value="0.1565" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_create_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_phone_android_24.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_baseline_read_more_24.xml" value="0.187" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_car.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_contact.xml" value="0.1455" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_contact_page.xml" value="0.1565" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_curve.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_edit.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_edit_green.xml" value="0.1445" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_emergency.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_houses.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_location.xml" value="0.1565" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_lock.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_mechanical.xml" value="0.1595" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_menu.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_parking.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_person.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_person_black.xml" value="0.1595" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_phone.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_settings.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_tilt.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/ic_tune.xml" value="0.1595" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/image_registration.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/drawable/textview_shap.xml" value="0.22552083333333334" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_create_account.xml" value="0.209375" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_login_activity.xml" value="0.2" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_main_mechanical.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_registration.xml" value="0.209375" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/activity_splash.xml" value="0.209375" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_add_garage_man_data.xml" value="0.2" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_add_mechanical_data.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_contact.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_emergancy.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_maps.xml" value="0.209375" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_mechanical__profile.xml" value="0.25" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_mechanical_user.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_setting.xml" value="0.25" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_view_customer_data.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/fragment_view_drivers.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/main_appbar_map.xml" value="0.1" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/main_mechanical_menu.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/mechanical_recycler.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/layout/navigation_header.xml" value="0.67" />
+        <entry key="..\:/project/hibarking/app/src/main/res/menu/mechanical_navigation_menu.xml" value="0.1718683197947841" />
+        <entry key="..\:/project/hibarking/app/src/main/res/menu/navigation_menu.xml" value="0.209375" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

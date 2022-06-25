@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mechanical.main_mechanical"
+    android:id="@+id/mechanical_drawer"
+    android:background="@color/white">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/main_mechanical_menu"
+        >
+    </include>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/m_nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/navigation_header"
+        app:menu="@menu/mechanical_navigation_menu"
+        android:background="@color/white"
+        app:itemTextColor="@color/grean"
+        app:itemIconTint="@color/grean"
+        />
+
+</androidx.drawerlayout.widget.DrawerLayout>

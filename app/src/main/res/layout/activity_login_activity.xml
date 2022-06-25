@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".user_acess.login"
+    android:orientation="vertical"
+    android:background="?attr/background_color"
+     >
+
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="?attr/background_color"
+                >
+
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:background="@drawable/ic_tilt" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="10dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginBottom="20dp"
+                    app:cardMaxElevation="12dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="?attr/background_color"
+
+                    >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_below="@+id/imageView_view"
+
+                    >
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:id="@+id/phone_login"
+                android:layout_gravity="center"
+
+                android:textSize="18sp"
+
+                android:textColor="@color/white"
+                android:text="phone login"
+                android:background="@drawable/button_shape"
+                android:paddingStart="20dp"
+                android:drawableLeft="@drawable/ic_baseline_phone_android_24"/>
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="?attr/background_green"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        >
+                    </View>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="OR"
+                        android:textColor="@color/grean"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        >
+                    </TextView>
+                   <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                       android:background="?attr/background_green"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        >
+                    </View>
+                </LinearLayout>
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:id="@+id/email_edittext"
+                android:textColor="?attr/text_color"
+                android:textColorHint="@android:color/darker_gray"
+                android:background="@drawable/edittext_shape"
+                android:padding="10dp"
+                android:paddingStart="10dp"
+                android:inputType="textEmailAddress"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:hint=" Enter email"
+                android:ems="10"/>
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:id="@+id/email_password_text"
+                android:textColor="?attr/text_color"
+                android:inputType="textPassword"
+                android:textColorHint="@color/text_color"
+                android:hint="Enter password"
+                android:paddingStart="10dp"
+                android:drawablePadding="10dp"
+                android:background="@drawable/edittext_shape"
+                android:padding="10dp"
+
+                android:drawableStart="@drawable/ic_lock"
+
+                android:ems="10"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:id="@+id/email_login"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+
+                android:textSize="18sp"
+
+                android:background="@drawable/button_shape"
+                android:text="login"/>
+
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:id="@+id/driver"
+                            android:textColor="@android:color/darker_gray"
+                            android:text="Driver"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mechanic"
+                            android:id="@+id/mechanical"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_marginStart="5dp"/>
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Garage manager"
+                            android:id="@+id/garage_manager"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_marginStart="5dp"/>
+                    </RadioGroup>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/new_account"
+                android:textColor="@color/grean"
+                android:gravity="center"
+                android:text="Create new account ?  Register"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:id="@+id/forgit_password"
+                android:textColor="@color/grean"
+                android:text="Forget password ?"/>
+                </LinearLayout>
+                </androidx.cardview.widget.CardView>
+        </LinearLayout>
+</LinearLayout>

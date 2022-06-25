@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".driver.user_mechanical.mechanical_user"
+    android:id="@+id/user_mechanical">
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardMaxElevation="@dimen/_10sdp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/user_call_mechanicl"
+            android:background="@drawable/button_shape"
+            android:layout_margin="@dimen/_10sdp"
+            android:text="Call"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/white"
+
+            >
+        </androidx.appcompat.widget.AppCompatButton>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/user_chat_mechanicl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/user_call_mechanicl"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+
+            android:background="@drawable/button_shape"
+            android:text="Chat"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp"></androidx.appcompat.widget.AppCompatButton>
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</FrameLayout>
