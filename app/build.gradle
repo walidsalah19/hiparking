@@ -69,7 +69,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
   //sweetalartdialog
     implementation 'com.github.f0ris.sweetalert:library:1.6.2'
-
+    //pdf
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     //scale
     implementation "com.intuit.sdp:sdp-android:1.0.6"
     implementation "com.intuit.ssp:ssp-android:1.0.6"

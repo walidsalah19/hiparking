@@ -92,7 +92,7 @@
                         android:textColor="@color/grean"
                         android:background="@drawable/edittext_shape"
                         >
-                    </>
+                    </EditText>
 
                 </LinearLayout>
                 <LinearLayout

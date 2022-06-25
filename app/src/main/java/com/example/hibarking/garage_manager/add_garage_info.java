@@ -31,6 +31,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
 
 import java.util.HashMap;
 import java.util.UUID;
@@ -212,33 +213,30 @@ public class add_garage_info extends Fragment {
             dialog.setMessage("Uploading");
             dialog.show();
             imageuri = data.getData();
-            StorageReference storageReference = FirebaseStorage.getInstance().getReference("garage_paper");
             String file_id=UUID.randomUUID().toString();
-            final StorageReference filepath = storageReference.child(file_id + "." + "pdf");
-            filepath.putFile(imageuri).continueWithTask(new Continuation() {
+            FirebaseStorage storage = FirebaseStorage.getInstance();
+            StorageReference reference = storage.getReference("garage_paper").child(file_id+ "." + "pdf");
+            StorageTask task = reference.putFile(imageuri);
+            task.continueWithTask(new Continuation() {
                 @Override
                 public Object then(@NonNull Task task) throws Exception {
                     if (!task.isSuccessful()) {
                         throw task.getException();
                     }
-                    return filepath.getDownloadUrl();
+                    return reference.getDownloadUrl();
                 }
             }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                 @Override
                 public void onComplete(@NonNull Task<Uri> task) {
                     if (task.isSuccessful()) {
-                        // After uploading is done it progress
-                        // dialog box will be dismissed
                         dialog.dismiss();
-                        Uri uri = task.getResult();
-                         paper_str= uri.toString();
-
-                       pDialogSuccess.setTitleText("successful upload file ");
-                       pDialogSuccess.show();
-
+                        Uri i = task.getResult();
+                        paper_str= i.toString();
                     } else {
                         dialog.dismiss();
-                        pDialogerror.setTitleText("Failed to upload file ");
+                       // pDialogLoading.dismiss();
+                        pDialogerror.setTitleText("error occur in loading image ");
+                        pDialogerror.show();
                     }
                 }
             });
