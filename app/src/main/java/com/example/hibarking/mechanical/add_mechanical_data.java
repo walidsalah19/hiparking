@@ -1,7 +1,10 @@
 package com.example.hibarking.mechanical;
 
+import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -9,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -24,6 +28,7 @@ import android.widget.Toast;
 import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
 import com.example.hibarking.driver.user_account.create_account;
+import com.example.hibarking.garage_data.map;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -44,28 +49,35 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.UUID;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class add_mechanical_data extends AppCompatActivity {
 
     CircleImageView imageView;
     EditText name , phone , nationalID;
-    Uri imageUri;
+    Uri imageUri ,imageuri;
     ProgressBar progressBar;
     UploadTask uploadTask;
     StorageReference storageReference;
     FirebaseFirestore db =FirebaseFirestore.getInstance();
     DocumentReference documentReference;
-    String date_of_creation, email ,currentUser_id;
+    SweetAlertDialog pDialogLoading , pDialogerror,pDialogSuccess;
+    String date_of_creation, email ,currentUser_id ,paper_str;
     AppCompatButton create_account;
-    private static final int PICK_IMAGE=1;
+    AppCompatImageButton paper , location;
+    private static final int PICK_IMAGE=100 , PICK_LOC=20;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_add_mechanical_data);
         initialization();
+
+        add_location();
+        add_paper();
         create_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,11 +94,14 @@ public class add_mechanical_data extends AppCompatActivity {
         progressBar = findViewById(R.id.mec_progress);
         phone = findViewById(R.id.add_mechanical_national_phone);
         nationalID = findViewById(R.id.add_mechanical_national_id);
+        paper = findViewById(R.id.add_mechanical_licence_paper);
+        location = findViewById(R.id.add_mechanical_location);
         date_of_creation = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
         email=getIntent().getExtras().get("Email").toString();
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        currentUser_id = firebaseAuth.getCurrentUser().getUid();
+
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        currentUser_id=auth.getCurrentUser().getUid();
 
 
 
@@ -115,6 +130,44 @@ public class add_mechanical_data extends AppCompatActivity {
                 imageUri = data.getData();
                 Picasso.get().load(imageUri).into(imageView);
             }
+            if (requestCode == PICK_LOC || resultCode == Activity.RESULT_OK || data != null || data.getData() != null) {
+
+                // Here we are initialising the progress dialog box
+                dialog = new ProgressDialog(this);
+                dialog.setMessage("Uploading");
+                dialog.show();
+                imageuri = data.getData();
+                StorageReference storageReference = FirebaseStorage.getInstance().getReference("Mechanical_paper");
+                String file_id= UUID.randomUUID().toString();
+                final StorageReference filepath = storageReference.child(file_id + "." + "pdf");
+                filepath.putFile(imageuri).continueWithTask(new Continuation() {
+                    @Override
+                    public Object then(@NonNull Task task) throws Exception {
+                        if (!task.isSuccessful()) {
+                            throw task.getException();
+                        }
+                        return filepath.getDownloadUrl();
+                    }
+                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Uri> task) {
+                        if (task.isSuccessful()) {
+                            // After uploading is done it progress
+                            // dialog box will be dismissed
+                            dialog.dismiss();
+                            Uri uri = task.getResult();
+                            paper_str= uri.toString();
+
+                            pDialogSuccess.setTitleText("successful upload file ");
+                            pDialogSuccess.show();
+
+                        } else {
+                            dialog.dismiss();
+                            pDialogerror.setTitleText("Failed to upload file ");
+                        }
+                    }
+                });
+            }
         }catch (Exception ex)
         {
             Toast.makeText(this, "error"+ex, Toast.LENGTH_SHORT).show();
@@ -126,7 +179,7 @@ public class add_mechanical_data extends AppCompatActivity {
         String mec_nationalId=nationalID.getText().toString();
         String mec_phone=phone.getText().toString();
 
-        documentReference=db.collection("User").document(currentUser_id);
+        documentReference=db.collection("Mechanical").document(currentUser_id);
         storageReference= FirebaseStorage.getInstance().getReference("Profile images");
 
         if(!TextUtils.isEmpty(mec_name) && !TextUtils.isEmpty(mec_nationalId) && !TextUtils.isEmpty(mec_phone) && imageUri!=null)
@@ -158,6 +211,7 @@ public class add_mechanical_data extends AppCompatActivity {
                             profile.put("uri",downloadUri.toString());
                         }
                         profile.put("email",email);
+                        profile.put("paper",paper_str);
                         profile.put("phone",mec_phone);
                         profile.put("uid",currentUser_id);
                         profile.put("image",imageChild);
@@ -191,5 +245,69 @@ public class add_mechanical_data extends AppCompatActivity {
         }
 
     }
+    private void add_paper() {
+        paper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pDialogLoading.setTitleText("Notification : file should be pdf ");
+                pDialogLoading.setCancelText("No");
+                pDialogLoading.setConfirmText("yes");
+                pDialogLoading.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        pDialogLoading.dismiss();
+                    }
+                });
+                pDialogLoading.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        pDialogLoading.dismiss();
+                        Intent galleryIntent = new Intent();
 
+                        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                        // We will be redirected to choose pdf
+                        galleryIntent.setType("application/pdf");
+                        startActivityForResult(galleryIntent, 1);
+                    }
+                });
+                pDialogLoading.show();
+
+            }
+        });
+    }
+    ProgressDialog dialog;
+    private void add_location() {
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getSupportFragmentManager().beginTransaction()
+                        .add(R.id.grarage_manager_frameLayout, new map()).commit();
+            }
+        });
+    }
+
+    private void sweetalert()
+    {
+        //loading
+        pDialogLoading = new SweetAlertDialog(this, SweetAlertDialog.NORMAL_TYPE);
+        pDialogLoading.getProgressHelper().setBarColor(Color.parseColor("#30a852"));
+        pDialogLoading.setCancelable(true);
+        //error
+        pDialogerror= new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE);
+        pDialogerror.getProgressHelper().setBarColor(Color.parseColor("#30a852"));
+        pDialogerror.setConfirmText("ok");
+        pDialogerror.setConfirmClickListener(sweetAlertDialog -> {
+            pDialogerror.dismiss();
+        });
+        pDialogerror.setCancelable(true);
+
+        //Success
+        pDialogSuccess= new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE);
+        pDialogSuccess.getProgressHelper().setBarColor(Color.parseColor("#30a852"));
+        pDialogSuccess.setConfirmText("ok");
+        pDialogSuccess.setConfirmClickListener(sweetAlertDialog -> {
+            pDialogSuccess.dismiss();
+        });
+        pDialogSuccess.setCancelable(true);
+    }
 }

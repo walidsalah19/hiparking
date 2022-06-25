@@ -51,17 +51,18 @@
         </activity>
         <activity android:name=".mechanical.main_mechanical"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".garage_manager.AddGarageManData" />
 
         <activity android:name=".user_acess.login" />
         <activity android:name=".Splash"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
         <activity android:name=".MainActivity" />

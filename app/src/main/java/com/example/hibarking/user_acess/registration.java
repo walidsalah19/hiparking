@@ -50,7 +50,6 @@ public class registration extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                get_user_data();
-               go_to_create_account();
            }
        });
     }
@@ -80,11 +79,11 @@ public class registration extends AppCompatActivity {
     }
      private void check_username_password()
      {
-         if(TextUtils.isEmpty(editText_password.getText())||TextUtils.isEmpty(editText_confirm_password.getText()))
+         if(TextUtils.isEmpty(editText_password.getText().toString())||TextUtils.isEmpty(editText_confirm_password.getText().toString()))
          {
              Toast.makeText(this, "Please Enter Your Data Correctly", Toast.LENGTH_SHORT).show();
          }
-         else if(editText_password.getText().length()<8)
+         else if(editText_password.getText().toString().length()<8)
          {
              Toast.makeText(this, "Your password should be more than 8 character", Toast.LENGTH_SHORT).show();
          }
@@ -92,11 +91,10 @@ public class registration extends AppCompatActivity {
          {
              Toast.makeText(this, "Your password should contain small , large character and number ", Toast.LENGTH_SHORT).show();
          }
-         else if(! editText_password.getText().equals(editText_confirm_password.getText()))
+         else if(!editText_password.getText().toString().equals(editText_confirm_password.getText().toString()))
          {
              editText_confirm_password.setError("not match the password ");
          }
-
          else
          {
              signing();
