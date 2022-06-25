@@ -47,6 +47,7 @@
                         >
                     </TextView>
                     <TextView
+                        android:id="@+id/sh_garage_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -77,6 +78,8 @@
                         >
                     </TextView>
                     <TextView
+                        android:id="@+id/sh_garage_city"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -110,6 +113,8 @@
                         >
                     </TextView>
                     <TextView
+                        android:id="@+id/sh_garage_unit_num"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -140,6 +145,8 @@
                         >
                     </TextView>
                     <TextView
+                        android:id="@+id/sh_garage_hour_price"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -168,7 +175,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/add_credit_card" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/add_garage_location"
+                    android:id="@+id/sh_garage_location"
                     android:layout_width="150dp"
                     android:layout_height="39dp"
                     android:layout_marginEnd="24dp"
@@ -200,7 +207,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/add_garage_location" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
-                        android:id="@+id/add_garage_paper"
+                        android:id="@+id/sh_garage_paper"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="24dp"

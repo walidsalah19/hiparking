@@ -7,12 +7,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.example.hibarking.R;
 
 public class show_garage_info extends Fragment {
 private ProgressBar progressBar;
+     private TextView name,price,num_unit,city;
+     private ImageButton location,paper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,12 @@ private ProgressBar progressBar;
         progressBar_method(v);
 
         return v;
+    }
+    private void intialization_tool(View v)
+    {
+        name=v.findViewById(R.id.sh_garage_name);
+        city=v.findViewById(R.id.sh_garage_city);
+        name=v.findViewById(R.id.sh_garage_hour_price);name=v.findViewById(R.id.sh_garage_name);
     }
 
     private void progressBar_method(View v) {

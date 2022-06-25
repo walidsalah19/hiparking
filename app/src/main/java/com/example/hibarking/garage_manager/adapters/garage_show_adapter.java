@@ -1,5 +1,6 @@
 package com.example.hibarking.garage_manager.adapters;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,11 @@ public class garage_show_adapter extends RecyclerView.Adapter<garage_show_adapte
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              main.getSupportFragmentManager().beginTransaction().replace(R.id.grarage_manager_frameLayout,new show_garage_info()).addToBackStack(null).commitAllowingStateLoss();
+                show_garage_info show=new show_garage_info();
+                Bundle b=new Bundle();
+                b.putString("garage_id",arrayList.get(position).garage_id);
+                show.setArguments(b);
+              main.getSupportFragmentManager().beginTransaction().replace(R.id.grarage_manager_frameLayout,show).addToBackStack(null).commitAllowingStateLoss();
             }
         });
 

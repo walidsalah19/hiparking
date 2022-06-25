@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.example.hibarking.R;
 import com.example.hibarking.data_class.garage_model;
+import com.example.hibarking.driver.google_map.map_class.get_location_firebase;
 import com.example.hibarking.driver.google_map.map_class.map_routes;
 import com.example.hibarking.driver.google_map.map_class.map_search;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -225,18 +226,14 @@ public class MapsFragment extends Fragment {
     {
         // map marker
         latLngArrayList = new ArrayList<>();
-        latLngArrayList.add(new garage_model("sadny","city",5,29.976480, 31.131302, 150,"1","4.5"));
-        latLngArrayList.add(new garage_model("sadny2","city",15,-31.083332, 150.916672, 150,"2","4"));
-        latLngArrayList.add(new garage_model("sadny3","city",12,-32.916668, 151.750000, 150,"3","4.2"));
-        latLngArrayList.add(new garage_model("sadny4","city",2,27.470125, 153.021072, 150,"4","4.8"));
-
+        latLngArrayList.add(new garage_model("sadny","city","5","6","",29.976480, 31.131302, 150,6));
         for (int i = 0; i < latLngArrayList.size(); i++) {
 
             // adding marker to each location on google maps
             LatLng lat=new LatLng(latLngArrayList.get(i).getLatitude(), latLngArrayList.get(i).getLongitude());
             mMap.addMarker(new MarkerOptions()
                     .position(lat)
-                    .title(latLngArrayList.get(i).getName()))
+                    .title(latLngArrayList.get(i).getGarage_name()))
                      ;
         }
        // bottom sheet
@@ -246,11 +243,11 @@ public class MapsFragment extends Fragment {
                 for (int i = 0; i < latLngArrayList.size(); i++) {
                     if(latLngArrayList.get(i).getLatitude()==marker.getPosition().latitude&&latLngArrayList.get(i).getLongitude()==marker.getPosition().longitude)
                     {
-                        garage_id=latLngArrayList.get(i).getId();
+                        garage_id=latLngArrayList.get(i).getGarage_id();
                         int book=  get_location_firebase.get_number_of_booking(garage_id);
                         int empty=latLngArrayList.get(i).getUnit_number()-book;
-                        Bottom_Sheet_Menu m=new Bottom_Sheet_Menu(garage_id,latLngArrayList.get(i).getName(),empty+" ",
-                                latLngArrayList.get(i).getRate(),latLngArrayList.get(i).getPrice()+" ");
+                        Bottom_Sheet_Menu m=new Bottom_Sheet_Menu(garage_id,latLngArrayList.get(i).getGarage_name(),empty+" ",
+                                "2",latLngArrayList.get(i).getHour_price()+" ");
                         m.show(getChildFragmentManager(),"MapsFragment");
                     }
                 }
