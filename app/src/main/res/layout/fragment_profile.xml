@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="?attr/background_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardCornerRadius="45dp"
+            android:layout_gravity="center_vertical|start"
+            android:background="@color/grean"
+            android:elevation="8dp"
+            app:cardElevation="10dp"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_pro"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/profile_image"
+                app:civ_border_color="?attr/background_green"
+                android:clickable="false"
+                android:focusable="false"
+                app:civ_border_width="2dp"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/add_image"
+                android:visibility="gone"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="10dp"
+                android:background="@android:color/darker_gray"
+                app:cardCornerRadius="12.5dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@android:color/darker_gray"
+                    android:src="@drawable/ic_add"
+                    android:contentDescription="TODO" />
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/pr_name"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="2dp"
+                android:textAlignment="viewStart"
+                android:text="User name"
+                android:textColor="?attr/text_color"
+                android:background="@drawable/edittext_shape_profile"
+                android:enabled="false"/>
+            <EditText
+                android:id="@+id/pr_id"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textSize="16sp"
+                android:background="@drawable/edittext_shape_profile"
+                android:layout_marginBottom="2dp"
+                android:textAlignment="viewStart"
+                android:text="ID : 235635638537843"
+                android:gravity="start"
+                android:enabled="false"
+                android:textColor="@android:color/darker_gray"/>
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/image_edit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_edit_green"
+            android:layout_margin="@dimen/_4sdp"
+            android:background="@android:color/transparent"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_person"/>
+            </FrameLayout>
+            <EditText
+                android:id="@+id/pr_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ID : 255886386346473"
+                android:maxLines="1"
+                android:background="@drawable/edittext_shape_profile"
+                android:layout_marginStart="10dp"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:enabled="false"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_email_24"/>
+            </FrameLayout>
+            <EditText
+                android:id="@+id/pr_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email : mousdddddtafa03@gmail.com"
+                android:textSize="15sp"
+                android:maxLines="1"
+                android:background="@drawable/edittext_shape_profile"
+                android:layout_marginStart="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:enabled="false"
+                android:forceHasOverlappingRendering="true"
+               />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_phone"/>
+            </FrameLayout>
+            <EditText
+                android:id="@+id/pr_web"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Phone : +201159088197"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:enabled="false"
+                android:background="@drawable/edittext_shape_profile"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_car"/>
+            </FrameLayout>
+            <EditText
+                android:id="@+id/pr_license"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Car ID : 131|ABDS"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:enabled="false"
+                android:background="@drawable/edittext_shape_profile"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:textSize="16sp"
+                />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/frameshape">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/framecircle"
+                >
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_car"/>
+            </FrameLayout>
+            <EditText
+                android:id="@+id/pr_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Join in :25/nov/2022"
+                android:textColor="@color/white"
+                android:maxLines="1"
+                android:enabled="false"
+                android:background="@drawable/edittext_shape_profile"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:textSize="16sp"
+               />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btu_save"
+        android:text="Save"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:background="@drawable/button_shape"
+        android:layout_margin="10dp"/>
+    <ProgressBar
+        android:id="@+id/update_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:visibility="gone"
+        android:indeterminate="true"
+        android:layout_gravity="center_horizontal"
+       />
+
+
+</LinearLayout>

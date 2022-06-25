@@ -1,0 +1,273 @@
+package com.example.hibarking.garage_manager;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.example.hibarking.R;
+import com.example.hibarking.driver.google_map.MapsFragment;
+import com.example.hibarking.garage_manager.garage_data.map;
+import com.example.hibarking.garage_manager.garage_data.move_location;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.HashMap;
+import java.util.UUID;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
+
+public class add_garage_info extends Fragment {
+
+    private EditText garage_name,city,unit,price;
+    private ImageButton location,paper;
+    private FirebaseFirestore database;
+    private FirebaseAuth auth;
+    private String user_id,longitude,latitude,paper_str="";
+    private Button add_data;
+    private SweetAlertDialog pDialogLoading,pDialogSuccess,pDialogerror;
+    Uri imageuri = null;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v= inflater.inflate(R.layout.fragment_add_garage_info, container, false);
+        intialization_tool(v);
+        firebase_tool();
+        sweetalert();
+        add_location();
+        add_paper();
+        add_data(v);
+        return v;
+    }
+    private void sweetalert()
+    {
+        //loading
+
+        pDialogLoading = new SweetAlertDialog(getActivity(), SweetAlertDialog.NORMAL_TYPE);
+        pDialogLoading.getProgressHelper().setBarColor(Color.parseColor("#30a852"));
+        pDialogLoading.setCancelable(true);
+        //error
+        pDialogerror= new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE);
+        pDialogerror.getProgressHelper().setBarColor(Color.parseColor("#30a852"));
+        pDialogerror.setConfirmText("ok");
+        pDialogerror.setConfirmClickListener(sweetAlertDialog -> {
+            pDialogerror.dismiss();
+        });
+        pDialogerror.setCancelable(true);
+
+        //Success
+        pDialogSuccess= new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE);
+        pDialogSuccess.getProgressHelper().setBarColor(Color.parseColor("#30a852"));
+        pDialogSuccess.setConfirmText("ok");
+        pDialogSuccess.setConfirmClickListener(sweetAlertDialog -> {
+            pDialogSuccess.dismiss();
+        });
+        pDialogSuccess.setCancelable(true);
+    }
+    private void add_data(View v) {
+        add_data=v.findViewById(R.id.add_garage_info);
+        add_data.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pDialogLoading.setTitleText("loading data");
+                pDialogLoading.show();
+                check_data();
+            }
+        });
+    }
+
+    private void check_data() {
+        longitude= move_location.getLongitude();
+        latitude=move_location.getLatitude();
+
+       if (TextUtils.isEmpty(garage_name.getText().toString()))
+        {
+            garage_name.setError("please enter the garage name");
+        }
+        else if (TextUtils.isEmpty(city.getText().toString()))
+        {
+            city.setError("please enter the city ");
+        }
+        else if (TextUtils.isEmpty(unit.getText().toString()))
+        {
+            unit.setError("please enter the number of the units in the garage ");
+        }
+        else if (TextUtils.isEmpty(price.getText().toString()))
+        {
+            price.setError("please enter the unit price per hour  ");
+        }
+        else if (TextUtils.isEmpty(latitude)&& TextUtils.isEmpty(longitude))
+        {
+            Toast.makeText(getActivity(),"please select the garage location",Toast.LENGTH_LONG).show();
+        }
+        else if (TextUtils.isEmpty(paper_str))
+        {
+            Toast.makeText(getActivity(),"please add the garage papers",Toast.LENGTH_LONG).show();
+        }
+        else
+       {
+           add_to_database();
+       }
+    }
+
+    private void add_to_database() {
+        String garage_id= UUID.randomUUID().toString();
+        HashMap<String, String>map=new HashMap<String, String>();
+        map.put("manager_id",user_id);
+        map.put("garage_id",garage_id);
+        map.put("garage_name",garage_name.getText().toString());
+        map.put("unit_num",unit.getText().toString());
+        map.put("hour_price",price.getText().toString());
+        map.put("longitude",longitude);
+        map.put("latitude",latitude);
+        map.put("garage_paper",paper_str);
+        map.put("city",city.getText().toString());
+        database.collection("garage_requist").document(garage_id).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                   if (task.isSuccessful())
+                   {
+                       pDialogLoading.dismiss();
+                       pDialogSuccess.setTitleText("successful update date ");
+                       pDialogSuccess.show();
+                   }
+                   else
+                   {
+                       pDialogLoading.dismiss();
+                       pDialogerror.setTitleText("error occur");
+                       pDialogerror.show();
+                   }
+            }
+        });
+    }
+
+    private void add_paper() {
+        paper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pDialogLoading.setTitleText("Notification : file should be pdf ");
+                pDialogLoading.setCancelText("No");
+                pDialogLoading.setConfirmText("yes");
+                pDialogLoading.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                   pDialogLoading.dismiss();
+                    }
+                });
+                pDialogLoading.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        pDialogLoading.dismiss();
+                        Intent galleryIntent = new Intent();
+
+                        galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                        // We will be redirected to choose pdf
+                        galleryIntent.setType("application/pdf");
+                        startActivityForResult(galleryIntent, 1);
+                    }
+                });
+                pDialogLoading.show();
+
+            }
+        });
+    }
+    ProgressDialog dialog;
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 || resultCode == Activity.RESULT_OK || data != null || data.getData() != null) {
+
+            // Here we are initialising the progress dialog box
+            dialog = new ProgressDialog(getActivity());
+            dialog.setMessage("Uploading");
+            dialog.show();
+            imageuri = data.getData();
+            StorageReference storageReference = FirebaseStorage.getInstance().getReference("garage_paper");
+            String file_id=UUID.randomUUID().toString();
+            final StorageReference filepath = storageReference.child(file_id + "." + "pdf");
+            filepath.putFile(imageuri).continueWithTask(new Continuation() {
+                @Override
+                public Object then(@NonNull Task task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
+                    }
+                    return filepath.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        // After uploading is done it progress
+                        // dialog box will be dismissed
+                        dialog.dismiss();
+                        Uri uri = task.getResult();
+                         paper_str= uri.toString();
+
+                       pDialogSuccess.setTitleText("successful upload file ");
+                       pDialogSuccess.show();
+
+                    } else {
+                        dialog.dismiss();
+                        pDialogerror.setTitleText("Failed to upload file ");
+                    }
+                }
+            });
+        }
+    }
+    private void add_location() {
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              getActivity().getSupportFragmentManager().beginTransaction()
+                        .add(R.id.grarage_manager_frameLayout, new map()).commit();
+            }
+        });
+    }
+
+    private void firebase_tool() {
+        database=FirebaseFirestore.getInstance();
+        auth=FirebaseAuth.getInstance();
+        user_id=auth.getCurrentUser().getUid().toString();
+    }
+
+    private void intialization_tool(View v)
+    {
+        garage_name=v.findViewById(R.id.add_garage_username);
+        city=v.findViewById(R.id.add_garage_city);
+        unit=v.findViewById(R.id.add_garage_unit);
+        price=v.findViewById(R.id.add_credit_price);
+        location=v.findViewById(R.id.add_garage_location);
+        paper=v.findViewById(R.id.add_garage_paper);
+
+    }
+}

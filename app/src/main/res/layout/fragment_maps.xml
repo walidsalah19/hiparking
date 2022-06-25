@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorlayout"
+    >
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".driver.google_map.MapsFragment" >
+        </fragment>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grean"
+            android:id="@+id/search_view"
+            android:theme="@style/SearchViewStyle"
+            android:layout_margin="@dimen/_10sdp"
+            >
+        </androidx.appcompat.widget.SearchView>
+        <ImageView
+        android:layout_width="70dp"
+        android:layout_height="@dimen/_30sdp"
+        android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
+        android:id="@+id/view_map_type"
+            android:layout_below="@id/search_view"
+            android:popupBackground="@color/lite_grean"
+            android:layout_margin="@dimen/_10sdp"
+        >
+    </ImageView>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_baseline_my_location_24"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/search_view"
+            android:layout_margin="@dimen/_10sdp"
+            android:id="@+id/imagebottom_my_location">
+        </ImageView>
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

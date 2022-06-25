@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rediogroup_map_typ">
+
+        <RadioButton
+            android:id="@+id/normal_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="normal map"
+            android:textColor="@color/grean"/>
+
+        <RadioButton
+            android:id="@+id/hybrid_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="hybrid map"
+            android:textColor="@color/grean"/>
+
+        <RadioButton
+            android:id="@+id/satellite_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="satellite map"
+            android:textColor="@color/grean"/>
+
+        <RadioButton
+            android:id="@+id/terrain_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="terrain map"
+            android:textColor="@color/grean"/>
+    </RadioGroup>
+</LinearLayout>
