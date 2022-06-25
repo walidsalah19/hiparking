@@ -1,4 +1,4 @@
-package com.example.hibarking.mechanical;
+package com.example.hibarking.mechanical.Fragments;
 
 import android.os.Bundle;
 

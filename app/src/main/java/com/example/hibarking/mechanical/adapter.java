@@ -1,6 +1,5 @@
 package com.example.hibarking.mechanical;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hibarking.R;
-import com.example.hibarking.garage_manager.show_garage_info;
+import com.example.hibarking.mechanical.Fragments.view_customer_data;
 
 import java.util.ArrayList;
 

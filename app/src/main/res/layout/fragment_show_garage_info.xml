@@ -46,7 +46,8 @@
                         android:padding="@dimen/_5sdp"
                         >
                     </TextView>
-                    <TextView
+                    <EditText
+                        android:enabled="false"
                         android:id="@+id/sh_garage_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -58,7 +59,7 @@
                         android:textColor="@color/grean"
                         android:background="@drawable/edittext_shape"
                         >
-                    </TextView>
+                    </EditText>
 
                 </LinearLayout>
                 <LinearLayout
@@ -77,7 +78,8 @@
                         android:padding="@dimen/_5sdp"
                         >
                     </TextView>
-                    <TextView
+                    <EditText
+                        android:enabled="false"
                         android:id="@+id/sh_garage_city"
 
                         android:layout_width="match_parent"
@@ -90,7 +92,7 @@
                         android:textColor="@color/grean"
                         android:background="@drawable/edittext_shape"
                         >
-                    </TextView>
+                    </>
 
                 </LinearLayout>
                 <LinearLayout
@@ -112,9 +114,9 @@
                         android:padding="@dimen/_5sdp"
                         >
                     </TextView>
-                    <TextView
+                    <EditText
+                        android:enabled="false"
                         android:id="@+id/sh_garage_unit_num"
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -139,14 +141,14 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:padding="@dimen/_5sdp"
-                        android:text="price "
+                        android:text="hour price "
                         android:textSize="@dimen/_16sdp"
                         android:textColor="@color/black"
                         >
                     </TextView>
-                    <TextView
+                    <EditText
+                        android:enabled="false"
                         android:id="@+id/sh_garage_hour_price"
-
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -157,7 +159,40 @@
                         android:textColor="@color/grean"
                         android:background="@drawable/edittext_shape"
                         />
-                </LinearLayout><LinearLayout
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:background="@drawable/edittext_shape"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="@dimen/_5sdp"
+                        android:text="rate "
+                        android:textSize="@dimen/_16sdp"
+                        android:textColor="@color/black"
+                        >
+                    </TextView>
+                    <EditText
+                        android:enabled="false"
+                        android:id="@+id/sh_garage_hour_rate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="5 "
+                        android:padding="@dimen/_5sdp"
+                        android:textSize="@dimen/_16sdp"
+                        android:gravity="center"
+                        android:textColor="@color/grean"
+                        android:background="@drawable/edittext_shape"
+                        />
+                </LinearLayout>
+                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
