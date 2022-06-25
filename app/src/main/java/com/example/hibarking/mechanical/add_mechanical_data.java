@@ -187,7 +187,7 @@ public class add_mechanical_data extends AppCompatActivity {
 
         }else
         {
-            Toast.makeText(this, "fill all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "fill all field", Toast.LENGTH_SHORT).show();
         }
 
     }
