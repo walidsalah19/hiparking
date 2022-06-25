@@ -41,9 +41,8 @@ private ProgressBar progressBar;
      private FirebaseFirestore database;
      private String garage_id,latitude,longitude,url;
      SharedPref sharedPref;
-        String urls;
-        PDFView pdfView;
-        ProgressDialog dialog;
+     ProgressDialog dialog;
+    double rate_num=0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         sharedPref = new SharedPref(getActivity());
@@ -66,7 +65,11 @@ private ProgressBar progressBar;
         intialization_tool(v);
         get_garage_data();
         download_file(v);
+       show_location(v);
         return v;
+    }
+
+    private void show_location(View v) {
     }
 
     private void download_file(View v) {
@@ -115,14 +118,15 @@ private ProgressBar progressBar;
                     latitude=task.getResult().get("latitude").toString();
                     longitude=task.getResult().get("longitude").toString();
                     url=task.getResult().get("garage_paper").toString();
-                    dialog.dismiss();
+                    getrate();
                 }
             }
         });
     }
+    
     private void getrate()
     {
-        double rate_num=0;
+       
         database.collection("garage_rate").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -132,12 +136,14 @@ private ProgressBar progressBar;
                         String id = document.get("garage_id").toString();
                         if (garage_id.equals(id))
                         {
-
+                           rate_num+=Double.parseDouble(document.get("rate").toString());
                         }
                     }
                 }
             }
         });
+        rate.setText(rate_num+"");
+        dialog.dismiss();
     }
 
 }

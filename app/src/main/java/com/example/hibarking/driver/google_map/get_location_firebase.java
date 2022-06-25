@@ -1,4 +1,4 @@
-package com.example.hibarking.driver.google_map.map_class;
+package com.example.hibarking.driver.google_map;
 
 import androidx.annotation.NonNull;
 

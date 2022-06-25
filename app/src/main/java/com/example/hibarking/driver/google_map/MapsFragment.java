@@ -28,9 +28,6 @@ import android.widget.Toast;
 
 import com.example.hibarking.R;
 import com.example.hibarking.data_class.garage_model;
-import com.example.hibarking.driver.google_map.map_class.get_location_firebase;
-import com.example.hibarking.driver.google_map.map_class.map_routes;
-import com.example.hibarking.driver.google_map.map_class.map_search;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;

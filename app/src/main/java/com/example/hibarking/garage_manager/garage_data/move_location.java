@@ -1,7 +1,15 @@
 package com.example.hibarking.garage_manager.garage_data;
 
 public class move_location {
-   static String longitude="",latitude="";
+   static String longitude="",latitude="",type="";
+
+    public static String getType() {
+        return type;
+    }
+
+    public static void setType(String type) {
+        move_location.type = type;
+    }
 
     public static String getLongitude() {
         return longitude;
