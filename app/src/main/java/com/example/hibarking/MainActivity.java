@@ -63,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolpar_intialize();
         firebase_tool_intialize();
-        //check_user_acess();
         start_google_maps();
         navigation_items();
 
@@ -188,6 +187,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void replace_fragment(Fragment fragment) {
+
+
         getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, fragment).addToBackStack(null).commitAllowingStateLoss();
         drawerLayout.closeDrawer(GravityCompat.START);
     }

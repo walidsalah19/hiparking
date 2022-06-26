@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/frame_map"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".mechanical.add_mechanical_data"
     android:background="@color/white">
@@ -51,17 +52,20 @@
                             android:src="@drawable/ic_baseline_add_24"
                             android:contentDescription="TODO" />
                     </androidx.cardview.widget.CardView>
+
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/mechanical_image"
+                        layout_constraintTop_toTopOf="parent"
                         android:layout_width="150dp"
                         android:layout_height="112dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/_10sdp"
                         android:src="@drawable/profile"
                         app:civ_border_color="@color/grean"
                         app:civ_border_width="1dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        layout_constraintTop_toTopOf="parent"
-                        android:layout_margin="@dimen/_10sdp"
-                        android:layout_alignParentRight="true"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:layout_editor_absoluteY="١٣dp" />
                 <TextView
                     android:id="@+id/add_event_title"
                     android:layout_width="wrap_content"
@@ -201,16 +205,24 @@
                            android:layout_width="match_parent"
                            android:layout_height="wrap_content"
                            android:background="@drawable/button_shape"
-                        android:textColor="@color/white"
+                           android:textColor="@color/white"
                            android:textSize="@dimen/_18sdp"
                            android:text="add"
-                        android:id="@+id/add_mechanical_data"
+                           android:id="@+id/add_mechanical_data"
                            app:layout_constraintTop_toBottomOf="@id/add_mechanical_licence_paper"
                            android:layout_marginTop="@dimen/_20sdp"
                            android:layout_margin="@dimen/_10sdp">
                        </androidx.appcompat.widget.AppCompatButton>
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+            <ProgressBar
+                android:id="@+id/mec_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_marginVertical="10dp"
+                android:layout_gravity="center"
+                />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </FrameLayout>
