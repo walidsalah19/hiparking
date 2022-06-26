@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
 import com.example.hibarking.driver.user_account.create_account;
 import com.example.hibarking.garage_manager.AddGarageManData;
@@ -164,11 +163,13 @@ public class registration extends AppCompatActivity {
 
          if (driver.isChecked()) {
              Intent i=new Intent(this,create_account.class);
-             i.putExtra("email",editText_email.getText().toString());
+             i.putExtra("Email",editText_email.getText().toString());
              startActivity(i);
          }
         else if (mechanical.isChecked()) {
-             startActivity(new Intent(this, add_mechanical_data.class));
+             Intent intent = new Intent(this, add_mechanical_data.class);
+             intent.putExtra("Email",email_string);
+             startActivity(intent);
         }
         else if(garage_manager.isChecked())
          {

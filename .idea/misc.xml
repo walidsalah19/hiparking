@@ -51,6 +51,11 @@
         <entry key="..\:/project/hibarking/app/src/main/res/layout/main_appbar_map.xml" value="0.209375" />
         <entry key="..\:/project/hibarking/app/src/main/res/layout/navigation_header.xml" value="0.67" />
         <entry key="..\:/project/hibarking/app/src/main/res/menu/navigation_menu.xml" value="0.209375" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable-v24/ic_contact_page.xml" value="0.1405" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_main_mechanical.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_add_mechanical_data.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_mechanical__profile.xml" value="0.25" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/menu/mechanical_navigation_menu.xml" value="0.209375" />
       </map>
     </option>
   </component>

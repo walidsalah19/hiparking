@@ -77,7 +77,7 @@ public class create_account extends AppCompatActivity {
         create= new create_account_class();
 
         date_of_creation= new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-       Email=getIntent().getExtras().get("email").toString();
+       Email=getIntent().getExtras().get("Email").toString();
 
         FirebaseAuth auth=FirebaseAuth.getInstance();
         currentUser_id=auth.getCurrentUser().getUid();
