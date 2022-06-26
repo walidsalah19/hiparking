@@ -17,10 +17,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 
 import com.example.hibarking.R;
+import com.example.hibarking.SharedPref;
 import com.example.hibarking.garage_manager.garage_data.map;
 import com.example.hibarking.garage_manager.garage_data.move_location;
 import com.google.android.gms.tasks.Continuation;
@@ -62,10 +64,17 @@ public class add_mechanical_data extends AppCompatActivity {
     String longitude, latitude;
     AppCompatImageButton paper , location;
     private static final int PICK_IMAGE=22;
+    SharedPref sharedPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPref = new SharedPref(this);
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.Theme_Dark);
+        }else {
+            setTheme(R.style.Theme_Light);
+        }
         setContentView(R.layout.fragment_add_mechanical_data);
         initialization();
         add_location();

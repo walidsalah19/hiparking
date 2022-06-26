@@ -3,6 +3,7 @@ package com.example.hibarking.driver.user_account;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
+import com.example.hibarking.SharedPref;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -56,10 +58,17 @@ public class create_account extends AppCompatActivity {
     String Email,date_of_creation,currentUser_id;
     create_account_class create;
     private static final int PICK_IMAGE=1;
+    SharedPref sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPref = new SharedPref(this);
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.Theme_Dark);
+        }else {
+            setTheme(R.style.Theme_Light);
+        }
         setContentView(R.layout.activity_create_account);
         intialize();
 

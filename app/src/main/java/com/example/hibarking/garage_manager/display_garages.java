@@ -3,6 +3,7 @@ package com.example.hibarking.garage_manager;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.hibarking.R;
+import com.example.hibarking.SharedPref;
 import com.example.hibarking.garage_manager.adapters.garage_show_adapter;
 import com.example.hibarking.garage_manager.adapters.recycler_show_garage_info;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,10 +33,17 @@ public class display_garages extends Fragment {
     private FirebaseAuth auth;
     private String user_id;
     private FloatingActionButton add_new_garage;
+    SharedPref sharedPref;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        sharedPref = new SharedPref(getActivity());
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            getActivity().setTheme(R.style.Theme_Dark);
+        }else {
+            getActivity().setTheme(R.style.Theme_Light);
+        }
     }
 
     @Override
