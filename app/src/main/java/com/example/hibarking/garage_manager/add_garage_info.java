@@ -75,7 +75,7 @@ public class add_garage_info extends Fragment {
 
         pDialogLoading = new SweetAlertDialog(getActivity(), SweetAlertDialog.NORMAL_TYPE);
         pDialogLoading.getProgressHelper().setBarColor(Color.parseColor("#30a852"));
-        pDialogLoading.setCancelable(true);
+        pDialogLoading.setCancelable(false);
         //error
         pDialogerror= new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE);
         pDialogerror.getProgressHelper().setBarColor(Color.parseColor("#30a852"));
@@ -83,7 +83,7 @@ public class add_garage_info extends Fragment {
         pDialogerror.setConfirmClickListener(sweetAlertDialog -> {
             pDialogerror.dismiss();
         });
-        pDialogerror.setCancelable(true);
+        pDialogerror.setCancelable(false);
 
         //Success
         pDialogSuccess= new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE);
@@ -92,7 +92,7 @@ public class add_garage_info extends Fragment {
         pDialogSuccess.setConfirmClickListener(sweetAlertDialog -> {
             pDialogSuccess.dismiss();
         });
-        pDialogSuccess.setCancelable(true);
+        pDialogSuccess.setCancelable(false);
     }
     private void add_data(View v) {
         add_data=v.findViewById(R.id.add_garage_info);
@@ -177,7 +177,7 @@ public class add_garage_info extends Fragment {
             public void onClick(View view) {
                 pDialogLoading.setTitleText("Notification : file should be pdf ");
                 pDialogLoading.setCancelText("No");
-                pDialogLoading.setConfirmText("yes");
+                pDialogLoading.setConfirmText("Yes");
                 pDialogLoading.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                     @Override
                     public void onClick(SweetAlertDialog sweetAlertDialog) {

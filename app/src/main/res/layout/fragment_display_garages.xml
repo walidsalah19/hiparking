@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".garage_manager.display_garages">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/grarage_manager_recyclerView"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        app:fabSize="normal"
+        android:id="@+id/add_new_garage"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_15sdp"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        android:backgroundTint="@color/grean"
+        />
+    </RelativeLayout>
+</FrameLayout>

@@ -1,4 +1,4 @@
-package com.example.hibarking.driver.profile.Fragments;
+package com.example.hibarking.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -9,37 +9,25 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
-import android.app.ActivityManager;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.hibarking.driver.profile.Fragments.ContactFragment;
-import com.example.hibarking.driver.profile.Fragments.EmergancyFragment;
+import com.example.hibarking.Fragments.ContactFragment;
+import com.example.hibarking.Fragments.EmergancyFragment;
 import com.example.hibarking.driver.profile.ProfileFragment;
-import com.example.hibarking.driver.profile.Fragments.SettingFragment;
+import com.example.hibarking.Fragments.SettingFragment;
 import com.example.hibarking.driver.user_account.create_account;
 import com.example.hibarking.driver.google_map.MapsFragment;
 import com.example.hibarking.user_acess.login;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.Toast;
-
-import com.example.hibarking.chating.chating;
-import com.example.hibarking.driver.booking_package.booking_fragment;
-import com.example.hibarking.driver.google_map.MapsFragment;
-import com.example.hibarking.driver.user_mechanical.mechanical_user;
-import com.example.hibarking.user_acess.login;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

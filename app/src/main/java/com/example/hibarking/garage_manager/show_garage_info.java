@@ -20,6 +20,8 @@ import android.widget.TextView;
 
 import com.example.hibarking.R;
 import com.example.hibarking.SharedPref;
+import com.example.hibarking.garage_manager.garage_data.map;
+import com.example.hibarking.garage_manager.garage_data.move_location;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -42,7 +44,9 @@ private ProgressBar progressBar;
      private String garage_id,latitude,longitude,url;
      SharedPref sharedPref;
      ProgressDialog dialog;
+     private TextView parsent;
     double rate_num=0;
+    int max_unit,booking_num=0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         sharedPref = new SharedPref(getActivity());
@@ -61,7 +65,6 @@ private ProgressBar progressBar;
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_show_garage_info, container, false);
         garage_id=getArguments().getString("garage_id").toString();
-        progressBar_method(v);
         intialization_tool(v);
         get_garage_data();
         download_file(v);
@@ -70,6 +73,16 @@ private ProgressBar progressBar;
     }
 
     private void show_location(View v) {
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                move_location.setLatitude(latitude);
+                move_location.setLongitude(longitude);
+                move_location.setType("shaw");
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .add(R.id.grarage_manager_frameLayout, new map()).addToBackStack(null).commit();
+            }
+        });
     }
 
     private void download_file(View v) {
@@ -85,6 +98,8 @@ private ProgressBar progressBar;
 
     private void intialization_tool(View v)
     {
+        progressBar=v.findViewById(R.id.progress_bar);
+        parsent=v.findViewById(R.id.garage_persent_booking);
         name=v.findViewById(R.id.sh_garage_name);
         city=v.findViewById(R.id.sh_garage_city);
         price=v.findViewById(R.id.sh_garage_hour_price);
@@ -92,12 +107,6 @@ private ProgressBar progressBar;
         location=v.findViewById(R.id.sh_garage_location);
         rate=v.findViewById(R.id.sh_garage_hour_rate);
         paper=v.findViewById(R.id.sh_garage_paper);
-    }
-
-
-    private void progressBar_method(View v) {
-        progressBar=v.findViewById(R.id.progress_bar);
-        progressBar.setProgress(90);
     }
     private void get_garage_data()
     {
@@ -112,13 +121,14 @@ private ProgressBar progressBar;
                 if (task.isSuccessful())
                 {
                     name.setText(task.getResult().get("garage_name").toString());
-                    city.setText(task.getResult().get("garage_name").toString());
-                    price.setText(task.getResult().get("garage_name").toString());
-                    num_unit.setText(task.getResult().get("garage_name").toString());
+                    city.setText(task.getResult().get("city").toString());
+                    price.setText(task.getResult().get("hour_price").toString());
+                    num_unit.setText(task.getResult().get("unit_num").toString());
                     latitude=task.getResult().get("latitude").toString();
                     longitude=task.getResult().get("longitude").toString();
                     url=task.getResult().get("garage_paper").toString();
                     getrate();
+                    get_booking_analysis();
                 }
             }
         });
@@ -144,6 +154,30 @@ private ProgressBar progressBar;
         });
         rate.setText(rate_num+"");
         dialog.dismiss();
+    }
+    private void get_booking_analysis()
+    {
+        max_unit=Integer.parseInt(num_unit.getText().toString());
+        database.collection("booking").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    String id = document.get("garage_id").toString();
+                    if (garage_id.equals(id))
+                    {
+                        booking_num++;
+                        progressBar_method(booking_num);
+                    }
+                }
+            }
+        });
+
+    }
+    private void progressBar_method(int num) {
+        float persent=(num/max_unit)*100;
+        parsent.setText(persent+" %");
+        progressBar.setMax(max_unit);
+        progressBar.setProgress(num);
     }
 
 }

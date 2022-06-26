@@ -37,31 +37,42 @@ public class map extends Fragment {
         @Override
         public void onMapReady(GoogleMap googleMap) {
             googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-
-            googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
-                @Override
-                public void onMapClick(@NonNull LatLng latLng) {
-                    Log.d("location",latLng.longitude+"");
-                    //Success
-                    SweetAlertDialog pDialogSuccess= new SweetAlertDialog(getActivity(), SweetAlertDialog.NORMAL_TYPE);
-                    pDialogSuccess.setTitleText("select location");
-                    pDialogSuccess.setConfirmText("yes");
-                    pDialogSuccess.setCancelText("No");
-                    pDialogSuccess.setConfirmClickListener(sweetAlertDialog -> {
-                        move_location.setLatitude(latLng.latitude+"");
-                        move_location.setLongitude(latLng.longitude+"");
-                        pDialogSuccess.dismiss();
-                        getActivity().getSupportFragmentManager().beginTransaction().remove(map.this).commit();
-                    });
-                    pDialogSuccess.setCancelClickListener(sweetAlertDialog ->
-                    {
-                        pDialogSuccess.dismiss();
-                    });
-                    pDialogSuccess.setCancelable(false);
-                    pDialogSuccess.show();
-                }
-            });
-
+             if (move_location.getType().equals("shaw"))
+             {
+                 LatLng lat=new LatLng(Double.parseDouble(move_location.getLatitude()),Double.parseDouble( move_location.getLongitude()));
+                 googleMap.addMarker(new MarkerOptions()
+                         .position(lat)
+                         .title("garage"))
+                 ;
+                 googleMap.moveCamera(CameraUpdateFactory.newLatLng(lat));
+                 googleMap.getMinZoomLevel();
+                 googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lat, 20));
+             }
+             else {
+                 googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                     @Override
+                     public void onMapClick(@NonNull LatLng latLng) {
+                         Log.d("location", latLng.longitude + "");
+                         //Success
+                         SweetAlertDialog pDialogSuccess = new SweetAlertDialog(getActivity(), SweetAlertDialog.NORMAL_TYPE);
+                         pDialogSuccess.setTitleText("select location");
+                         pDialogSuccess.setConfirmText("yes");
+                         pDialogSuccess.setCancelText("No");
+                         pDialogSuccess.setConfirmClickListener(sweetAlertDialog -> {
+                             move_location.setLatitude(latLng.latitude + "");
+                             move_location.setLongitude(latLng.longitude + "");
+                             pDialogSuccess.dismiss();
+                             getActivity().getSupportFragmentManager().beginTransaction().remove(map.this).commit();
+                         });
+                         pDialogSuccess.setCancelClickListener(sweetAlertDialog ->
+                         {
+                             pDialogSuccess.dismiss();
+                         });
+                         pDialogSuccess.setCancelable(false);
+                         pDialogSuccess.show();
+                     }
+                 });
+             }
         }
     };
 

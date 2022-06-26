@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hibarking.R;
@@ -17,9 +18,9 @@ import java.util.ArrayList;
 
 public class garage_show_adapter extends RecyclerView.Adapter<garage_show_adapter.holder>{
     ArrayList<recycler_show_garage_info> arrayList;
-    main_garage_manager main;
+   Fragment main;
 
-    public garage_show_adapter(ArrayList<recycler_show_garage_info> arrayList, main_garage_manager main) {
+    public garage_show_adapter(ArrayList<recycler_show_garage_info> arrayList, Fragment main) {
         this.arrayList = arrayList;
         this.main = main;
     }
@@ -42,7 +43,7 @@ public class garage_show_adapter extends RecyclerView.Adapter<garage_show_adapte
                 Bundle b=new Bundle();
                 b.putString("garage_id",arrayList.get(position).garage_id);
                 show.setArguments(b);
-              main.getSupportFragmentManager().beginTransaction().replace(R.id.grarage_manager_frameLayout,show).addToBackStack(null).commitAllowingStateLoss();
+              main.getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.grarage_manager_frameLayout,show).addToBackStack(null).commitAllowingStateLoss();
             }
         });
 

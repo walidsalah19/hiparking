@@ -3,6 +3,12 @@
 
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/g_navigation_home"
+        android:title="home"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_baseline_home_24">
+    </item>
+    <item
         android:id="@+id/g_navigation_profile"
         android:title="Profile"
         android:orderInCategory="100"
@@ -19,13 +25,6 @@
         android:orderInCategory="100"
         android:icon="@drawable/ic_phone"
         android:id="@+id/g_navigation_contact">
-    </item>
-    <item
-        android:title="Rating"
-        android:orderInCategory="100"
-        android:icon="@android:drawable/btn_star_big_on"
-        android:id="@+id/g_navigation_rating"
-        >
     </item>
     <item
         android:title="Setting"

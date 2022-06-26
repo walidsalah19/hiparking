@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".driver.profile.Fragments.EmergancyFragment"
+    tools:context=".Fragments.EmergancyFragment"
     android:background="?attr/background_color"
     android:orientation="vertical">
 
@@ -14,6 +14,7 @@
         android:background="?attr/background_color"
         android:orientation="vertical">
         <FrameLayout
+            android:id="@+id/Ambulance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -49,6 +50,7 @@
             </LinearLayout>
         </FrameLayout>
         <FrameLayout
+            android:id="@+id/Tourism"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -84,6 +86,7 @@
             </LinearLayout>
         </FrameLayout>
         <FrameLayout
+            android:id="@+id/Traffic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -122,6 +125,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:id="@+id/Police"
             android:background="@drawable/frameshape">
 
             <LinearLayout
@@ -143,7 +147,7 @@
                     android:id="@+id/emergency"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Emergency Police : 122"
+                    android:text="Police Emergency : 122"
                     android:maxLines="1"
                     android:layout_marginStart="10dp"
                     android:textSize="18sp"
@@ -158,6 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:id="@+id/Fire"
             android:background="@drawable/frameshape">
 
             <LinearLayout
@@ -193,6 +198,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:id="@+id/Electricity"
             android:background="@drawable/frameshape">
 
             <LinearLayout
@@ -228,6 +234,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:id="@+id/Gas_Emergency"
             android:background="@drawable/frameshape">
 
             <LinearLayout

@@ -24,6 +24,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -40,7 +42,7 @@ public class booking_fragment extends Fragment {
     private Button booking;
     private  String garage_id;
     private  FirebaseAuth auth;
-    private DatabaseReference database;
+    private FirebaseFirestore database;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -181,7 +183,7 @@ public class booking_fragment extends Fragment {
 
     private void send_to_database(String p) {
         auth=FirebaseAuth.getInstance();
-        database= FirebaseDatabase.getInstance().getReference("booking");
+        database= FirebaseFirestore.getInstance();
         String userId=auth.getCurrentUser().getUid();
         HashMap<String, String> dataset=new HashMap<>();
         dataset.put("duration",p);
@@ -189,9 +191,10 @@ public class booking_fragment extends Fragment {
         dataset.put("name",name.getText().toString());
         dataset.put("date",text_date.getText().toString());
         dataset.put("time",text_time.getText().toString());
-        database.child(garage_id).child(userId).setValue(dataset).addOnCompleteListener(new OnCompleteListener<Void>() {
+        dataset.put("garage_id",garage_id);
+        database.collection("booking").add(dataset).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
             @Override
-            public void onComplete(@NonNull Task<Void> task) {
+            public void onComplete(@NonNull Task<DocumentReference> task) {
                 if (task.isSuccessful())
                 {
                     Toast.makeText(getActivity(), "successful booking", Toast.LENGTH_SHORT).show();
