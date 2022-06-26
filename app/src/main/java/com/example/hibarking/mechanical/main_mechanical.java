@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -16,16 +19,31 @@ import androidx.fragment.app.Fragment;
 import com.example.hibarking.Fragments.ContactFragment;
 import com.example.hibarking.Fragments.EmergancyFragment;
 import com.example.hibarking.Fragments.SettingFragment;
+import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
+import com.example.hibarking.driver.user_account.create_account;
 import com.example.hibarking.mechanical.Fragments.Mechanical_Profile;
 import com.example.hibarking.mechanical.Fragments.ViewDrivers;
 import com.example.hibarking.user_acess.login;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class main_mechanical extends AppCompatActivity {
     private Toolbar toolbar;
     private FirebaseAuth auth;
+    private FirebaseUser firebaseUser;
+    TextView headerName;
+    CircleImageView  imageView;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
     @Override
@@ -33,11 +51,17 @@ public class main_mechanical extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_mechanical);
 
-            toolpar_intialize();
-            navigation_items();
-            StartDrivers();
+
+        toolpar_intialize();
+
+        getData();
+
+        navigation_items();
+
+        StartDrivers();
     }
     private void toolpar_intialize() {
+        navigationView = (NavigationView) findViewById(R.id.m_nav_view);
         auth = FirebaseAuth.getInstance();
         toolbar = findViewById(R.id.mechanical_appbar_main);
         drawerLayout = (DrawerLayout) findViewById(R.id.mechanical_drawer);
@@ -48,7 +72,6 @@ public class main_mechanical extends AppCompatActivity {
         toggle.syncState();
     }
     private void navigation_items() {
-        navigationView = (NavigationView) findViewById(R.id.m_nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -64,9 +87,6 @@ public class main_mechanical extends AppCompatActivity {
         }
         else if(item.getItemId()== R.id.m_navigation_profile) {
             replace_fragment(new Mechanical_Profile());
-        }
-        else if (item.getItemId() == R.id.m_navigation_rating) {
-            //replace_fragment(new MapsFragment());
         }
         else if(item.getItemId()== R.id.m_navigation_emergency) {
             replace_fragment(new EmergancyFragment());
@@ -92,4 +112,61 @@ public class main_mechanical extends AppCompatActivity {
                 .add(R.id.machanical_framelayout, new ViewDrivers()).commit();
     }
 
+    private void getData(){
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+        String currentUserId= null;
+        if (user != null) {
+            currentUserId = user.getUid();
+        }
+        DocumentReference reference;
+        FirebaseFirestore firestore=FirebaseFirestore.getInstance();
+
+        if (currentUserId != null) {
+            View header = navigationView.getHeaderView(0);
+            headerName = (TextView) header.findViewById(R.id.user_name);
+            imageView =(CircleImageView) header.findViewById(R.id.circl_imag_navigation_head);
+            reference = firestore.collection("Mechanical").document(currentUserId);
+            reference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    try {
+                        if (task.getResult().exists()) {
+                            String names = task.getResult().getString("name");
+                            String urls = task.getResult().getString("uri");
+
+                            if(!urls.equals("null"))
+                                Picasso.get().load(urls).into(imageView);
+                            else {
+                                imageView.setImageResource(R.drawable.profile_image);
+                            }
+                            headerName.setText(names);
+
+
+                        } else {
+
+                            Intent intent = new Intent(main_mechanical.this, create_account.class);
+                            intent.putExtra("email", user.getEmail().toString());
+
+                            startActivity(intent);
+                        }
+                    } catch (NullPointerException nullPointerException) {
+                        Toast.makeText(main_mechanical.this, "" + nullPointerException.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+
+    private void check_user_acess() {
+        firebaseUser = auth.getCurrentUser();
+        if (firebaseUser == null) {
+            startActivity(new Intent(this, login.class));
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        check_user_acess();
+    }
 }

@@ -130,8 +130,6 @@ public class ProfileFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
     public void editProfile(){
-
-
         FirebaseAuth auth=FirebaseAuth.getInstance();
         currentUser_id=auth.getCurrentUser().getUid();
 
