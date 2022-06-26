@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -21,6 +22,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.hibarking.R;
+import com.example.hibarking.SharedPref;
 import com.example.hibarking.driver.google_map.MapsFragment;
 import com.example.hibarking.garage_manager.garage_data.map;
 import com.example.hibarking.garage_manager.garage_data.move_location;
@@ -49,11 +51,17 @@ public class add_garage_info extends Fragment {
     private Button add_data;
     private SweetAlertDialog pDialogLoading,pDialogSuccess,pDialogerror;
     Uri imageuri = null;
+    SharedPref sharedPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        sharedPref = new SharedPref(getActivity());
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            getActivity().setTheme(R.style.Theme_Dark);
+        }else {
+            getActivity().setTheme(R.style.Theme_Light);
+        }
     }
 
     @Override

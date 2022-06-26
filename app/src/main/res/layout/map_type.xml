@@ -15,28 +15,28 @@
             android:id="@+id/normal_map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="normal map"
+            android:text="@string/normal_map"
             android:textColor="@color/grean"/>
 
         <RadioButton
             android:id="@+id/hybrid_map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="hybrid map"
+            android:text="@string/hybrid_map"
             android:textColor="@color/grean"/>
 
         <RadioButton
             android:id="@+id/satellite_map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="satellite map"
+            android:text="@string/satellite_map"
             android:textColor="@color/grean"/>
 
         <RadioButton
             android:id="@+id/terrain_map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="terrain map"
+            android:text="@string/terrain_map"
             android:textColor="@color/grean"/>
     </RadioGroup>
 </LinearLayout>

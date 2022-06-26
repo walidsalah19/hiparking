@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Garage Name"
+                android:text="@string/garage_name"
                 android:textColor="@color/grean"
                 android:paddingStart="@dimen/_10sdp"
                 android:textSize="@dimen/_20sdp"
@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="name"
+                android:text="@string/name"
                 android:gravity="center"
                 android:textColor="@color/grean"
                 android:textSize="@dimen/_20sdp"/>
@@ -60,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1.4"
-                android:text="empty Space "
+                android:text="@string/empty_space"
                 android:textColor="@color/grean"
                 android:paddingStart="@dimen/_10sdp"
                 android:textSize="@dimen/_20sdp"
@@ -71,7 +71,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No space "
+                android:text="@string/no_space"
                 android:gravity="center"
                 android:textColor="@color/grean"
                 android:textSize="@dimen/_20sdp"/>
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="price"
+                android:text="@string/price"
                 android:textColor="@color/grean"
                 android:paddingStart="@dimen/_10sdp"
                 android:textSize="@dimen/_20sdp"
@@ -99,7 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5"
+                android:text="@string/_5"
                 android:gravity="center"
                 android:textColor="@color/grean"
                 android:textSize="@dimen/_20sdp"/>
@@ -116,7 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rate"
+                android:text="@string/rate"
                 android:textColor="@color/grean"
                 android:paddingStart="@dimen/_10sdp"
                 android:textSize="@dimen/_20sdp"
@@ -127,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0"
+                android:text="@string/_0"
                 android:gravity="center"
                 android:textColor="@color/grean"
                 android:textSize="@dimen/_20sdp"/>
@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
-                android:text="book"
+                android:text="@string/book"
                 android:textColor="@color/white"/>
         </LinearLayout>
     </RelativeLayout>
