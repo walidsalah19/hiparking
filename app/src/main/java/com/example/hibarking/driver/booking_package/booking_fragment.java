@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,7 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.hibarking.R;
+import com.example.hibarking.SharedPref;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -48,10 +50,21 @@ public class booking_fragment extends Fragment {
     private  String garage_id,userId;
     private  FirebaseAuth auth;
     private FirebaseFirestore database;
+<<<<<<< HEAD
     private SweetAlertDialog pDialogLoading,pDialogSuccess,pDialogerror;
+=======
+
+    SharedPref sharedPref;
+>>>>>>> eed2489bb2fa1b008c67240a2689a7ac1e601fb7
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPref = new SharedPref(getActivity());
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            getActivity().setTheme(R.style.Theme_Dark);
+        }else {
+            getActivity().setTheme(R.style.Theme_Light);
+        }
     }
 
     @Override

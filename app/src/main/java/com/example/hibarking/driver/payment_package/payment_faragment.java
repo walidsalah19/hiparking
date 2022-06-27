@@ -2,6 +2,7 @@ package com.example.hibarking.driver.payment_package;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.hibarking.R;
+import com.example.hibarking.SharedPref;
 import com.fevziomurtekin.payview.Payview;
 
 /**
@@ -49,10 +51,17 @@ public class payment_faragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+    SharedPref sharedPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPref = new SharedPref(getActivity());
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            getActivity().setTheme(R.style.Theme_Dark);
+        }else {
+            getActivity().setTheme(R.style.Theme_Light);
+        }
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);

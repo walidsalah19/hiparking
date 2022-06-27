@@ -27,20 +27,23 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <EditText
+                android:id="@+id/booking_driver_name"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_45sdp"
-                android:id="@+id/booking_driver_name"
-                android:hint="name"
-                android:textColorHint="@color/text_color"
-                android:textColor="@color/black"
-                android:background="@drawable/edittext_shape"
-                android:padding="@dimen/_15sdp"
-
-                android:layout_margin="@dimen/_10sdp"
                 android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
 
-                />
+                android:background="@drawable/edittext_shape"
+
+                android:hint="@string/name"
+                android:padding="@dimen/_15sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/text_color" />
             <LinearLayout android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
@@ -62,7 +65,7 @@
                         android:id="@+id/permenent_redio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="permanent"
+                        android:text="@string/permanent"
                         android:layout_weight="1"
                         android:textColor="@color/black"
                         />
@@ -71,7 +74,7 @@
                         android:id="@+id/nonpermenent_redio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Non permanent"
+                        android:text="@string/non_permanent"
                         android:layout_weight="1"
                         android:textColor="@color/black"
                         />
@@ -122,7 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Date"
+                    android:text="@string/date"
                     android:textSize="@dimen/_18sdp"
                     android:textColor="@color/white"
                     android:gravity="center"
@@ -135,7 +138,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="time"
+                    android:text="@string/time"
                     android:textSize="@dimen/_18sdp"
                     android:gravity="center"
                     android:layout_margin="@dimen/_10sdp"
@@ -147,19 +150,21 @@
 
 
             </LinearLayout>
+
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/drivre_booking_garage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/date_layout"
-                android:background="@drawable/button_shape"
-                android:layout_margin="@dimen/_10sdp"
-                android:text="book"
-                android:id="@+id/drivre_booking_garage"
-                android:textSize="@dimen/_18sdp"
-                android:textColor="@color/white"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
 
-                >
-            </androidx.appcompat.widget.AppCompatButton>
+                android:background="@drawable/button_shape"
+                android:text="@string/book"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sdp"></androidx.appcompat.widget.AppCompatButton>
 
         </RelativeLayout>
 

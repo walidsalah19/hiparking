@@ -10,6 +10,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.hibarking.R;
+import com.example.hibarking.SharedPref;
 import com.example.hibarking.chating.chating;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,6 +39,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class mechanical_user extends Fragment {
 
+    SharedPref sharedPref;
     private SweetAlertDialog pDialogLoading;
     private FirebaseFirestore database;
     private FirebaseAuth auth;
@@ -46,6 +49,12 @@ public class mechanical_user extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        sharedPref = new SharedPref(getActivity());
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            getActivity().setTheme(R.style.Theme_Dark);
+        }else {
+            getActivity().setTheme(R.style.Theme_Light);
+        }
     }
 
     @Override

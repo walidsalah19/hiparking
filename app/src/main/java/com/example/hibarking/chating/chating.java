@@ -3,6 +3,7 @@ package com.example.hibarking.chating;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
+import com.example.hibarking.SharedPref;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -41,10 +43,16 @@ public class chating extends Fragment {
     private String user_image,user_id,send_time,chat_type,chat_id,user_name;
     private FloatingActionButton send;
     private EditText message_text;
+    SharedPref sharedPref;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        sharedPref = new SharedPref(getActivity());
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            getActivity().setTheme(R.style.Theme_Dark);
+        }else {
+            getActivity().setTheme(R.style.Theme_Light);
+        }
     }
 
     @Override

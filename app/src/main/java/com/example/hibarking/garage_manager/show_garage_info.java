@@ -49,13 +49,14 @@ private ProgressBar progressBar;
     int max_unit,booking_num=0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         sharedPref = new SharedPref(getActivity());
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             getActivity().setTheme(R.style.Theme_Dark);
         }else {
             getActivity().setTheme(R.style.Theme_Light);
         }
-        super.onCreate(savedInstanceState);
+
 
     }
 

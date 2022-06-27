@@ -4,6 +4,7 @@ import android.app.Service;
 import android.content.Intent;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.graphics.PixelFormat;
 import android.os.Build;
@@ -19,6 +20,7 @@ import android.widget.Button;
 
 import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
+import com.example.hibarking.SharedPref;
 
 
 public class floating_window extends Service {
@@ -32,10 +34,17 @@ public class floating_window extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
+    SharedPref sharedPref;
+
     @Override
     public void onCreate() {
         super.onCreate();
-
+        sharedPref = new SharedPref(this);
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+           setTheme(R.style.Theme_Dark);
+        }else {
+            setTheme(R.style.Theme_Light);
+        }
         DisplayMetrics metrics = getApplicationContext().getResources().getDisplayMetrics();
         int width = metrics.widthPixels;
         int height = metrics.heightPixels;
