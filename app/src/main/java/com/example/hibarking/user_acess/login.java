@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
 import com.example.hibarking.garage_manager.main_garage_manager;
+import com.example.hibarking.mechanical.main_mechanical;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -31,7 +32,6 @@ public class login extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseFirestore database;
     private String username,password,type;
-    private RadioButton driver,mechanical,garage_manager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
@@ -42,7 +42,7 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
         text_initialized();
-         login_Button_method();
+        login_Button_method();
         registration_method();
 
     }
@@ -57,31 +57,7 @@ public class login extends AppCompatActivity {
         super.onStart();
     }
 
-    private void catagories()
-    {
-        driver=findViewById(R.id.driver);
-        mechanical=findViewById(R.id.mechanical);
-        garage_manager=findViewById(R.id.garage_manager);
-        if(driver.isChecked())
-        {
-            type="driver";
-            login_method();
-        }
-        else if (mechanical.isChecked())
-        {
-            type="mechanical";
-            login_method();
-        }
-        else if (garage_manager.isChecked())
-        {
-            type="garage_manager";
-            login_method();
-        }
-        else
-        {
-            Toast.makeText(this,"select on item ",Toast.LENGTH_LONG).show();
-        }
-    }
+
 
 
     private void login_Button_method() {
@@ -89,7 +65,7 @@ public class login extends AppCompatActivity {
         login_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               catagories();
+               login_method();
 
             }
         });
@@ -114,7 +90,7 @@ public class login extends AppCompatActivity {
         password=password_login.getText().toString().trim();
         if(TextUtils.isEmpty(username)&&TextUtils.isEmpty(password))
         {
-            Toast.makeText(this, "Please Enter you'r data correctly", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please Enter your data correctly", Toast.LENGTH_SHORT).show();
         }
         else{
                auth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -126,7 +102,7 @@ public class login extends AppCompatActivity {
                        }
                        else
                        {
-                           Toast.makeText(login.this, "Error", Toast.LENGTH_LONG).show();
+                           Toast.makeText(login.this, "No such a User", Toast.LENGTH_LONG).show();
                        }
                    }
                });
@@ -162,6 +138,17 @@ public class login extends AppCompatActivity {
                    }
                }
            });
+          database.collection("Mechanical").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    if (task.getResult().exists()) {
+                        startActivity(new Intent(login.this, main_mechanical.class));
+                        finish();
+                    }
+                }
+            }
+        });
     }
     private void text_initialized()
     {

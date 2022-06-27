@@ -179,6 +179,18 @@ public class add_mechanical_data extends AppCompatActivity {
         String mec_name =name.getText().toString();
         String mec_nationalId=nationalID.getText().toString();
         String mec_phone=phone.getText().toString();
+        String sub=phone.getText().toString().substring(0,3);
+        if (TextUtils.isEmpty(phone.getText().toString())&&phone.getText().toString().length()!=11)
+        {
+            phone.setError("please enter correct phone number");
+        }
+        else if (!sub.equals("010")&&!sub.equals("011")&&!sub.equals("012")&&!sub.equals("015"))
+        {
+            phone.setError("please enter correct phone number");
+        }
+        else if (TextUtils.isEmpty(nationalID.getText().toString())||nationalID.getText().toString().length()!=14) {
+            nationalID.setError("please enter your national id");
+        }
         longitude = move_location.getLongitude();
         latitude = move_location.getLatitude();
 
@@ -209,9 +221,11 @@ public class add_mechanical_data extends AppCompatActivity {
                         Uri downloadUri=task.getResult();
                         Map<String ,String> profile=new HashMap<>();
                         profile.put("name",mec_name);
-                        profile.put("national_id",mec_name);
+                        profile.put("national_id",mec_nationalId);
                         if (downloadUri != null) {
                             profile.put("uri",downloadUri.toString());
+                        }else {
+                            profile.put("uri","null");
                         }
                         profile.put("longitude",longitude);
                         profile.put("latitude",latitude);
