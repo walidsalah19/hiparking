@@ -76,10 +76,12 @@ public class main_garage_manager extends AppCompatActivity {
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                     try {
                         if (task.getResult().exists()) {
-                            String names = task.getResult().getString("username");
-                            String urls = task.getResult().getString("image");
 
-                            Picasso.get().load(urls).into(circleImageView);
+                            String names = task.getResult().getString("username");
+                            if (task.getResult().contains("image")) {
+                                String urls = task.getResult().getString("image");
+                                Picasso.get().load(urls).into(circleImageView);
+                            }
                             headerName.setText(names);
 
 

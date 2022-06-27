@@ -133,7 +133,7 @@ private ProgressBar progressBar;
             }
         });
     }
-    
+    int count=0;
     private void getrate()
     {
        
@@ -146,13 +146,14 @@ private ProgressBar progressBar;
                         String id = document.get("garage_id").toString();
                         if (garage_id.equals(id))
                         {
+                            count++;
                            rate_num+=Double.parseDouble(document.get("rate").toString());
                         }
                     }
                 }
             }
         });
-        rate.setText(rate_num+"");
+        rate.setText((rate_num/count)+"");
         dialog.dismiss();
     }
     private void get_booking_analysis()

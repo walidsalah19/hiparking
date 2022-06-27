@@ -2,6 +2,7 @@ package com.example.hibarking.driver.booking_package;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -26,9 +27,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Calendar;
 import java.util.HashMap;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class booking_fragment extends Fragment {
 
@@ -40,9 +45,10 @@ public class booking_fragment extends Fragment {
     private RadioButton permenent,nonpermenent;
     private LinearLayout duration_layout;
     private Button booking;
-    private  String garage_id;
+    private  String garage_id,userId;
     private  FirebaseAuth auth;
     private FirebaseFirestore database;
+    private SweetAlertDialog pDialogLoading,pDialogSuccess,pDialogerror;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,11 +59,38 @@ public class booking_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
          View v= inflater.inflate(R.layout.fragment_booking_fragment, container, false);
+        auth=FirebaseAuth.getInstance();
+        database= FirebaseFirestore.getInstance();
+         sweetalert();
         text_date_method(v);
         text_time_method(v);
         catagories(v);
         booking_garage(v);
          return v;
+    }
+    private void sweetalert()
+    {
+        //loading
+
+        pDialogLoading = new SweetAlertDialog(getActivity(), SweetAlertDialog.PROGRESS_TYPE);
+        pDialogLoading.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+        pDialogLoading.setCancelable(false);
+
+        //error
+        pDialogerror= new SweetAlertDialog(getActivity(), SweetAlertDialog.ERROR_TYPE);
+        pDialogerror.setConfirmText(getString(R.string.dialog_ok));
+        pDialogerror.setConfirmClickListener(sweetAlertDialog -> {
+            pDialogerror.dismiss();
+        });
+        pDialogerror.setCancelable(true);
+
+        //Success
+        pDialogSuccess= new SweetAlertDialog(getActivity(), SweetAlertDialog.SUCCESS_TYPE);
+        pDialogSuccess.setConfirmText(getString(R.string.dialog_ok));
+        pDialogSuccess.setConfirmClickListener(sweetAlertDialog -> {
+            pDialogSuccess.dismiss();
+        });
+        pDialogSuccess.setCancelable(true);
     }
     private void catagories(View v)
     {
@@ -146,11 +179,38 @@ public class booking_fragment extends Fragment {
           booking.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
-                  check_date();
+                  check_if_exixt();
               }
           });
     }
 
+   private void check_if_exixt()
+   {
+       userId=auth.getCurrentUser().getUid();
+       database.collection("booking").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+           @Override
+           public void onComplete(@NonNull Task<QuerySnapshot> task) {
+               if (task.isSuccessful()) {
+                   boolean found=false;
+                   for (QueryDocumentSnapshot document : task.getResult()) {
+                       String id=document.get("id").toString();
+                       if (userId.equals(id))
+                       {
+                           pDialogerror.setTitleText("you have old booking ");
+                           pDialogerror.show();
+                           garage_id=document.get("garage_id").toString();
+                           found=true;
+                           break;
+                       }
+                   }
+                   if (!found)
+                   {
+                       check_date();
+                   }
+               }
+           }
+       });
+   }
     private void check_date() {
         if( name.getText().equals(" "))
         {
@@ -180,11 +240,7 @@ public class booking_fragment extends Fragment {
             }
         }
     }
-
     private void send_to_database(String p) {
-        auth=FirebaseAuth.getInstance();
-        database= FirebaseFirestore.getInstance();
-        String userId=auth.getCurrentUser().getUid();
         HashMap<String, String> dataset=new HashMap<>();
         dataset.put("duration",p);
         dataset.put("id",userId);
@@ -197,11 +253,13 @@ public class booking_fragment extends Fragment {
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 if (task.isSuccessful())
                 {
-                    Toast.makeText(getActivity(), "successful booking", Toast.LENGTH_SHORT).show();
+                    pDialogSuccess.setTitleText("successful booking");
+                    pDialogSuccess.show();
                 }
                 else
                 {
-                    Toast.makeText(getActivity(), "error occur", Toast.LENGTH_SHORT).show();
+                    pDialogerror.setTitleText("error occur ");
+                    pDialogerror.show();
                 }
             }
         });
