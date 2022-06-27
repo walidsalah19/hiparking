@@ -17,6 +17,7 @@ import androidx.cardview.widget.CardView;
 
 import com.example.hibarking.R;
 import com.example.hibarking.driver.booking_package.booking_fragment;
+import com.example.hibarking.driver.user_mechanical.mechanical_user;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 
@@ -37,29 +38,53 @@ public class Bottom_Sheet_Menu extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = getLayoutInflater().inflate(R.layout.bottom_sheet_layout, null);
-        location_name = v.findViewById(R.id.bottomsheet_name);
-        location_rate = v.findViewById(R.id.bottomsheet_rate);
-        location_unit = v.findViewById(R.id.bottomsheet_apace);
-        location_price = v.findViewById(R.id.bottomsheet_price);
-        location_name.setText(name);
-        location_rate.setText(rate);
-        location_price.setText(price);
-        location_unit.setText(unit);
-        Button booking;
-        booking = (Button) v.findViewById(R.id.user_main_booking);
-        booking.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (garage_id != null) {
-                    Bundle b = new Bundle();
-                    b.putString("id", garage_id);
-                    booking_fragment booking = new booking_fragment();
-                    booking.setArguments(b);
-                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, booking).addToBackStack(null).commitAllowingStateLoss();
+        if (unit.equals("mechanical")) {
+            View v = getLayoutInflater().inflate(R.layout.bottom_sheet_m_layout, null);
+            location_name = v.findViewById(R.id.m_bottomsheet_name);
+            location_rate = v.findViewById(R.id.m_bottomsheet_rate);
+            location_name.setText(name);
+            location_rate.setText(rate);
+            Button booking;
+            booking = (Button) v.findViewById(R.id.user_main_contact);
+            booking.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (garage_id != null) {
+                        Bundle b = new Bundle();
+                        b.putString("id", garage_id);
+                        mechanical_user booking = new mechanical_user();
+                        booking.setArguments(b);
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, booking).addToBackStack(null).commitAllowingStateLoss();
+                    }
                 }
-            }
-        });
-        return v;
+            });
+            return v;
+        } else {
+            View v = getLayoutInflater().inflate(R.layout.bottom_sheet_layout, null);
+            location_name = v.findViewById(R.id.bottomsheet_name);
+            location_rate = v.findViewById(R.id.bottomsheet_rate);
+            location_unit = v.findViewById(R.id.bottomsheet_apace);
+            location_price = v.findViewById(R.id.bottomsheet_price);
+            location_name.setText(name);
+            location_rate.setText(rate);
+            location_price.setText(price);
+            location_unit.setText(unit);
+            Button booking;
+            booking = (Button) v.findViewById(R.id.user_main_booking);
+            booking.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (garage_id != null) {
+                        Bundle b = new Bundle();
+                        b.putString("id", garage_id);
+                        booking_fragment booking = new booking_fragment();
+                        booking.setArguments(b);
+                        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, booking).addToBackStack(null).commitAllowingStateLoss();
+                    }
+                }
+            });
+            return v;
+        }
+
     }
 }

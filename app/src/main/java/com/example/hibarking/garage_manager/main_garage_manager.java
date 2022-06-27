@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -19,6 +20,7 @@ import com.example.hibarking.R;
 import com.example.hibarking.Fragments.ContactFragment;
 import com.example.hibarking.Fragments.EmergancyFragment;
 import com.example.hibarking.Fragments.SettingFragment;
+import com.example.hibarking.SharedPref;
 import com.example.hibarking.driver.user_account.create_account;
 import com.example.hibarking.mechanical.main_mechanical;
 import com.example.hibarking.user_acess.login;
@@ -46,12 +48,19 @@ public class main_garage_manager extends AppCompatActivity {
     private DrawerLayout drawerLayout;
 
     NavigationView navigationView;
+    SharedPref sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPref = new SharedPref(this);
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.Theme_Dark);
+        }else {
+            setTheme(R.style.Theme_Light);
+        }
         setContentView(R.layout.activity_main_garage);
-       firebase_describtion();
+        firebase_describtion();
         toolpar_intialize();
         navigation_items();
     }
@@ -78,6 +87,7 @@ public class main_garage_manager extends AppCompatActivity {
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                     try {
                         if (task.getResult().exists()) {
+
                             String names = task.getResult().getString("username");
                             String urls;
                             if(task.getResult().contains("image")){
@@ -90,6 +100,7 @@ public class main_garage_manager extends AppCompatActivity {
                             else {
                                 circleImageView.setImageResource(R.drawable.profile_image);
                             }
+
 
                             headerName.setText(names);
 
@@ -158,7 +169,11 @@ public class main_garage_manager extends AppCompatActivity {
           move_fragment(new ContactFragment());
       }
       else if(item.getItemId()==R.id.g_navigation_setting) {
-          move_fragment(new SettingFragment());
+          Bundle b=new Bundle();
+          b.putString("type","manager");
+          SettingFragment f=new SettingFragment();
+          f.setArguments(b);
+          move_fragment(f);
       }
 
     }

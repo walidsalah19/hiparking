@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HiParking</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="close">close</string>
+    <string name="open">open</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="name">الإسم</string>
+    <string name="id">رقم البطاقة / جواز السفر</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="licence">الرخصة</string>
+    <string name="create">إنشاء</string>
+    <string name="cancel">إلغاء</string>
+
+    <string name="phone_login">تسجيل الدخول عبر الهاتف</string>
+    <string name="or">أو</string>
+    <string name="enter_email">أدخل البريد الإلكتروني</string>
+    <string name="enter_password">أدخل الرقم السري</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="driver">سائق</string>
+    <string name="mechanic">ميكانيكي</string>
+    <string name="garage_manager">مدير الجراج</string>
+    <string name="create_new_account_register">هل تريد إنشاء حساب جديد؟ تسجيل</string>
+    <string name="forget_password">هل نسيت الرقم السري؟</string>
+
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">الرقم السري</string>
+    <string name="confirm_password">تأكيد الرقم السري</string>
+    <string name="register">تسجيل</string>
+    <string name="do_you_have_account_login">هل لديك حساب بالفعل؟ تسجيل الدخول</string>
+
+    <string name="garage_name">إسم الجراج</string>
+    <string name="empty_space">المساحة الفارغة</string>
+    <string name="no_space">عدد الأماكن الفارغة</string>
+    <string name="price">السعر</string>
+    <string name="_5">٥</string>
+    <string name="rate">تقييم</string>
+    <string name="_0">٠</string>
+    <string name="book">حجز</string>
+
+    <string name="permanent">دائم</string>
+    <string name="non_permanent">غير دائم</string>
+    <string name="date">التاريخ</string>
+    <string name="time">الوقت</string>
+
+    <string name="city">المدينة</string>
+    <string name="number_of_garage_unit">عدد الأماكن المتاحة</string>
+    <string name="unit_price_per_hour">سعر الوحدة لكل ساعة</string>
+    <string name="location">الموقع</string>
+    <string name="licence_paper">ورق الترخيص</string>
+    <string name="add">إضافة</string>
+
+    <string name="garage_manager_name">اسم مدير الجراج</string>
+    <string name="national_id">الهوية الوطنية</string>
+    <string name="phone">الهاتف</string>
+
+    <string name="mechanical_name">اسم الميكانيكي</string>
+
+    <string name="send">إرسال</string>
+
+    <string name="ambulance_123">الإسعاف : ١٢٣</string>
+    <string name="tourism_police_126">شرطة السياحة : ١٢٦</string>
+    <string name="traffic_police_128">شرطة المرور : ١٢٨</string>
+    <string name="police_emergency_122">شرطة الطوارئ : ١٢٢</string>
+    <string name="fire_department_180">قسم الإطفاء : ١٨٠</string>
+    <string name="electricity_emergency_121">طوارئ الكهرباء : ١٢١</string>
+    <string name="gas_emergency_129">طوارئ الغاز : ١٢٩</string>
+
+    <string name="call">مكالمة</string>
+    <string name="chat">دردشة</string>
+
+    <string name="user_name">إسم المستخدم</string>
+    <string name="id_235635638537843">رقم الهوية الوطنية : ٢٣٥٦٤٥٦٤٨٥٣٧٨٤٣</string>
+    <string name="id_255886386346473">رقم الهوية الوطنية : ٢٥٥٨٨٦٣٨٦٣٤٦٤٧٣</string>
+    <string name="email_mousdddddtafa03_gmail_com">البريد الالكتروني : mousdddddtafa03@gmail.com</string>
+    <string name="phone_201159088197">الهاتف : ٠١١٥٩٠٨٨١٩٧+</string>
+    <string name="location_egypt_alx">الموقع: مصر، اسكندريه</string>
+    <string name="paper">الأوراق: </string>
+    <string name="car_id_131_abds">رقم السيارة: ١٣١|أ ب د س</string>
+    <string name="join_in_25_nov_2022">إنضم في ٢٥ نوف ٢٠٢٢</string>
+
+    <string name="account">الحساب</string>
+    <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="change_password">تغيير الرقم السري</string>
+    <string name="app">التطبيق</string>
+    <string name="dark_mode">الوضع المظلم</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="more">المزيد</string>
+    <string name="language">اللغة</string>
+
+    <string name="garage_1">جراج ١</string>
+    <string name="cairo">القاهرة</string>
+    <string name="garage_unit">سعة الجراج</string>
+    <string name="_50">٥٠</string>
+    <string name="hour_price">سعر الساعة</string>
+    <string name="booking_analysis">تفاصيل عن الحجز</string>
+    <string name="__0">٠ ٪</string>
+
+    <string name="customer_name">اسم العميل</string>
+    <string name="description">الوصف</string>
+
+    <string name="normal_map">خريطة عادية</string>
+    <string name="hybrid_map">خريطة هجينة</string>
+    <string name="satellite_map">خريطة القمر الصناعي</string>
+    <string name="terrain_map">خريطة التضاريس</string>
+
+</resources>

@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         toolpar_intialize();
         firebase_tool_intialize();
-        start_google_maps();
+        start_google_maps("garage");
         navigation_items();
 
 
@@ -93,11 +93,11 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         if (task.getResult().exists()) {
                             String names = task.getResult().getString("name");
-                            String urls = task.getResult().getString("uri");
-
-                            Picasso.get().load(urls).into(circleImageView);
+                            if (task.getResult().contains("uri")) {
+                                String urls = task.getResult().getString("uri");
+                                Picasso.get().load(urls).into(circleImageView);
+                            }
                             headerName.setText(names);
-
 
                         } else {
 
@@ -142,10 +142,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void start_google_maps() {
-
+    private void start_google_maps(String type) {
+       Bundle b=new Bundle();
+       b.putString("type",type);
+       MapsFragment m=new MapsFragment();
+       m.setArguments(b);
        getSupportFragmentManager().beginTransaction()
-                .add(R.id.main_framelayout, new MapsFragment()).commit();
+                .add(R.id.main_framelayout, m).commit();
 
     }
     private void navigation_items() {
@@ -161,14 +164,15 @@ public class MainActivity extends AppCompatActivity {
     private void navigation_item_click(MenuItem item)
     {
         if(item.getItemId()==R.id.parking) {
-            start_google_maps();
+            start_google_maps("garage");
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         else if(item.getItemId()==R.id.navigation_menu_profile) {
             replace_fragment(new ProfileFragment());
         }
         else if (item.getItemId() == R.id.navigation_menu_mechanical) {
-            replace_fragment(new MapsFragment());
+            start_google_maps("mechanical");
+            drawerLayout.closeDrawer(GravityCompat.START);
         }
         else if(item.getItemId()==R.id.navigation_menu_Emergency) {
             replace_fragment(new EmergancyFragment());
@@ -177,7 +181,11 @@ public class MainActivity extends AppCompatActivity {
              replace_fragment(new ContactFragment());
         }
         else if(item.getItemId()==R.id.navigation_menu_setting) {
-            replace_fragment(new SettingFragment());
+            Bundle b=new Bundle();
+            b.putString("type","user");
+            SettingFragment f=new SettingFragment();
+            f.setArguments(b);
+            replace_fragment(f);
         }
         else if(item.getItemId()==R.id.navigation_logout) {
             auth.signOut();

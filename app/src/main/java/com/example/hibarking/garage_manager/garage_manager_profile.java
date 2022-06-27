@@ -5,6 +5,11 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
+
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -14,6 +19,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hibarking.R;
+
 import com.example.hibarking.driver.user_account.create_account;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,6 +38,7 @@ public class garage_manager_profile extends Fragment {
     EditText name, id , email , phone;
     CircleImageView imageView;
     @Override
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initialization();
@@ -50,6 +57,7 @@ public class garage_manager_profile extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_garage_manager_profile, container, false);
     }
+
 
     public void getDateGarageManager(){
         FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
@@ -106,3 +114,4 @@ public class garage_manager_profile extends Fragment {
     }
 
 }
+

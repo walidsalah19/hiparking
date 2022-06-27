@@ -55,7 +55,7 @@
                 android:textSize="18sp"
 
                 android:textColor="@color/white"
-                android:text="phone login"
+                android:text="@string/phone_login"
                 android:background="@drawable/button_shape"
                 android:paddingStart="20dp"
                 android:drawableLeft="@drawable/ic_baseline_phone_android_24"/>
@@ -75,7 +75,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="OR"
+                        android:text="@string/or"
                         android:textColor="@color/grean"
                         android:layout_weight="1"
                         android:gravity="center"
@@ -104,7 +104,7 @@
                 android:inputType="textEmailAddress"
                 android:drawablePadding="10dp"
                 android:drawableStart="@drawable/ic_baseline_email_24"
-                android:hint=" Enter email"
+                android:hint="@string/enter_email"
                 android:ems="10"/>
 
             <EditText
@@ -114,8 +114,10 @@
                 android:id="@+id/email_password_text"
                 android:textColor="?attr/text_color"
                 android:inputType="textPassword"
+
                 android:textColorHint="@android:color/darker_gray"
-                android:hint="Enter password"
+                android:hint="@string/enter_password"
+
                 android:paddingStart="10dp"
                 android:drawablePadding="10dp"
                 android:background="@drawable/edittext_shape"
@@ -136,8 +138,7 @@
                 android:textSize="18sp"
 
                 android:background="@drawable/button_shape"
-                android:text="login"/>
-
+                android:text="@string/login"/>
 
 
             <TextView
@@ -147,7 +148,7 @@
                 android:id="@+id/new_account"
                 android:textColor="@color/grean"
                 android:gravity="center"
-                android:text="Create new account ?  Register"/>
+                android:text="@string/create_new_account_register"/>
 
             <TextView
                 android:layout_height="wrap_content"
@@ -155,7 +156,7 @@
                 android:layout_margin="10dp"
                 android:id="@+id/forgit_password"
                 android:textColor="@color/grean"
-                android:text="Forget password ?"/>
+                android:text="@string/forget_password"/>
                 </LinearLayout>
                 </androidx.cardview.widget.CardView>
         </LinearLayout>

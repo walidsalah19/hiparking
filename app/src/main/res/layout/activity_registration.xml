@@ -62,7 +62,7 @@
             android:drawableStart="@drawable/ic_baseline_email_24"
             android:drawablePadding="5dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:padding="10dp"
@@ -88,7 +88,7 @@
                 android:drawableStart="@drawable/ic_lock"
                 android:drawablePadding="5dp"
                 android:ems="10"
-                android:hint="password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:padding="10dp"
                 android:textColor="?attr/text_color"
@@ -110,7 +110,7 @@
         android:ems="10"
         android:textColor="?attr/text_color"
         android:inputType="textPassword"
-        android:hint="confirm password"
+        android:hint="@string/confirm_password"
         android:drawableStart="@drawable/ic_lock"
         android:textColorHint="@android:color/darker_gray"
         android:drawablePadding="5dp"
@@ -135,11 +135,11 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
 
-            android:textColor="@color/white"
-           
             android:background="@drawable/button_shape"
-            android:text="Register"
+
+            android:text="@string/register"
             android:textAllCaps="false"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
 
@@ -155,7 +155,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:text="Driver"
+                android:text="@string/driver"
                 android:textColor="@android:color/darker_gray" />
 
             <RadioButton
@@ -163,7 +163,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:text="Mechanic"
+                android:text="@string/mechanic"
                 android:textColor="@android:color/darker_gray" />
 
             <RadioButton
@@ -171,7 +171,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:text="Garage manager"
+                android:text="@string/garage_manager"
                 android:textColor="@android:color/darker_gray" />
         </RadioGroup>
 
@@ -183,9 +183,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Do you have account ?  Login"
-            android:textColor="@color/grean"
-            />
+            android:text="@string/do_you_have_account_login"
+            android:textColor="@color/grean" />
 
     </RelativeLayout>
     </androidx.cardview.widget.CardView>

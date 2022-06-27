@@ -21,4 +21,13 @@ public class SharedPref {
     public boolean loadThemeMode(){
         return preferences.getBoolean("state",false);
     }
+    public void setlanguage(String language){
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("language",language);
+        editor.apply();
+    }
+
+    public String loadlanguage(){
+        return preferences.getString("language","");
+    }
 }
