@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -21,7 +22,11 @@ import com.example.hibarking.Fragments.EmergancyFragment;
 import com.example.hibarking.Fragments.SettingFragment;
 import com.example.hibarking.MainActivity;
 import com.example.hibarking.R;
+
 import com.example.hibarking.driver.user_account.create_account;
+
+import com.example.hibarking.SharedPref;
+
 import com.example.hibarking.mechanical.Fragments.Mechanical_Profile;
 import com.example.hibarking.mechanical.Fragments.ViewDrivers;
 import com.example.hibarking.user_acess.login;
@@ -46,9 +51,17 @@ public class main_mechanical extends AppCompatActivity {
     CircleImageView  imageView;
     private NavigationView navigationView;
     private DrawerLayout drawerLayout;
+    SharedPref sharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPref = new SharedPref(this);
+        if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+            setTheme(R.style.Theme_Dark);
+        }else {
+            setTheme(R.style.Theme_Light);
+        }
         setContentView(R.layout.activity_main_mechanical);
 
 

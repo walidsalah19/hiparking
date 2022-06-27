@@ -21,7 +21,14 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.type.Color;
 
 import java.util.ArrayList;
@@ -33,6 +40,8 @@ public class map_routes implements RoutingListener  {
     private LatLng end=null;
     private LatLng start=null;
     Location myLocation;
+    String user_id,garage_id;
+    FirebaseFirestore database;
     private List<Polyline> polylines=null;
     Location destinationLocation=null;
     public map_routes(GoogleMap mMap, Fragment fragment,Location myLocation) {
@@ -42,22 +51,47 @@ public class map_routes implements RoutingListener  {
     }
     public void rout()
     {
-        //get destination location when user click on map
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+        FirebaseAuth auth=FirebaseAuth.getInstance();
+        user_id=auth.getCurrentUser().getUid().toString();
+        database=FirebaseFirestore.getInstance();
+        database.collection("booking").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public boolean onMarkerClick(@NonNull Marker marker) {
-                end=marker.getPosition();
-
-                //  mMap.clear();
-
-                start=new LatLng(myLocation.getLatitude(),myLocation.getLongitude());
-                //start route finding
-                Findroutes(start,end);
-                return false;
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+               if (task.isSuccessful()) {
+                   boolean found=false;
+                   for (QueryDocumentSnapshot document : task.getResult()) {
+                       String id=document.get("id").toString();
+                       if (user_id.equals(id))
+                       {
+                           garage_id=document.get("garage_id").toString();
+                           found=true;
+                           break;
+                       }
+                   }
+                   if (found)
+                   {
+                       get_garage_lcation();
+                   }
+               }
             }
         });
-
     }
+
+    private void get_garage_lcation() {
+        database.collection("garage_requist").document(garage_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                  if(task.getResult().exists())
+                  {
+                      end=new LatLng(Double.parseDouble(task.getResult().get("latitude").toString()),Double.parseDouble(task.getResult().get("longitude").toString()));
+                      start=new LatLng(myLocation.getLatitude(),myLocation.getLongitude());
+                      //start route finding
+                      Findroutes(start,end);
+                  }
+            }
+        });
+    }
+
     // function to find Routes.
     public void Findroutes(LatLng Start, LatLng End)
     {

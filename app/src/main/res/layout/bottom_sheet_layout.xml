@@ -29,10 +29,10 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Garage Name"
+                android:text="@string/garage_name"
                 android:textColor="@color/grean"
                 android:paddingStart="@dimen/_10sdp"
                 android:textSize="@dimen/_20sdp"
@@ -40,10 +40,10 @@
 
             <TextView
                 android:id="@+id/bottomsheet_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="name"
+                android:text="@string/name"
                 android:gravity="center"
                 android:textColor="@color/grean"
                 android:textSize="@dimen/_20sdp"/>
@@ -57,10 +57,15 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1.4"
+<<<<<<< HEAD
                 android:text="empty Space "
+                android:layout_weight="1"
+=======
+                android:layout_weight="1.4"
+                android:text="@string/empty_space"
+>>>>>>> eed2489bb2fa1b008c67240a2689a7ac1e601fb7
                 android:textColor="@color/grean"
                 android:paddingStart="@dimen/_10sdp"
                 android:textSize="@dimen/_20sdp"
@@ -68,10 +73,10 @@
 
             <TextView
                 android:id="@+id/bottomsheet_apace"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="No space "
+                android:text="@string/no_space"
                 android:gravity="center"
                 android:textColor="@color/grean"
                 android:textSize="@dimen/_20sdp"/>
@@ -85,10 +90,10 @@
 
             <TextView
                 android:id="@+id/price"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="price"
+                android:text="@string/price"
                 android:textColor="@color/grean"
                 android:paddingStart="@dimen/_10sdp"
                 android:textSize="@dimen/_20sdp"
@@ -96,10 +101,10 @@
 
             <TextView
                 android:id="@+id/bottomsheet_price"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5"
+                android:text="@string/_5"
                 android:gravity="center"
                 android:textColor="@color/grean"
                 android:textSize="@dimen/_20sdp"/>
@@ -113,10 +118,10 @@
 
             <TextView
                 android:id="@+id/rate"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Rate"
+                android:text="@string/rate"
                 android:textColor="@color/grean"
                 android:paddingStart="@dimen/_10sdp"
                 android:textSize="@dimen/_20sdp"
@@ -124,10 +129,15 @@
 
             <TextView
                 android:id="@+id/bottomsheet_rate"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+<<<<<<< HEAD
                 android:text="0"
+                android:layout_weight="1"
+=======
+                android:layout_weight="1"
+                android:text="@string/_0"
+>>>>>>> eed2489bb2fa1b008c67240a2689a7ac1e601fb7
                 android:gravity="center"
                 android:textColor="@color/grean"
                 android:textSize="@dimen/_20sdp"/>
@@ -148,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_shape"
-                android:text="book"
+                android:text="@string/book"
                 android:textColor="@color/white"/>
         </LinearLayout>
     </RelativeLayout>

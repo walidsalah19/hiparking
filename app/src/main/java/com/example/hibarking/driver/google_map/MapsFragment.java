@@ -18,6 +18,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ import android.widget.Toast;
 
 import com.example.hibarking.R;
 import com.example.hibarking.data_class.garage_model;
+import com.example.hibarking.data_class.user_mechanical_data;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -37,9 +39,18 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
+import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.core.Observer;
 
 public class MapsFragment extends Fragment {
     private GoogleMap mMap;
@@ -49,7 +60,10 @@ public class MapsFragment extends Fragment {
     private boolean locationpermassion = false;
     private SupportMapFragment mapFragment;
     private ArrayList<garage_model> latLngArrayList;
-    private TextView location_name,location_unit,location_rate,location_price;
+    private ArrayList<user_mechanical_data> mechanical_arr;
+    private int count=0;
+
+
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         @Override
@@ -58,8 +72,13 @@ public class MapsFragment extends Fragment {
             if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)&&locationpermassion) {
                 get_my_location();
             }
-
-           getdata_from_map();
+            String t=getArguments().getString("type");
+            if (t.equals("garage")) {
+                getdata_from_map();
+            }
+            else {
+                get_mechanical_data();
+            }
         }
     };
 
@@ -72,6 +91,7 @@ public class MapsFragment extends Fragment {
         map_search.search_method(v,mMap,MapsFragment.this);
         imagebottom_my_location(v);
         map_type_method(v);
+
         return v;
     }
 
@@ -161,8 +181,8 @@ public class MapsFragment extends Fragment {
                         mMap.getMinZoomLevel();
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lat, 17));
                         // draw rout in map
-                        map_routes rout=new map_routes(mMap,MapsFragment.this,location);
-                        rout.rout();
+                      /*  map_routes rout=new map_routes(mMap,MapsFragment.this,location);
+                        rout.rout();*/
                     }
                 }
             });
@@ -170,11 +190,6 @@ public class MapsFragment extends Fragment {
         {
             Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-    }
-    private void add_location_zoom_in_map(LatLng currentLocation,int zoom,String title)
-    {
-        mMap.addMarker(new MarkerOptions()
-                .position(currentLocation).title(title));
     }
     private void alart_permation()
     {
@@ -218,34 +233,20 @@ public class MapsFragment extends Fragment {
           }
       });
     }
-    // add garage to map and show in bottom sheet
     private void getdata_from_map()
     {
-        // map marker
-        latLngArrayList = new ArrayList<>();
-        latLngArrayList.add(new garage_model("sadny","city","5","6","",29.976480, 31.131302, 150,6));
-        for (int i = 0; i < latLngArrayList.size(); i++) {
+        get_garage_data garage=new get_garage_data(mMap,MapsFragment.this);
+        latLngArrayList=garage.get_garage_data();
 
-            // adding marker to each location on google maps
-            LatLng lat=new LatLng(latLngArrayList.get(i).getLatitude(), latLngArrayList.get(i).getLongitude());
-            mMap.addMarker(new MarkerOptions()
-                    .position(lat)
-                    .title(latLngArrayList.get(i).getGarage_name()))
-                     ;
-        }
-       // bottom sheet
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(@NonNull Marker marker) {
                 for (int i = 0; i < latLngArrayList.size(); i++) {
                     if(latLngArrayList.get(i).getLatitude()==marker.getPosition().latitude&&latLngArrayList.get(i).getLongitude()==marker.getPosition().longitude)
                     {
+
                         garage_id=latLngArrayList.get(i).getGarage_id();
-                        int book=  get_location_firebase.get_number_of_booking(garage_id);
-                        int empty=latLngArrayList.get(i).getUnit_number()-book;
-                        Bottom_Sheet_Menu m=new Bottom_Sheet_Menu(garage_id,latLngArrayList.get(i).getGarage_name(),empty+" ",
-                                "2",latLngArrayList.get(i).getHour_price()+" ");
-                        m.show(getChildFragmentManager(),"MapsFragment");
+                        garage.get_number_of_booking(garage_id,latLngArrayList.get(i).getGarage_name(),latLngArrayList.get(i).getHour_price()+" ",latLngArrayList.get(i).getUnit_number()+"");
                     }
                 }
 
@@ -297,5 +298,27 @@ public class MapsFragment extends Fragment {
                 })
                 .create()
                 .show();
+    }
+    private void get_mechanical_data()
+    {
+        get_mechanical_data mech=new get_mechanical_data(mMap,MapsFragment.this);
+        mechanical_arr=mech.get_garage_data();
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(@NonNull Marker marker) {
+                for (int i = 0; i < mechanical_arr.size(); i++) {
+                    if(mechanical_arr.get(i).getLatitude()==marker.getPosition().latitude&&mechanical_arr.get(i).getLongitude()==marker.getPosition().longitude)
+                    {
+
+                       String  mechanical_id=mechanical_arr.get(i).getId();
+                        mech.get_rate(mechanical_id,mechanical_arr.get(i).getName());
+                    }
+                }
+
+
+                return false;
+            }
+        });
     }
 }

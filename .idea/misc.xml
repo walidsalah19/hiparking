@@ -3,6 +3,45 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/drawable/button_shape.xml" value="0.1395" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/activity_create_account.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/activity_login_activity.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/activity_main_garage.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/activity_main_mechanical.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/activity_maps.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/activity_registration.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/activity_splash.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/chating_recycler_layout.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/flooting_window.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_add_garage_info.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_add_garage_man_data.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_add_mechanical_data.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_booking_fragment.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_chating.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_contact.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_display_garages.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_emergancy.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_garage_manager_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_map2.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_maps.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_mechanical__profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_mechanical_user.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_payment_faragment.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_setting.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_show_garage_info.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_view_customer_data.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/fragment_view_drivers.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/garage_manager_show_recyclview.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/main_appbar_map.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/main_garge_menu.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/main_mechanical_menu.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/map_info.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/map_type.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/mechanical_recycler.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/wahee/OneDrive/Desktop/github/hibarking_old/app/src/main/res/layout/navigation_header.xml" value="0.22826086956521738" />
         <entry key="..\:/project/hibarking/app/src/main/res/drawable/button_shape.xml" value="0.22552083333333334" />
         <entry key="..\:/project/hibarking/app/src/main/res/drawable/edittext_shape.xml" value="0.22552083333333334" />
         <entry key="..\:/project/hibarking/app/src/main/res/drawable/edittext_shape_profile.xml" value="0.1445" />
@@ -67,7 +106,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

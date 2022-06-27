@@ -49,13 +49,14 @@ private ProgressBar progressBar;
     int max_unit,booking_num=0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         sharedPref = new SharedPref(getActivity());
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
             getActivity().setTheme(R.style.Theme_Dark);
         }else {
             getActivity().setTheme(R.style.Theme_Light);
         }
-        super.onCreate(savedInstanceState);
+
 
     }
 
@@ -133,7 +134,7 @@ private ProgressBar progressBar;
             }
         });
     }
-    
+    int count=0;
     private void getrate()
     {
        
@@ -146,13 +147,14 @@ private ProgressBar progressBar;
                         String id = document.get("garage_id").toString();
                         if (garage_id.equals(id))
                         {
+                            count++;
                            rate_num+=Double.parseDouble(document.get("rate").toString());
                         }
                     }
                 }
             }
         });
-        rate.setText(rate_num+"");
+        rate.setText((rate_num/count)+"");
         dialog.dismiss();
     }
     private void get_booking_analysis()
