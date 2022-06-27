@@ -44,7 +44,7 @@
             android:layout_gravity="center_vertical"
             android:orientation="vertical">
             <EditText
-                android:id="@+id/mec_name_gar"
+                android:id="@+id/name_gar"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
@@ -57,7 +57,7 @@
                 android:background="@drawable/edittext_shape_profile"
                 android:enabled="false"/>
             <EditText
-                android:id="@+id/mec_id_gar"
+                android:id="@+id/id_gar"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
@@ -96,7 +96,7 @@
                     android:src="@drawable/ic_baseline_email_24"/>
             </FrameLayout>
             <EditText
-                android:id="@+id/mec_email_gar"
+                android:id="@+id/email_gar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Email : mousdddddtafa03@gmail.com"
@@ -135,7 +135,7 @@
                     android:src="@drawable/ic_phone"/>
             </FrameLayout>
             <EditText
-                android:id="@+id/mec_phone_gar"
+                android:id="@+id/phone_gar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Phone : +201159088197"

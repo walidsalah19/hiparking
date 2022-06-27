@@ -225,7 +225,7 @@ public class Mechanical_Profile extends Fragment {
 
 
                       } else {
-                          Intent intent = new Intent(getActivity(), create_account.class);
+                          Intent intent = new Intent(getActivity(), add_mechanical_data.class);
                           startActivity(intent);
                       }
                   } catch (NullPointerException nullPointerException) {
@@ -256,8 +256,10 @@ public class Mechanical_Profile extends Fragment {
         paper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlPaper));
-                getActivity().startActivity(intent);
+                if(UrlPaper!=null) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(UrlPaper));
+                    getActivity().startActivity(intent);
+                }
             }
         });
     }

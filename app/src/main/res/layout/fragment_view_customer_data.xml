@@ -30,10 +30,9 @@
            android:background="@color/white"
            >
            <de.hdodenhof.circleimageview.CircleImageView
-               android:id="@+id/mechanical_customer_image"
+               android:id="@+id/mec_customer_image"
                android:layout_width="@dimen/_114sdp"
                android:layout_height="@dimen/_112sdp"
-               android:src="@drawable/profile"
                app:civ_border_color="@color/grean"
                app:civ_border_width="@dimen/_2sdp"
                app:layout_constraintHorizontal_bias="0.196"
@@ -53,7 +52,7 @@
                  android:text="customer name"
                  android:background="@drawable/textview_shap"
                  android:padding="@dimen/_8sdp"
-                 android:id="@+id/mechanical_customer_name"
+                 android:id="@+id/mec_customer_name"
                  app:layout_constraintTop_toTopOf="parent"
                  >
              </TextView>
@@ -66,44 +65,17 @@
                android:text="date"
                android:background="@drawable/textview_shap"
                android:padding="@dimen/_8sdp"
-               android:id="@+id/mechanical_customer_date"
+               android:id="@+id/mec_customer_date"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintTop_toBottomOf="@id/mechanical_customer_name"
+               app:layout_constraintTop_toBottomOf="@id/mec_customer_name"
                >
            </TextView>
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_margin="@dimen/_5sdp"
-               android:textSize="@dimen/_18sdp"
-               android:textColor="@color/black"
-               android:background="@drawable/textview_shap"
-               android:padding="@dimen/_8sdp"
-               android:text="price"
-               android:layout_marginLeft="@dimen/_18sdp"
-               android:id="@+id/mechanical_customer_price"
-               app:layout_constraintEnd_toStartOf="@id/mechanical_customer_date"
-               app:layout_constraintTop_toBottomOf="@id/mechanical_customer_name"
-               >
-           </TextView>
-           <TextView
-               android:layout_width="match_parent"
-               android:layout_height="@dimen/_100sdp"
-               android:id="@+id/mechanicl_customer_describtion"
-               android:layout_centerHorizontal="true"
-               android:layout_marginTop="@dimen/_10sdp"
-               android:gravity="start"
-               android:padding="@dimen/_5sdp"
-               android:text="description"
-               android:textSize="18sp"
-               android:background="@drawable/textview_shap"
-               app:layout_constraintTop_toBottomOf="@id/mechanical_customer_image"
-               android:textColor="#000" />
+
            <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:orientation="horizontal"
-               app:layout_constraintTop_toBottomOf="@id/mechanicl_customer_describtion"
+               app:layout_constraintTop_toBottomOf="@id/mec_customer_image"
                >
            <androidx.appcompat.widget.AppCompatButton
                android:layout_width="match_parent"
