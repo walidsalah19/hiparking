@@ -85,7 +85,11 @@ public class main_mechanical extends AppCompatActivity {
             replace_fragment(new ContactFragment());
         }
         else if(item.getItemId()== R.id.m_navigation_setting) {
-            replace_fragment(new SettingFragment());
+            Bundle b=new Bundle();
+            b.putString("type","mechanical");
+            SettingFragment f=new SettingFragment();
+            f.setArguments(b);
+            replace_fragment(f);
         }
         else if(item.getItemId()== R.id.m_navigation_logout) {
             auth.signOut();

@@ -181,7 +181,11 @@ public class MainActivity extends AppCompatActivity {
              replace_fragment(new ContactFragment());
         }
         else if(item.getItemId()==R.id.navigation_menu_setting) {
-            replace_fragment(new SettingFragment());
+            Bundle b=new Bundle();
+            b.putString("type","user");
+            SettingFragment f=new SettingFragment();
+            f.setArguments(b);
+            replace_fragment(f);
         }
         else if(item.getItemId()==R.id.navigation_logout) {
             auth.signOut();

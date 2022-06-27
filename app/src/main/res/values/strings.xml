@@ -89,5 +89,8 @@
     <string name="hybrid_map">hybrid map</string>
     <string name="satellite_map">satellite map</string>
     <string name="terrain_map">terrain map</string>
+    <string name="please_enter_email">please enter you\'r email</string>
+    <string name="successful_add">"Successfully added "</string>
+    <string name="change_language">change language</string>
 
 </resources>

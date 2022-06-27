@@ -50,12 +50,9 @@ public class booking_fragment extends Fragment {
     private  String garage_id,userId;
     private  FirebaseAuth auth;
     private FirebaseFirestore database;
-<<<<<<< HEAD
     private SweetAlertDialog pDialogLoading,pDialogSuccess,pDialogerror;
-=======
 
     SharedPref sharedPref;
->>>>>>> eed2489bb2fa1b008c67240a2689a7ac1e601fb7
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

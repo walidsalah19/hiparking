@@ -59,13 +59,8 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
                 android:text="empty Space "
                 android:layout_weight="1"
-=======
-                android:layout_weight="1.4"
-                android:text="@string/empty_space"
->>>>>>> eed2489bb2fa1b008c67240a2689a7ac1e601fb7
                 android:textColor="@color/grean"
                 android:paddingStart="@dimen/_10sdp"
                 android:textSize="@dimen/_20sdp"
@@ -131,13 +126,8 @@
                 android:id="@+id/bottomsheet_rate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
                 android:text="0"
                 android:layout_weight="1"
-=======
-                android:layout_weight="1"
-                android:text="@string/_0"
->>>>>>> eed2489bb2fa1b008c67240a2689a7ac1e601fb7
                 android:gravity="center"
                 android:textColor="@color/grean"
                 android:textSize="@dimen/_20sdp"/>

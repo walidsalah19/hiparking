@@ -158,7 +158,11 @@ public class main_garage_manager extends AppCompatActivity {
           move_fragment(new ContactFragment());
       }
       else if(item.getItemId()==R.id.g_navigation_setting) {
-          move_fragment(new SettingFragment());
+          Bundle b=new Bundle();
+          b.putString("type","manager");
+          SettingFragment f=new SettingFragment();
+          f.setArguments(b);
+          move_fragment(f);
       }
 
     }
