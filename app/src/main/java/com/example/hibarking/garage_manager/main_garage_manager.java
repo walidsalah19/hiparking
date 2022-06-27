@@ -12,6 +12,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
@@ -21,6 +22,7 @@ import com.example.hibarking.Fragments.EmergancyFragment;
 import com.example.hibarking.Fragments.SettingFragment;
 import com.example.hibarking.SharedPref;
 import com.example.hibarking.driver.user_account.create_account;
+import com.example.hibarking.mechanical.main_mechanical;
 import com.example.hibarking.user_acess.login;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -87,10 +89,19 @@ public class main_garage_manager extends AppCompatActivity {
                         if (task.getResult().exists()) {
 
                             String names = task.getResult().getString("username");
-                            if (task.getResult().contains("image")) {
-                                String urls = task.getResult().getString("image");
-                                Picasso.get().load(urls).into(circleImageView);
+                            String urls;
+                            if(task.getResult().contains("image")){
+                                urls = task.getResult().getString("image");
+                            }else {
+                                urls="null";
                             }
+                            if(!urls.equals("null"))
+                                Picasso.get().load(urls).into(circleImageView);
+                            else {
+                                circleImageView.setImageResource(R.drawable.profile_image);
+                            }
+
+
                             headerName.setText(names);
 
 
@@ -169,6 +180,8 @@ public class main_garage_manager extends AppCompatActivity {
     private void move_fragment(Fragment Fragment)
     {
         getSupportFragmentManager().beginTransaction().replace(R.id.grarage_manager_frameLayout,Fragment).addToBackStack(null).commitAllowingStateLoss();
+        drawerLayout.closeDrawer(GravityCompat.START);
+
     }
     private void check_user_acess() {
         firebaseUser = auth.getCurrentUser();
@@ -176,4 +189,5 @@ public class main_garage_manager extends AppCompatActivity {
             startActivity(new Intent(this, login.class));
         }
     }
+
 }

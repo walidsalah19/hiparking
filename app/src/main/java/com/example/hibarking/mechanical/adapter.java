@@ -10,24 +10,25 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hibarking.R;
+import com.example.hibarking.data_class.Driver;
 import com.example.hibarking.data_class.DriverMechanicalRegister;
 
 import java.util.ArrayList;
 
 
 public class adapter extends RecyclerView.Adapter<adapter.helper>{
-    ArrayList<DriverMechanicalRegister> arrayList;
+    ArrayList<Driver> arrayList;
     Context context;
     private OnItemClickListener mListener;
 
     public interface OnItemClickListener{
-        void onItemUnRegister(String name ,String uid , String description , String date);
+        void onItemUnRegister(String name ,String uid , String date);
 
     }
     public void setOnItemClickListener(OnItemClickListener listener){
         mListener=listener;
     }
-    public adapter(ArrayList<DriverMechanicalRegister> ArrayList, Context context)
+    public adapter(ArrayList<Driver> ArrayList, Context context)
     {
         this.arrayList = ArrayList;
         this.context = context;
@@ -45,12 +46,11 @@ public class adapter extends RecyclerView.Adapter<adapter.helper>{
         holder.name.setText(arrayList.get(position).getName());
         String Uid = arrayList.get(position).getId();
         String Name = arrayList.get(position).getName();
-        String description = arrayList.get(position).getDescription();
         String date = arrayList.get(position).getDate();
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mListener.onItemUnRegister(Name,Uid,description,date);
+                mListener.onItemUnRegister(Name,Uid,date);
             }
         });
     }
