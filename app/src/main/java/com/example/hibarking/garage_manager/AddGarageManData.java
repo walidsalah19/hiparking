@@ -108,18 +108,18 @@ public class AddGarageManData extends AppCompatActivity {
         String sub=phone.getText().toString().substring(0,3);
         if (TextUtils.isEmpty(username.getText().toString()))
         {
-            username.setError("please enter you'r name");
+            username.setError("please enter your name");
         }
        else if (TextUtils.isEmpty(phone.getText().toString())&&phone.getText().toString().length()!=11)
         {
-            phone.setError("please enter you'r correct phone");
+            phone.setError("please enter your correct phone");
         }
         else if (!sub.equals("010")&&!sub.equals("011")&&!sub.equals("012")&&!sub.equals("015"))
         {
-            phone.setError("please enter you'r correct phone");
+            phone.setError("please enter your correct phone");
         }
         else if (TextUtils.isEmpty(national_id.getText().toString())||national_id.getText().toString().length()!=14) {
-            national_id.setError("please enter you'r national id");
+            national_id.setError("please enter your national id");
         }
         else {
             pDialogLoading.setTitleText("update garage manager data");

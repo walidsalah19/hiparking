@@ -26,13 +26,6 @@
         android:id="@+id/m_navigation_contact">
     </item>
     <item
-        android:title="Rating"
-        android:orderInCategory="100"
-        android:icon="@android:drawable/btn_star_big_on"
-        android:id="@+id/m_navigation_rating"
-        >
-    </item>
-    <item
         android:title="Setting"
         android:orderInCategory="100"
         android:icon="@drawable/ic_settings"
