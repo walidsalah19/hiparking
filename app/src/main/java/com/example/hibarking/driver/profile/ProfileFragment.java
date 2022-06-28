@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -73,7 +75,7 @@ public class ProfileFragment extends Fragment {
     DatabaseReference databaseReference;
     FirebaseFirestore db =FirebaseFirestore.getInstance();
     DocumentReference documentReference;
-    String currentUser_id , Email,DATE;
+    String currentUser_id , Email,DATE, userToken;
     AppCompatButton btuSave;
     create_account_class create;
     private static final int PICK_IMAGE=1;
@@ -292,4 +294,5 @@ public class ProfileFragment extends Fragment {
             System.exit(0);
         }
     }
+
 }

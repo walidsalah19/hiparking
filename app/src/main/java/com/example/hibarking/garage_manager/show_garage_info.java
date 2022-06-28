@@ -1,5 +1,6 @@
 package com.example.hibarking.garage_manager;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +48,7 @@ private ProgressBar progressBar;
      ProgressDialog dialog;
      private TextView parsent;
     double rate_num=0;
-    int max_unit,booking_num=0;
+    float max_unit,booking_num= (float) 0.0;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,15 +101,16 @@ private ProgressBar progressBar;
 
     private void intialization_tool(View v)
     {
-        progressBar=v.findViewById(R.id.progress_bar);
+
         parsent=v.findViewById(R.id.garage_persent_booking);
         name=v.findViewById(R.id.sh_garage_name);
         city=v.findViewById(R.id.sh_garage_city);
         price=v.findViewById(R.id.sh_garage_hour_price);
-        num_unit=v.findViewById(R.id.sh_garage_name);
+        num_unit=v.findViewById(R.id.sh_garage_unit_num);
         location=v.findViewById(R.id.sh_garage_location);
         rate=v.findViewById(R.id.sh_garage_hour_rate);
         paper=v.findViewById(R.id.sh_garage_paper);
+        progressBar=v.findViewById(R.id.progress_bar);
     }
     private void get_garage_data()
     {
@@ -121,10 +124,11 @@ private ProgressBar progressBar;
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful())
                 {
+                    max_unit=Float.parseFloat(task.getResult().get("unit_num").toString());
                     name.setText(task.getResult().get("garage_name").toString());
                     city.setText(task.getResult().get("city").toString());
                     price.setText(task.getResult().get("hour_price").toString());
-                    num_unit.setText(task.getResult().get("unit_num").toString());
+                    num_unit.setText(max_unit+"");
                     latitude=task.getResult().get("latitude").toString();
                     longitude=task.getResult().get("longitude").toString();
                     url=task.getResult().get("garage_paper").toString();
@@ -154,32 +158,40 @@ private ProgressBar progressBar;
                 }
             }
         });
-        rate.setText((rate_num/count)+"");
+        if (rate_num==0.0)
+        {
+            rate.setText("5.0");
+        }
+        else {
+            rate.setText((rate_num/count)+"");
+        }
         dialog.dismiss();
     }
     private void get_booking_analysis()
     {
-        max_unit=Integer.parseInt(num_unit.getText().toString());
+
         database.collection("booking").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                for (QueryDocumentSnapshot document : task.getResult()) {
-                    String id = document.get("garage_id").toString();
-                    if (garage_id.equals(id))
-                    {
-                        booking_num++;
-                        progressBar_method(booking_num);
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        String id = document.get("garage_id").toString();
+                        if (garage_id.equals(id)) {
+                            booking_num ++;
+                            progressBar_method();
+                        }
                     }
+
                 }
             }
         });
 
     }
-    private void progressBar_method(int num) {
-        float persent=(num/max_unit)*100;
-        parsent.setText(persent+" %");
-        progressBar.setMax(max_unit);
-        progressBar.setProgress(num);
+    private void progressBar_method() {
+
+        progressBar.setMax((int)max_unit);
+        progressBar.setProgress((int)booking_num);
+        parsent.setText((booking_num/max_unit)*100+" %");
     }
 
 }

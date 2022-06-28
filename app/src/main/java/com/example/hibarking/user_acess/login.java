@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -25,6 +26,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+
 public class login extends AppCompatActivity {
     private TextView registration,forgit_password;
     private Button login_btn,phone_btn;
@@ -32,6 +35,8 @@ public class login extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseFirestore database;
     private String username,password,type;
+    private SweetAlertDialog pDialogLoading,pDialogSuccess,pDialogerror;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
@@ -41,6 +46,7 @@ public class login extends AppCompatActivity {
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
+        sweetalert();
         text_initialized();
         login_Button_method();
         registration_method();
@@ -52,13 +58,38 @@ public class login extends AppCompatActivity {
         auth=FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null)
         {
+            pDialogLoading.setTitleText(getString(R.string.login));
+            pDialogLoading.show();
              get_user_type(auth.getCurrentUser().getUid().toString());
         }
         super.onStart();
     }
 
 
+    private void sweetalert()
+    {
+        //loading
 
+        pDialogLoading = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
+        pDialogLoading.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+        pDialogLoading.setCancelable(true);
+
+        //error
+        pDialogerror= new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE);
+        pDialogerror.setConfirmText(getString(R.string.dialog_ok));
+        pDialogerror.setConfirmClickListener(sweetAlertDialog -> {
+            pDialogerror.dismiss();
+        });
+        pDialogerror.setCancelable(true);
+
+        //Success
+        pDialogSuccess= new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE);
+        pDialogSuccess.setConfirmText(getString(R.string.dialog_ok));
+        pDialogSuccess.setConfirmClickListener(sweetAlertDialog -> {
+            pDialogSuccess.dismiss();
+        });
+        pDialogSuccess.setCancelable(true);
+    }
 
     private void login_Button_method() {
         login_btn=(Button) findViewById(R.id.email_login);
@@ -93,6 +124,8 @@ public class login extends AppCompatActivity {
             Toast.makeText(this, R.string.enter_data, Toast.LENGTH_SHORT).show();
         }
         else{
+            pDialogLoading.setTitleText(getString(R.string.login));
+            pDialogLoading.show();
                auth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                    @Override
                    public void onComplete(@NonNull Task<AuthResult> task) {
@@ -102,14 +135,15 @@ public class login extends AppCompatActivity {
                        }
                        else
                        {
-                           Toast.makeText(login.this, R.string.no_user, Toast.LENGTH_LONG).show();
+                           pDialogLoading.dismiss();
+                           pDialogerror.setTitleText(getString(R.string.no_user));
+                           pDialogerror.show();
                        }
                    }
                });
 
         }
     }
-    boolean next_user=false;
     private void get_user_type(String id)
     {
 
@@ -120,7 +154,7 @@ public class login extends AppCompatActivity {
                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                    if (task.isSuccessful()) {
                        if (task.getResult().exists()) {
-                           next_user = true;
+                           pDialogLoading.dismiss();
                            startActivity(new Intent(login.this, MainActivity.class));
                            finish();
                        }
@@ -132,6 +166,7 @@ public class login extends AppCompatActivity {
                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                    if (task.isSuccessful()) {
                        if (task.getResult().exists()) {
+                           pDialogLoading.dismiss();
                            startActivity(new Intent(login.this, main_garage_manager.class));
                            finish();
                        }
@@ -143,6 +178,7 @@ public class login extends AppCompatActivity {
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()) {
                     if (task.getResult().exists()) {
+                        pDialogLoading.dismiss();
                         startActivity(new Intent(login.this, main_mechanical.class));
                         finish();
                     }
