@@ -3,6 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layoutDirection="locale"
+    android:background="?attr/background_color"
     android:orientation="vertical">
     <TextView
         android:id="@+id/usernameinfowindow"
@@ -15,25 +16,27 @@
         android:id="@+id/textfrominfowindow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black" />
+        android:textColor="?attr/text_color" />
 
     <TextView
         android:id="@+id/filltextfrominfowindow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxLines="1"
+        android:textColor="?attr/text_color"
         android:textSize="12sp" />
 
     <TextView
         android:id="@+id/texttoinfowindow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black" />
+        android:textColor="?attr/text_color" />
 
     <TextView
         android:id="@+id/filltexttoinfowindow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxLines="1"
+        android:textColor="?attr/text_color"
         android:textSize="12sp" />
 </LinearLayout>

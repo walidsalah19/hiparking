@@ -70,7 +70,7 @@ public class ContactFragment extends Fragment {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful())
                             {
-                                pDialogSuccess.setTitleText("Complaint has been sent successfully");
+                                pDialogSuccess.setTitleText(getString(R.string.compilation));
                                 pDialogSuccess.show();
                             }
                         }

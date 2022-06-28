@@ -74,14 +74,14 @@ public class SettingFragment extends Fragment {
         SweetAlertDialog dialog=   new SweetAlertDialog(getContext(), SweetAlertDialog.CUSTOM_IMAGE_TYPE);
         dialog .setTitleText(getString(R.string.change_language));
         dialog  .setCustomImage(R.drawable.ic_baseline_language_24);
-        dialog .setConfirmText("Arabic");
+        dialog .setConfirmText(getString(R.string.arabic));
         dialog  .getProgressHelper().setBarColor(Color.RED);
         dialog   .setConfirmClickListener(nDialog -> {
 
             change_local_language( "ar");
             nDialog.dismiss();
 
-        }).setCancelText("english")
+        }).setCancelText(getString(R.string.english))
                 .setCancelClickListener(sweetAlertDialog -> {
 
                     change_local_language("en");

@@ -11,7 +11,7 @@
     android:background="@drawable/textview_shap"
     android:textSize="18sp"
     android:padding="@dimen/_5sdp"
-    android:textColor="@color/grean"
+    android:textColor="?attr/background_green"
     android:id="@+id/mechanical_recycler_customer_name">
 </TextView>
 </LinearLayout>

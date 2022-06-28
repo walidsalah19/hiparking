@@ -5,7 +5,6 @@
     <string name="title_activity_maps">Map</string>
     <string name="close">close</string>
     <string name="open">open</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
@@ -79,7 +78,7 @@
     <string name="email_mousdddddtafa03_gmail_com">البريد الالكتروني : mousdddddtafa03@gmail.com</string>
     <string name="phone_201159088197">الهاتف : ٠١١٥٩٠٨٨١٩٧+</string>
     <string name="location_egypt_alx">الموقع: مصر، اسكندريه</string>
-    <string name="paper">الأوراق: </string>
+    <string name="paper">الأوراق </string>
     <string name="car_id_131_abds">رقم السيارة: ١٣١|أ ب د س</string>
     <string name="join_in_25_nov_2022">إنضم في ٢٥ نوف ٢٠٢٢</string>
 
@@ -108,4 +107,73 @@
     <string name="satellite_map">خريطة القمر الصناعي</string>
     <string name="terrain_map">خريطة التضاريس</string>
 
+    <string name="please_enter_email">من فضلك ادخل البريد الالكتروني</string>
+    <string name="successful_add">"تم الاضافة بنجاج"</string>
+    <string name="change_language">تغير اللغة</string>
+    <string name="show_location">عرض الموقع</string>
+
+    <string name="three_digits">يجب عليك إدخال أحرف مكونة من 3 أرقام</string>
+    <string name="expired">انتهت صلاحية بطاقتك. الرجاء إدخال تاريخ الاستخدام بشكل صحيح.</string>
+    <string name="two_digits">يجب إدخال حرفين مكونين من رقمين وستقوم بإدخال الرقم ، حيث تكون القيمة الأكثر رقمًا هي 12 </string>
+    <string name="enter_to_name">أدخل الاسم على بطاقتك.</string>
+    <string name="sixthty_digits">أدخل رقم بطاقتك المكون من 16 رقمًا.</string>
+    <string name="must">يجب عليك إدخال حرفين مكونين من رقمين وستقوم بإدخال الرقم ، حيث تكون القيمة الأكثر رقمًا هي 99</string>
+    <string name="parking">موقف سيارات</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="mechanical">ميكانيكي</string>
+    <string name="emergency">طارئ</string>
+    <string name="contact_us">اتصل بنا</string>
+    <string name="setting">ضبط</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="drivers">السائقين</string>
+    <string name="home">الصفحة الرئيسية</string>
+    <string name="enter_data">الرجاء إدخال البيانات الخاصة بك بشكل صحيح</string>
+    <string name="no_user">لا يوجد مثل هذا المستخدم</string>
+
+
+    <string name="old_booking">لديك حجز قديم</string>
+    <string name="enter_your_name">من فضلك أدخل إسمك</string>
+    <string name="choose_time">الرجاء اختيار الوقت</string>
+    <string name="choose_date">الرجاء اختيار التاريخ</string>
+    <string name="enter_duration">الرجاء إدخال المدة</string>
+    <string name="booking">حجز ناجح</string>
+    <string name="error">حدث خطأ</string>
+    <string name="unable_location">تعذر الحصول على الموقع</string>
+    <string name="destination">مكان الوصول</string>
+    <string name="update_profile">تم تحديث الملف الشخصي</string>
+    <string name="fill_all">املأ جميع الحقول</string>
+    <string name="create_profile">تم إنشاء الملف الشخصي</string>
+    <string name="compilation">تم إرسال الشكوى بنجاح</string>
+    <string name="arabic">عربي</string>
+    <string name="english">الإنجليزية</string>
+    <string name="garage">كراج</string>
+    <string name="select_location">اختر موقعا</string>
+    <string name="yes">تأكيد</string>
+    <string name="no">إلغاء</string>
+    <string name="loading">تحميل البيانات</string>
+    <string name="garage_name_enter">الرجاء إدخال اسم المرآب</string>
+    <string name="enter_city">من فضلك ادخل المدينة</string>
+    <string name="units_garage">برجاء ادخال عدد الوحدات بالجراج</string>
+    <string name="unit_per_hour">الرجاء إدخال سعر الوحدة بالساعة</string>
+    <string name="select_garage_location">الرجاء تحديد موقع المرآب</string>
+    <string name="add_garage_paper">الرجاء اضافة اوراق الجراج</string>
+    <string name="update_date">تم تحديث التاريخ بنجاح</string>
+    <string name="enter_name">من فضلك أدخل إسمك</string>
+    <string name="correct_phone">الرجاء إدخال رقم هاتفك الصحيح</string>
+    <string name="enter_national">الرجاء إدخال الهوية الوطنية الخاصة بك</string>
+    <string name="garage_manager_date">تحديث بيانات مدير المرآب</string>
+    <string name="add_garage_manager">إضافة بيانات مدير المرآب بنجاح</string>
+    <string name="error_loading_data">حدث خطأ في تحميل البيانات</string>
+    <string name="error_occer_image">حدث خطأ في تحميل الصورة </string>
+    <string name="file_pdf">إشعار: يجب أن يكون الملف pdf </string>
+    <string name="upload_file">تم رفع الملف بنجاح </string>
+    <string name="faild_upload">فشل تحميل الملف</string>
+    <string name="profile_created">تم إنشاء الملف الشخصي</string>
+    <string name="more_character">يجب أن تكون كلمة المرور الخاصة بك أكثر من 8 أحرف</string>
+    <string name="valid_email">يجب أن يحتوي البريد الإلكتروني على @ مثل ola@gmail.com</string>
+    <string name="correct_data">الرجاء إدخال البيانات الخاصة بك بشكل صحيح</string>
+    <string name="correct_pass">يجب أن تكون كلمة المرور الخاصة بك أكثر من 8 أحرف</string>
+    <string name="contain_small">يجب أن تحتوي كلمة المرور الخاصة بك على أحرف وأرقام صغيرة وكبيرة</string>
+    <string name="not_match">لا تتطابق مع كلمة المرور </string>
+    <string name="registeration">التسجيل ناجح</string>
 </resources>

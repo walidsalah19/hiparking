@@ -107,7 +107,7 @@ public class add_garage_info extends Fragment {
         add_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pDialogLoading.setTitleText("loading data");
+                pDialogLoading.setTitleText(getString(R.string.loading));
                 pDialogLoading.show();
                 check_data();
             }
@@ -120,27 +120,27 @@ public class add_garage_info extends Fragment {
 
        if (TextUtils.isEmpty(garage_name.getText().toString()))
         {
-            garage_name.setError("please enter the garage name");
+            garage_name.setError(getString(R.string.garage_name_enter));
         }
         else if (TextUtils.isEmpty(city.getText().toString()))
         {
-            city.setError("please enter the city ");
+            city.setError(getString(R.string.enter_city));
         }
         else if (TextUtils.isEmpty(unit.getText().toString()))
         {
-            unit.setError("please enter the number of the units in the garage ");
+            unit.setError(getString(R.string.units_garage));
         }
         else if (TextUtils.isEmpty(price.getText().toString()))
         {
-            price.setError("please enter the unit price per hour  ");
+            price.setError(getString(R.string.unit_per_hour));
         }
         else if (TextUtils.isEmpty(latitude)&& TextUtils.isEmpty(longitude))
         {
-            Toast.makeText(getActivity(),"please select the garage location",Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), R.string.select_garage_location,Toast.LENGTH_LONG).show();
         }
         else if (TextUtils.isEmpty(paper_str))
         {
-            Toast.makeText(getActivity(),"please add the garage papers",Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), R.string.add_garage_paper,Toast.LENGTH_LONG).show();
         }
         else
        {
@@ -166,13 +166,13 @@ public class add_garage_info extends Fragment {
                    if (task.isSuccessful())
                    {
                        pDialogLoading.dismiss();
-                       pDialogSuccess.setTitleText("successful update date ");
+                       pDialogSuccess.setTitleText(getString(R.string.update_date));
                        pDialogSuccess.show();
                    }
                    else
                    {
                        pDialogLoading.dismiss();
-                       pDialogerror.setTitleText("error occur");
+                       pDialogerror.setTitleText(getString(R.string.error));
                        pDialogerror.show();
                    }
             }

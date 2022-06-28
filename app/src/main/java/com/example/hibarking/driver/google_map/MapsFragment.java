@@ -49,9 +49,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import io.reactivex.rxjava3.core.Observable;
-import io.reactivex.rxjava3.core.Observer;
-
 public class MapsFragment extends Fragment {
     private GoogleMap mMap;
     private LocationManager locationManager;

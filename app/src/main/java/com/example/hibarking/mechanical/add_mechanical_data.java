@@ -159,12 +159,12 @@ public class add_mechanical_data extends AppCompatActivity {
                             Uri uri = task.getResult();
                             paper_str= uri.toString();
 
-                            pDialogSuccess.setTitleText("successful upload file ");
+                            pDialogSuccess.setTitleText(getString(R.string.upload_file));
                             pDialogSuccess.show();
 
                         } else {
                             dialog.dismiss();
-                            pDialogerror.setTitleText("Failed to upload file ");
+                            pDialogerror.setTitleText(getString(R.string.faild_upload));
                         }
                     }
                 });
@@ -182,14 +182,14 @@ public class add_mechanical_data extends AppCompatActivity {
         String sub=phone.getText().toString().substring(0,3);
         if (TextUtils.isEmpty(phone.getText().toString())&&phone.getText().toString().length()!=11)
         {
-            phone.setError("please enter correct phone number");
+            phone.setError(getString(R.string.correct_phone));
         }
         else if (!sub.equals("010")&&!sub.equals("011")&&!sub.equals("012")&&!sub.equals("015"))
         {
-            phone.setError("please enter correct phone number");
+            phone.setError(getString(R.string.correct_phone));
         }
         else if (TextUtils.isEmpty(nationalID.getText().toString())||nationalID.getText().toString().length()!=14) {
-            nationalID.setError("please enter your national id");
+            nationalID.setError(getString(R.string.enter_national));
         }
         longitude = move_location.getLongitude();
         latitude = move_location.getLatitude();
@@ -241,7 +241,7 @@ public class add_mechanical_data extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void unused) {
                                 progressBar.setVisibility(View.INVISIBLE);
-                                Toast.makeText(add_mechanical_data.this, "Profile created", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(add_mechanical_data.this, R.string.profile_created, Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(add_mechanical_data.this,main_mechanical.class);
                                 startActivity(intent);
                                 finish();
@@ -268,9 +268,9 @@ public class add_mechanical_data extends AppCompatActivity {
         paper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                pDialogLoading.setTitleText("Notification : file should be pdf ");
-                pDialogLoading.setCancelText("No");
-                pDialogLoading.setConfirmText("yes");
+                pDialogLoading.setTitleText(getString(R.string.file_pdf));
+                pDialogLoading.setCancelText(getString(R.string.no));
+                pDialogLoading.setConfirmText(getString(R.string.yes));
                 pDialogLoading.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                     @Override
                     public void onClick(SweetAlertDialog sweetAlertDialog) {

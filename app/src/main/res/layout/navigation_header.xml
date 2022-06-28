@@ -28,7 +28,7 @@
         android:layout_margin="12.3dp"
         android:id="@+id/circl_imag"
         android:src="?attr/background_color"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/first"
         app:layout_constraintBottom_toTopOf="@id/second"
         >
@@ -41,7 +41,7 @@
         app:civ_border_color="?attr/background_green"
         android:layout_margin="15dp"
         android:id="@+id/circl_imag_navigation_head"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/first"
         app:layout_constraintBottom_toTopOf="@id/second"
         >
@@ -50,15 +50,13 @@
 
     <TextView
         android:id="@+id/user_name"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/circl_imag_navigation_head"
         android:text="@string/user_name"
         android:textColor="@color/white"
         android:textSize="16sp"
-        android:layout_marginStart="@dimen/_5sdp"
-
+        android:layout_marginStart="5dp"
         app:layout_constraintBottom_toTopOf="@id/second"
         app:layout_constraintLeft_toRightOf="@id/circl_imag"
         >

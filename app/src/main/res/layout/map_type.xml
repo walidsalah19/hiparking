@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="?attr/background_color">
 
 
     <RadioGroup
@@ -16,27 +16,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/normal_map"
-            android:textColor="@color/grean"/>
+            android:textColor="?attr/background_green"/>
 
         <RadioButton
             android:id="@+id/hybrid_map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/hybrid_map"
-            android:textColor="@color/grean"/>
+            android:textColor="?attr/background_green"/>
 
         <RadioButton
             android:id="@+id/satellite_map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/satellite_map"
-            android:textColor="@color/grean"/>
+            android:textColor="?attr/background_green"/>
 
         <RadioButton
             android:id="@+id/terrain_map"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/terrain_map"
-            android:textColor="@color/grean"/>
+            android:textColor="?attr/background_green"/>
     </RadioGroup>
 </LinearLayout>

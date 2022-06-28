@@ -99,11 +99,11 @@ public class registration extends AppCompatActivity {
     {
         if (TextUtils.isEmpty(editText_email.getText()))
         {
-            Toast.makeText(this, "Your password should be more than 8 character", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.more_character, Toast.LENGTH_SHORT).show();
         }
         else if(!editText_email.getText().toString().matches(emailpattern))
         {
-            editText_email.setError("Email must valid Contain @ like ola@gmail.com");
+            editText_email.setError(getString(R.string.valid_email));
         }
         else
         {
@@ -114,19 +114,19 @@ public class registration extends AppCompatActivity {
      {
          if(TextUtils.isEmpty(editText_password.getText().toString())||TextUtils.isEmpty(editText_confirm_password.getText().toString()))
          {
-             Toast.makeText(this, "Please Enter Your Data Correctly", Toast.LENGTH_SHORT).show();
+             Toast.makeText(this, R.string.correct_data, Toast.LENGTH_SHORT).show();
          }
          else if(editText_password.getText().toString().length()<8)
          {
-             Toast.makeText(this, "You'r password should be more than 8 character", Toast.LENGTH_SHORT).show();
+             Toast.makeText(this, R.string.correct_pass, Toast.LENGTH_SHORT).show();
          }
          else if(editText_password.getText().toString().matches(passwordPattern))
          {
-             Toast.makeText(this, "You'r password should contain small , large character and number ", Toast.LENGTH_SHORT).show();
+             Toast.makeText(this, R.string.contain_small, Toast.LENGTH_SHORT).show();
          }
          else if(!editText_password.getText().toString().equals(editText_confirm_password.getText().toString()))
          {
-             editText_confirm_password.setError("not match the password ");
+             editText_confirm_password.setError(getString(R.string.not_match));
          }
 
          else
@@ -146,13 +146,13 @@ public class registration extends AppCompatActivity {
                 if(task.isSuccessful())
                 {
                     pDialogLoading.dismiss();
-                    pDialogSuccess.setTitleText("registration successful");
+                    pDialogSuccess.setTitleText(getString(R.string.registeration));
                     pDialogSuccess.show();
                     go_to_create_account();
                 }
                 else {
                     pDialogLoading.dismiss();
-                    pDialogerror.setTitleText("error occur");
+                    pDialogerror.setTitleText(getString(R.string.error));
                     pDialogerror.show();
                 }
             }

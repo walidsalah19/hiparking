@@ -22,7 +22,7 @@
             app:cardPreventCornerOverlap="false"
             app:cardCornerRadius="45dp"
             android:layout_gravity="center_vertical|start"
-            android:background="@color/grean"
+            android:background="?attr/background_green"
             android:elevation="8dp"
             app:cardElevation="10dp"
             >
@@ -52,7 +52,6 @@
                 android:textSize="18sp"
                 android:layout_marginBottom="2dp"
                 android:textAlignment="viewStart"
-                android:text="User name"
                 android:textColor="?attr/text_color"
                 android:background="@drawable/edittext_shape_profile"
                 android:enabled="false"/>
@@ -66,7 +65,6 @@
                 android:background="@drawable/edittext_shape_profile"
                 android:layout_marginBottom="2dp"
                 android:textAlignment="viewStart"
-                android:text="ID : 235635638537843"
                 android:gravity="start"
                 android:enabled="false"
                 android:textColor="@android:color/darker_gray"/>
@@ -99,7 +97,6 @@
                 android:id="@+id/email_gar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email : mousdddddtafa03@gmail.com"
                 android:textSize="15sp"
                 android:maxLines="1"
                 android:background="@drawable/edittext_shape_profile"
@@ -138,7 +135,6 @@
                 android:id="@+id/phone_gar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Phone : +201159088197"
                 android:textColor="@color/white"
                 android:maxLines="1"
                 android:enabled="false"

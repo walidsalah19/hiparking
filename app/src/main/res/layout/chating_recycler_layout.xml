@@ -3,11 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/background_color"
     android:orientation="vertical">
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:background="?attr/background_color"
         android:id="@+id/lineartext">
 
     <TextView
@@ -16,7 +18,7 @@
         android:id="@+id/chatesender"
         android:textStyle="bold"
         android:textSize="14sp"
-        android:textColor="@color/black"
+        android:textColor="?attr/text_color"
         android:padding="20dp"
         android:layout_weight="1"
         android:layout_marginBottom="5dp"
@@ -29,7 +31,7 @@
         android:id="@+id/chateresiver"
         android:textStyle="bold"
         android:textSize="14sp"
-        android:textColor="@color/black"
+        android:textColor="?attr/text_color"
         android:padding="20dp"
         android:layout_weight="1"
         android:layout_marginBottom="5dp"

@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/background_color"
     tools:context=".driver.booking_package.booking_fragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent">
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_20sdp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="?attr/background_color"
         app:cardCornerRadius="@dimen/_10sdp"
         app:cardElevation="@dimen/_10sdp"
         app:cardMaxElevation="@dimen/_10sdp"
@@ -26,7 +26,8 @@
         >
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="?attr/background_color">
 
             <EditText
                 android:id="@+id/booking_driver_name"
@@ -37,13 +38,11 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-
                 android:background="@drawable/edittext_shape"
-
                 android:hint="@string/name"
                 android:padding="@dimen/_15sdp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/text_color" />
+                android:textColor="?attr/text_color"
+                android:textColorHint="@android:color/darker_gray" />
             <LinearLayout android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:orientation="vertical"
@@ -67,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/permanent"
                         android:layout_weight="1"
-                        android:textColor="@color/black"
+                        android:textColor="?attr/text_color"
                         />
 
                     <RadioButton
@@ -76,7 +75,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/non_permanent"
                         android:layout_weight="1"
-                        android:textColor="@color/black"
+                        android:textColor="?attr/text_color"
                         />
                 </RadioGroup>
             </LinearLayout>
@@ -93,7 +92,7 @@
                         android:layout_weight="1"
                         android:text="Duration"
                         android:textSize="@dimen/_18sdp"
-                        android:textColor="@color/black"
+                        android:textColor="?attr/text_color"
                         android:gravity="center"
                         android:padding="@dimen/_5sdp"
                         >
@@ -160,11 +159,10 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
-
                 android:background="@drawable/button_shape"
                 android:text="@string/book"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_18sdp"></androidx.appcompat.widget.AppCompatButton>
+                android:textSize="@dimen/_18sdp"/>
 
         </RelativeLayout>
 

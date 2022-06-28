@@ -4,42 +4,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/parking"
-        android:title="Parking"
+        android:title="@string/parking"
         android:orderInCategory="100"
         android:icon="@drawable/ic_parking">
     </item>
     <item
     android:id="@+id/navigation_menu_profile"
-    android:title="Profile"
+    android:title="@string/profile"
     android:orderInCategory="100"
     android:icon="@drawable/ic_person">
     </item>
     <item
         android:id="@+id/navigation_menu_mechanical"
-        android:title="Mechanical"
+        android:title="@string/mechanical"
         android:orderInCategory="100"
         android:icon="@drawable/ic_mechanical">
     </item>
     <item
         android:id="@+id/navigation_menu_Emergency"
-        android:title="Emergency"
+        android:title="@string/emergency"
         android:orderInCategory="100"
         android:icon="@drawable/ic_emergency">
     </item>
     <item
         android:id="@+id/navigation_menu_contact"
-        android:title="Contact us"
+        android:title="@string/contact_us"
         android:orderInCategory="100"
         android:icon="@drawable/ic_phone">
     </item>
     <item
         android:id="@+id/navigation_menu_setting"
-        android:title="Setting"
+        android:title="@string/setting"
         android:orderInCategory="100"
         android:icon="@drawable/ic_settings">
     </item>
     <item
-        android:title="Logout"
+        android:title="@string/logout"
         android:id="@+id/navigation_logout"
         android:orderInCategory="100"
         android:icon="@drawable/ic_baseline_logout_24">

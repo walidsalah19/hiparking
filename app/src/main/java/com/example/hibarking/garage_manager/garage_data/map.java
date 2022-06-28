@@ -42,7 +42,7 @@ public class map extends Fragment {
                  LatLng lat=new LatLng(Double.parseDouble(move_location.getLatitude()),Double.parseDouble( move_location.getLongitude()));
                  googleMap.addMarker(new MarkerOptions()
                          .position(lat)
-                         .title("garage"))
+                         .title(getString(R.string.garage)))
                  ;
                  googleMap.moveCamera(CameraUpdateFactory.newLatLng(lat));
                  googleMap.getMinZoomLevel();
@@ -55,9 +55,9 @@ public class map extends Fragment {
                          Log.d("location", latLng.longitude + "");
                          //Success
                          SweetAlertDialog pDialogSuccess = new SweetAlertDialog(getActivity(), SweetAlertDialog.NORMAL_TYPE);
-                         pDialogSuccess.setTitleText("select location");
-                         pDialogSuccess.setConfirmText("yes");
-                         pDialogSuccess.setCancelText("No");
+                         pDialogSuccess.setTitleText(getString(R.string.select_location));
+                         pDialogSuccess.setConfirmText(getString(R.string.yes));
+                         pDialogSuccess.setCancelText(getString(R.string.no));
                          pDialogSuccess.setConfirmClickListener(sweetAlertDialog -> {
                              move_location.setLatitude(latLng.latitude + "");
                              move_location.setLongitude(latLng.longitude + "");

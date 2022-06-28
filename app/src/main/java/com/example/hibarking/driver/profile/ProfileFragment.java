@@ -188,7 +188,7 @@ public class ProfileFragment extends Fragment {
                             @Override
                             public void onSuccess(Void unused) {
                                 progressBar.setVisibility(View.INVISIBLE);
-                                Toast.makeText(getContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), R.string.update_profile, Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(getContext(), MainActivity.class);
                                 startActivity(intent);
                             }
@@ -214,7 +214,7 @@ public class ProfileFragment extends Fragment {
 
         }else
         {
-            Toast.makeText(getContext(), "fill all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.fill_all, Toast.LENGTH_SHORT).show();
         }
 
 

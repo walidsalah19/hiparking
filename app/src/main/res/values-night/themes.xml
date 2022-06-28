@@ -15,6 +15,7 @@
 
         <item name="background_color">#1f2235</item>
         <item name="text_color">#FFFFFF</item>
+        <item name="chat">#006401</item>
         <item name="background_green">#006401</item>
         <item name="background_design">#219C44</item>
     </style>

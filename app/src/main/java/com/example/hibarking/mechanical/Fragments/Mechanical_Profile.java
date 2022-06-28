@@ -113,9 +113,9 @@ public class Mechanical_Profile extends Fragment {
         paperEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    pDialogLoading.setTitleText("Notification : file should be pdf ");
-                    pDialogLoading.setCancelText("No");
-                    pDialogLoading.setConfirmText("yes");
+                    pDialogLoading.setTitleText(getString(R.string.file_pdf));
+                    pDialogLoading.setCancelText(getString(R.string.no));
+                    pDialogLoading.setConfirmText(getString(R.string.yes));
                     pDialogLoading.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
                         @Override
                         public void onClick(SweetAlertDialog sweetAlertDialog) {
@@ -332,12 +332,12 @@ public class Mechanical_Profile extends Fragment {
                             Uri uri = task.getResult();
                             paper_str= uri.toString();
 
-                            pDialogSuccess.setTitleText("successful upload file ");
+                            pDialogSuccess.setTitleText(getString(R.string.upload_file));
                             pDialogSuccess.show();
 
                         } else {
                             dialog.dismiss();
-                            pDialogerror.setTitleText("Failed to upload file ");
+                            pDialogerror.setTitleText(getString(R.string.faild_upload));
                         }
                     }
                 });
@@ -356,11 +356,11 @@ public class Mechanical_Profile extends Fragment {
         String sub=phone.getText().toString().substring(0,3);
         if (TextUtils.isEmpty(phone.getText().toString())&&phone.getText().toString().length()!=11)
         {
-            phone.setError("please enter correct phone number");
+            phone.setError(getString(R.string.correct_phone));
         }
         else if (!sub.equals("010")&&!sub.equals("011")&&!sub.equals("012")&&!sub.equals("015"))
         {
-            phone.setError("please enter correct phone number");
+            phone.setError(getString(R.string.correct_phone));
         }
         documentReference=db.collection("Mechanical").document(currentUser_id);
         storageReference= FirebaseStorage.getInstance().getReference("Profile images");
@@ -436,7 +436,7 @@ public class Mechanical_Profile extends Fragment {
 
         }else
         {
-            Toast.makeText(getContext(), "fill all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.fill_all, Toast.LENGTH_SHORT).show();
         }
 
     }

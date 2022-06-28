@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/m_echanical_drowerlayout"
-    android:background="@color/white">
+    android:background="?attr/background_color">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/mechanical_appbar_main"
-            android:background="@color/grean"
+            android:background="?attr/background_green"
             app:titleTextColor="@color/white"
             />
 
@@ -24,7 +24,7 @@
             android:id="@+id/machanical_framelayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
+            android:background="?attr/background_color"
             android:layout_below="@id/mechanical_appbar_main">
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"

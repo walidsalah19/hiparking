@@ -22,7 +22,7 @@
         <androidx.appcompat.widget.SearchView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/grean"
+            android:background="?attr/background_green"
             android:id="@+id/search_view"
             android:theme="@style/SearchViewStyle"
             android:layout_margin="@dimen/_10sdp"
@@ -34,7 +34,7 @@
         android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
         android:id="@+id/view_map_type"
             android:layout_below="@id/search_view"
-            android:popupBackground="@color/lite_grean"
+            android:popupBackground="?attr/background_design"
             android:layout_margin="@dimen/_10sdp"
         >
     </ImageView>

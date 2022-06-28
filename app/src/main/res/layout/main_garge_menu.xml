@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/g_echanical_drowerlayout"
-    android:background="@color/white">
+    android:background="?attr/background_color">
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/garage_manager_appbar_main"
-        android:background="@color/grean"
+        android:background="?attr/background_green"
         app:titleTextColor="@color/white"
         />
     <FrameLayout
@@ -21,7 +21,8 @@
         android:layout_below="@id/garage_manager_appbar_main">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="?attr/background_color">
 
         </RelativeLayout>
     </FrameLayout>

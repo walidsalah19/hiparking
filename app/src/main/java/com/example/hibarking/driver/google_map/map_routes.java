@@ -96,7 +96,7 @@ public class map_routes implements RoutingListener  {
     public void Findroutes(LatLng Start, LatLng End)
     {
         if(Start==null || End==null) {
-            Toast.makeText(fragment.getActivity(),"Unable to get location",Toast.LENGTH_LONG).show();
+            Toast.makeText(fragment.getActivity(), R.string.unable_location,Toast.LENGTH_LONG).show();
         }
         else
         {
@@ -156,7 +156,7 @@ public class map_routes implements RoutingListener  {
         }
         MarkerOptions endMarker = new MarkerOptions();
         endMarker.position(polylineEndLatLng);
-        endMarker.title("Destination");
+        endMarker.title(String.valueOf(R.string.destination));
         mMap.addMarker(endMarker);
     }
 
