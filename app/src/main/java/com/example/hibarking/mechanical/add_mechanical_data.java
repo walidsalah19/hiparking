@@ -83,7 +83,7 @@ public class add_mechanical_data extends AppCompatActivity {
         create_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UploadData();
+                checkData();
             }
         });
     }
@@ -175,11 +175,10 @@ public class add_mechanical_data extends AppCompatActivity {
         }
 
     }
-    private void UploadData() {
-        String mec_name =name.getText().toString();
-        String mec_nationalId=nationalID.getText().toString();
-        String mec_phone=phone.getText().toString();
+    private void checkData(){
         String sub=phone.getText().toString().substring(0,3);
+        longitude = move_location.getLongitude();
+        latitude = move_location.getLatitude();
         if (TextUtils.isEmpty(phone.getText().toString())&&phone.getText().toString().length()!=11)
         {
             phone.setError(getString(R.string.correct_phone));
@@ -190,14 +189,29 @@ public class add_mechanical_data extends AppCompatActivity {
         }
         else if (TextUtils.isEmpty(nationalID.getText().toString())||nationalID.getText().toString().length()!=14) {
             nationalID.setError(getString(R.string.enter_national));
+        } else if (TextUtils.isEmpty(latitude)&& TextUtils.isEmpty(longitude))
+        {
+            Toast.makeText(this, R.string.select_garage_location,Toast.LENGTH_LONG).show();
         }
+        else if (TextUtils.isEmpty(paper_str))
+        {
+            Toast.makeText(this, R.string.add_garage_paper,Toast.LENGTH_LONG).show();
+        }else {
+            UploadData();
+        }
+    }
+    private void UploadData() {
+        String mec_name =name.getText().toString();
+        String mec_nationalId=nationalID.getText().toString();
+        String mec_phone=phone.getText().toString();
         longitude = move_location.getLongitude();
         latitude = move_location.getLatitude();
+
 
         documentReference=db.collection("Mechanical").document(currentUser_id);
         storageReference= FirebaseStorage.getInstance().getReference("Profile images");
 
-        if(!TextUtils.isEmpty(mec_name) && !TextUtils.isEmpty(mec_nationalId) && !TextUtils.isEmpty(mec_phone) && imageUri!=null)
+        if(!TextUtils.isEmpty(mec_name) && !TextUtils.isEmpty(mec_nationalId) && !TextUtils.isEmpty(longitude) && !TextUtils.isEmpty(latitude)&& !TextUtils.isEmpty(mec_phone)&& !TextUtils.isEmpty(paper_str)  && imageUri!=null)
         {
             String imageChild =System.currentTimeMillis()+"."+getFileExt(imageUri);
             progressBar.setVisibility(View.VISIBLE);
