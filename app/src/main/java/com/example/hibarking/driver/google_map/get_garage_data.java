@@ -39,7 +39,7 @@ public class get_garage_data {
            arr=new ArrayList<>();
            mArrayList = new ArrayList<>();
 
-           firestore.collection("garage_requist").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+           firestore.collection("garages").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                @Override
                public void onComplete(@NonNull Task<QuerySnapshot> task) {
                    if (task.isSuccessful()) {

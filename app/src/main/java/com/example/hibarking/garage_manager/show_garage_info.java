@@ -116,7 +116,7 @@ private ProgressBar progressBar;
         dialog.setMessage("Loading..");
         dialog.setCancelable(false);
         dialog.show();
-        database.collection("garage_requist").document(garage_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+        database.collection("garages").document(garage_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful())

@@ -84,7 +84,7 @@ public class display_garages extends Fragment {
 
     }
     private void get_garage_data() {
-        database.collection("garage_requist").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+        database.collection("garages").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {

@@ -20,7 +20,19 @@
         android:id="@+id/appbar_main"
         android:background="?attr/background_green"
         app:titleTextColor="@color/white"
-        />
+        >
+        <TextView
+
+            android:gravity="end"
+            android:id="@+id/timer"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="1:1:1">
+
+        </TextView>
+    </androidx.appcompat.widget.Toolbar>
     <FrameLayout
 
         android:id="@+id/main_framelayout"
