@@ -45,11 +45,12 @@ public class timer {
 
                 if (snapshot != null && snapshot.exists()) {
                     timer.setText( snapshot.getString("arrival_time").toString());
+                    start_timer();
+
                 } else {
                 }
             }
         });
-start_timer();
     }
     void start_timer()
     {

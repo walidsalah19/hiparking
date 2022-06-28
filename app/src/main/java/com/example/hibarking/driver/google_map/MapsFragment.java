@@ -190,9 +190,9 @@ public class MapsFragment extends Fragment {
     }
     private void alart_permation()
     {
-        new AlertDialog.Builder(getActivity())
+        new AlertDialog.Builder(getActivity(),R.style.MyDialogTheme)
                 .setTitle("GPS")
-                .setMessage("get Gps")
+                .setMessage("open you'r Gps")
                 .setCancelable(false)
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override

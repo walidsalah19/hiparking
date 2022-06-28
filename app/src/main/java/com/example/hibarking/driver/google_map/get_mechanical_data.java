@@ -82,8 +82,13 @@ public class get_mechanical_data {
                             rate+=Double.parseDouble(document.get("rate").toString());
                         }
                     }
+                    double rate_value=rate/rate_count;
+                    if (rate==0.0)
+                    {
+                        rate_value=5.0;
+                    }
                     Bottom_Sheet_Menu m=new Bottom_Sheet_Menu(id,name,"mechanical",
-                            rate/rate_count+" "," ");
+                            rate_value+" "," ");
                     m.show(fragment.getChildFragmentManager(),"MapsFragment");
                     rate=0.0;
                     rate_count=0;

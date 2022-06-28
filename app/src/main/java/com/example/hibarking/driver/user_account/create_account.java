@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -30,6 +31,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -55,7 +57,7 @@ public class create_account extends AppCompatActivity {
     DocumentReference documentReference;
     ProgressBar cpPar;
     private Button create_account_btn;
-    String Email,date_of_creation,currentUser_id;
+    String Email,date_of_creation,currentUser_id,userToken;
     create_account_class create;
     private static final int PICK_IMAGE=1;
     SharedPref sharedPref;
@@ -71,7 +73,7 @@ public class create_account extends AppCompatActivity {
         }
         setContentView(R.layout.activity_create_account);
         intialize();
-
+        getToken();
 
     }
     private void intialize()
@@ -175,7 +177,7 @@ public class create_account extends AppCompatActivity {
                         profile.put("uid",currentUser_id);
                         profile.put("image",imageChild);
                         profile.put("date",date_of_creation);
-
+                        profile.put("token",userToken);
                         create.setUser_name(name);
                         create.setUser_id(id);
                         create.setPhone_number(phone);
@@ -219,5 +221,17 @@ public class create_account extends AppCompatActivity {
             Toast.makeText(this, R.string.fill_all, Toast.LENGTH_SHORT).show();
         }
 
+    }
+    private void getToken() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w("TAG", "Fetching FCM registration token failed", task.getException());
+                        return;
+                    }
+                    // Get new FCM registration token
+                    userToken = task.getResult();
+                    System.out.println(userToken);
+                });
     }
 }

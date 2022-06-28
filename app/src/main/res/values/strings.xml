@@ -155,6 +155,7 @@
     <string name="contain_small">Your password should contain small , large character and number</string>
     <string name="not_match">not match the password </string>
     <string name="registeration">registration successful</string>
+    <string name="duration">Duration</string>
 
 
 </resources>

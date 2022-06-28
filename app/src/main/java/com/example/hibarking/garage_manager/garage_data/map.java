@@ -2,27 +2,47 @@ package com.example.hibarking.garage_manager.garage_data;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.hibarking.R;
+import com.example.hibarking.driver.google_map.MapsFragment;
+import com.example.hibarking.driver.google_map.map_routes;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class map extends Fragment {
-
+    private GoogleMap mMap;
+    private LocationManager locationManager;
+    private boolean locationpermassion = false;
+    private String provider;
+    private FusedLocationProviderClient FusedLocationClient;
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     private OnMapReadyCallback callback = new OnMapReadyCallback() {
 
         /**
@@ -36,7 +56,11 @@ public class map extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
+            mMap=googleMap;
             googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)&&locationpermassion) {
+                get_my_location();
+            }
              if (move_location.getType().equals("shaw"))
              {
                  LatLng lat=new LatLng(Double.parseDouble(move_location.getLatitude()),Double.parseDouble( move_location.getLongitude()));
@@ -92,5 +116,88 @@ public class map extends Fragment {
         if (mapFragment != null) {
             mapFragment.getMapAsync(callback);
         }
+        locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        provider = locationManager.getBestProvider(new Criteria(), false);
+        FusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        checkLocationPermission();
     }
+    public boolean checkLocationPermission() {
+        if (ContextCompat.checkSelfPermission(getActivity(),
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(),
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+
+            } else {
+                ActivityCompat.requestPermissions(getActivity(),
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_LOCATION);
+            }
+            return false;
+        } else {
+            locationpermassion=true;
+            return true;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_LOCATION: {
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    locationpermassion = true;
+                    if (ContextCompat.checkSelfPermission(getActivity(),
+                            Manifest.permission.ACCESS_FINE_LOCATION)
+                            == PackageManager.PERMISSION_GRANTED) {
+                        locationpermassion = true;
+
+                        locationManager.requestLocationUpdates(provider, 400, 1, (LocationListener) getActivity());
+                    }
+
+                } else {
+                }
+                return;
+            }
+
+        }
+    }
+    private void get_my_location()
+    {
+
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }getdeviceLocation();
+
+    }
+    private void getdeviceLocation()
+    {
+
+        try {
+
+            FusedLocationClient.getLastLocation().addOnSuccessListener(new OnSuccessListener<Location>() {
+                @Override
+                public void onSuccess(Location location) {
+                    if (location !=null )
+                    {
+                        mMap.setMyLocationEnabled(true);
+                        LatLng lat = new LatLng(location.getLatitude(),location.getLongitude() );
+                        mMap.moveCamera(CameraUpdateFactory.newLatLng(lat));
+                        mMap.getMinZoomLevel();
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lat, 17));
+                        // draw rout in map
+                        map_routes rout=new map_routes(mMap, map.this,location);
+                        rout.rout();
+                    }
+                }
+            });
+        }catch (SecurityException e)
+        {
+            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
