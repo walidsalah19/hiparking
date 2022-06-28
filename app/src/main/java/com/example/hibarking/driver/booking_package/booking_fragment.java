@@ -32,7 +32,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -252,6 +254,15 @@ public class booking_fragment extends Fragment {
         }
     }
     private void send_to_database(String p) {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        String str = sdf.format(new Date());
+
+        long minutes =Long.parseLong(str.substring(3,5));
+        long second =Long.parseLong(str.substring(6,8));
+        long hours   = Long.parseLong(str.substring(0,2));
+        long currentTime =((hours *60*60+(minutes)*60)+second)*1000;
+
+
         HashMap<String, String> dataset=new HashMap<>();
         dataset.put("duration",p);
         dataset.put("id",userId);
@@ -260,7 +271,7 @@ public class booking_fragment extends Fragment {
         dataset.put("time",text_time.getText().toString());
         dataset.put("garage_id",garage_id);
         dataset.put("status","not arrived");
-        dataset.put("arrival_time","10");
+        dataset.put("arrival_time", String.valueOf(currentTime+60000));
         database.collection("booking").document(userId).set(dataset).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

@@ -121,9 +121,9 @@
     <string name="parking">موقف سيارات</string>
     <string name="profile">الملف الشخصي</string>
     <string name="mechanical">ميكانيكي</string>
-    <string name="emergency">طارئ</string>
+    <string name="emergency">الطوارئ</string>
     <string name="contact_us">اتصل بنا</string>
-    <string name="setting">ضبط</string>
+    <string name="setting">الضبط</string>
     <string name="logout">تسجيل خروج</string>
     <string name="drivers">السائقين</string>
     <string name="home">الصفحة الرئيسية</string>
@@ -176,4 +176,10 @@
     <string name="contain_small">يجب أن تحتوي كلمة المرور الخاصة بك على أحرف وأرقام صغيرة وكبيرة</string>
     <string name="not_match">لا تتطابق مع كلمة المرور </string>
     <string name="registeration">التسجيل ناجح</string>
+    <string name="complaint">الرجاء إدخال شكواك</string>
+    <string name="qr_scanner">الماسح الضوئي</string>
+    <string name="arrival">وقت الوصول %s</string>
+
+
+
 </resources>

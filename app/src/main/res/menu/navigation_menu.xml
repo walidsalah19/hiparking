@@ -10,7 +10,7 @@
     </item>
     <item
         android:id="@+id/scann"
-        android:title="Qr scanner"
+        android:title="@string/qr_scanner"
         android:orderInCategory="100"
         android:icon="@drawable/ic_baseline_document_scanner_24">
     </item>
