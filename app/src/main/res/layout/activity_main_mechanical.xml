@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".mechanical.main_mechanical"
     android:id="@+id/mechanical_drawer"
-    android:background="@color/white">
+    android:background="?attr/background_color">
 
     <include
         android:layout_width="match_parent"
@@ -23,9 +23,9 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/mechanical_navigation_menu"
-        android:background="@color/white"
-        app:itemTextColor="@color/grean"
-        app:itemIconTint="@color/grean"
+        android:background="?attr/background_color"
+        app:itemTextColor="?attr/text_color"
+        app:itemIconTint="?attr/background_green"
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

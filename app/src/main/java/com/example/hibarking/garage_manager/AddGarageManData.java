@@ -108,21 +108,21 @@ public class AddGarageManData extends AppCompatActivity {
         String sub=phone.getText().toString().substring(0,3);
         if (TextUtils.isEmpty(username.getText().toString()))
         {
-            username.setError("please enter your name");
+            username.setError(getString(R.string.enter_name));
         }
        else if (TextUtils.isEmpty(phone.getText().toString())&&phone.getText().toString().length()!=11)
         {
-            phone.setError("please enter your correct phone");
+            phone.setError(getString(R.string.correct_phone));
         }
         else if (!sub.equals("010")&&!sub.equals("011")&&!sub.equals("012")&&!sub.equals("015"))
         {
-            phone.setError("please enter your correct phone");
+            phone.setError(getString(R.string.correct_phone));
         }
         else if (TextUtils.isEmpty(national_id.getText().toString())||national_id.getText().toString().length()!=14) {
-            national_id.setError("please enter your national id");
+            national_id.setError(getString(R.string.enter_national));
         }
         else {
-            pDialogLoading.setTitleText("update garage manager data");
+            pDialogLoading.setTitleText(getString(R.string.garage_manager_date));
             pDialogLoading.show();
             auth=FirebaseAuth.getInstance();
             database=FirebaseFirestore.getInstance();
@@ -152,12 +152,12 @@ public class AddGarageManData extends AppCompatActivity {
            if (task.isSuccessful())
            {
                pDialogLoading.dismiss();
-               pDialogSuccess.setTitleText("add garage manager data successful");
+               pDialogSuccess.setTitleText(getString(R.string.add_garage_manager));
                pDialogSuccess.show();
                startActivity(new Intent(AddGarageManData.this, main_garage_manager.class));
            }else {
                pDialogLoading.dismiss();
-               pDialogerror.setTitleText("error occur in loading data ");
+               pDialogerror.setTitleText(getString(R.string.error_loading_data));
                pDialogerror.show();
            }
             }
@@ -222,7 +222,7 @@ public class AddGarageManData extends AppCompatActivity {
                        add_to_database(map);
                     } else {
                         pDialogLoading.dismiss();
-                        pDialogerror.setTitleText("error occur in loading image ");
+                        pDialogerror.setTitleText(getString(R.string.error_occer_image));
                         pDialogerror.show();
                     }
                 }

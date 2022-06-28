@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".mechanical.Fragments.view_customer_data"
+    android:id="@+id/user_contact_frame"
     android:background="@color/white">
 
    <androidx.core.widget.NestedScrollView
@@ -84,7 +85,7 @@
                android:textColor="@color/white"
                android:textSize="@dimen/_18sdp"
                android:text="@string/chat"
-               android:id="@+id/mechanical_customer_chat"
+               android:id="@+id/mec_customer_chat"
                android:layout_marginTop="@dimen/_20sdp"
                android:layout_weight="1"
                android:layout_margin="@dimen/_10sdp">
@@ -97,7 +98,7 @@
                    android:textSize="@dimen/_18sdp"
                    android:text="@string/call"
                    android:layout_weight="1"
-                   android:id="@+id/mechanical_customer_call"
+                   android:id="@+id/mec_customer_call"
                    android:layout_marginTop="@dimen/_20sdp"
                    android:layout_margin="@dimen/_10sdp">
                </androidx.appcompat.widget.AppCompatButton>

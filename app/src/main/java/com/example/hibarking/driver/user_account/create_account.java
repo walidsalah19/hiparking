@@ -189,7 +189,7 @@ public class create_account extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void unused) {
                                 cpPar.setVisibility(View.INVISIBLE);
-                                Toast.makeText(create_account.this, "Profile created", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(create_account.this, R.string.create_profile, Toast.LENGTH_SHORT).show();
                                 Intent intent=new Intent(create_account.this,MainActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -216,7 +216,7 @@ public class create_account extends AppCompatActivity {
 
         }else
         {
-            Toast.makeText(this, "fill all fields", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.fill_all, Toast.LENGTH_SHORT).show();
         }
 
     }

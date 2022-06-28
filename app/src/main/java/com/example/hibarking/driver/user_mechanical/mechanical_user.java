@@ -110,7 +110,8 @@ public class mechanical_user extends Fragment {
                     boolean found = true;
                     for (QueryDocumentSnapshot document : task.getResult()) {
                         String id=document.get("driver_id").toString();
-                        if (driver_id.equals(id))
+                        String id_mec=document.get("mechanical_id").toString();
+                        if (driver_id.equals(id) && mechanical_id.equals(id_mec))
                         {
                             found=false;
                             break;
@@ -124,8 +125,7 @@ public class mechanical_user extends Fragment {
             }
         });
     }
-    private void add_to_database()
-    {
+    private void add_to_database() {
         String id= UUID.randomUUID().toString();
         HashMap<String, String> map=new HashMap<String, String>();
         map.put("driver_id",driver_id);
@@ -134,8 +134,7 @@ public class mechanical_user extends Fragment {
 
         database.collection("mechanical_divers").document(id).set(map);
     }
-    private void user_chat_method(View v)
-    {
+    private void user_chat_method(View v) {
         user_chat=v.findViewById(R.id.user_chat_mechanicl);
         user_chat.setOnClickListener(new View.OnClickListener() {
             @Override

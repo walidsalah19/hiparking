@@ -14,7 +14,7 @@
             android:layout_weight="1"
             android:text="@string/name"
             android:id="@+id/grage_manager_gargae_name_recycler"
-            android:textColor="@color/grean"
+            android:textColor="?attr/background_green"
             android:padding="@dimen/_5sdp"
             android:layout_margin="@dimen/_5sdp"
             >
@@ -26,7 +26,7 @@
             android:text="@string/city"
             android:id="@+id/grage_manager_gargae_city_recycler"
             android:layout_weight="1"
-            android:textColor="@color/grean"
+            android:textColor="?attr/background_green"
             android:padding="@dimen/_5sdp"
             android:layout_margin="@dimen/_5sdp"
             >

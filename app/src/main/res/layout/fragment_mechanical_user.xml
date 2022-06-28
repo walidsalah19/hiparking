@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/background_color"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".driver.user_mechanical.mechanical_user"
     android:id="@+id/user_mechanical">
@@ -14,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp"
         android:layout_marginBottom="@dimen/_20sdp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="?attr/background_color"
         app:cardCornerRadius="@dimen/_10sdp"
         app:cardElevation="@dimen/_10sdp"
         app:cardMaxElevation="@dimen/_10sdp"
@@ -25,7 +26,8 @@
         >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="?attr/background_color">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/user_call_mechanicl"
@@ -35,12 +37,10 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-
             android:background="@drawable/button_shape"
             android:text="@string/call"
             android:textColor="@color/white"
-            android:textSize="@dimen/_18sdp"></androidx.appcompat.widget.AppCompatButton>
-
+            android:textSize="@dimen/_18sdp"/>
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/user_chat_mechanicl"
             android:layout_width="match_parent"
@@ -50,11 +50,10 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-
             android:background="@drawable/button_shape"
             android:text="@string/chat"
             android:textColor="@color/white"
-            android:textSize="@dimen/_18sdp"></androidx.appcompat.widget.AppCompatButton>
+            android:textSize="@dimen/_18sdp"/>
     </RelativeLayout>
     </androidx.cardview.widget.CardView>
     </RelativeLayout>

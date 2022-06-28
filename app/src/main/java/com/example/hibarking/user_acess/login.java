@@ -90,7 +90,7 @@ public class login extends AppCompatActivity {
         password=password_login.getText().toString().trim();
         if(TextUtils.isEmpty(username)&&TextUtils.isEmpty(password))
         {
-            Toast.makeText(this, "Please Enter your data correctly", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.enter_data, Toast.LENGTH_SHORT).show();
         }
         else{
                auth.signInWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -102,7 +102,7 @@ public class login extends AppCompatActivity {
                        }
                        else
                        {
-                           Toast.makeText(login.this, "No such a User", Toast.LENGTH_LONG).show();
+                           Toast.makeText(login.this, R.string.no_user, Toast.LENGTH_LONG).show();
                        }
                    }
                });
@@ -115,7 +115,7 @@ public class login extends AppCompatActivity {
 
         database=FirebaseFirestore.getInstance();
 
-           database.collection("User").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+           database.collection("Useri").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                @Override
                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                    if (task.isSuccessful()) {

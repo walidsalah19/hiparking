@@ -195,8 +195,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void replace_fragment(Fragment fragment) {
-
-
         getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, fragment).addToBackStack(null).commitAllowingStateLoss();
         drawerLayout.closeDrawer(GravityCompat.START);
     }

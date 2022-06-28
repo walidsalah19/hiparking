@@ -91,19 +91,69 @@
         <entry key="..\:/project/hibarking/app/src/main/res/layout/navigation_header.xml" value="0.67" />
         <entry key="..\:/project/hibarking/app/src/main/res/menu/navigation_menu.xml" value="0.209375" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable-v24/ic_contact_page.xml" value="0.1405" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/bg_chat_you.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/button_shape.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/edittext_shape_profile.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/edt_outline.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/framecircle.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/frameshape.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_baseline_read_more_24.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_emergency.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_mechanical.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_parking.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_person.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_person_black.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_phone.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/ic_tune.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/recycler_shaps.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/drawable/textview_shap.xml" value="0.103" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_create_account.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_forget_password.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_login_activity.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_main_garage.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_main_mechanical.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_maps.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_registration.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/activity_splash.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/bottom_sheet_m_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/chat_recycler_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/chating_recycler_layout.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/flooting_window.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_add_garage_info.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_add_garage_man_data.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_add_mechanical_data.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_booking_fragment.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_chating.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_contact.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_display_garages.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_emergancy.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_garage_manager_profile.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_map2.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_maps.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_mechanical__profile.xml" value="0.25" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_mechanical_profile.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_mechanical_user.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_payment_faragment.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_profile.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_setting.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_show_garage_info.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_view_customer_data.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/fragment_view_drivers.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/garage_manager_show_recyclview.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/main_appbar_map.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/main_garge_menu.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/main_mechanical_menu.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/map_info.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/map_type.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/mechanical_recycler.xml" value="0.17074275362318841" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/layout/navigation_header.xml" value="0.17074275362318841" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/menu/garage_navigation_menu.xml" value="0.209375" />
         <entry key="..\:/project2/hibarking_old/app/src/main/res/menu/mechanical_navigation_menu.xml" value="0.209375" />
+        <entry key="..\:/project2/hibarking_old/app/src/main/res/menu/navigation_menu.xml" value="0.209375" />
       </map>
     </option>
   </component>

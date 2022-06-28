@@ -10,16 +10,19 @@
        android:id="@+id/text_contact_et"
        android:layout_width="match_parent"
        android:layout_height="@dimen/_200sdp"
-       android:textColor="?attr/text_color"
-       android:layout_margin="@dimen/_10sdp"
+       android:layout_marginStart="@dimen/_10sdp"
+       android:layout_marginTop="@dimen/_10sdp"
+       android:layout_marginEnd="@dimen/_10sdp"
+       android:layout_marginBottom="@dimen/_10sdp"
+       android:background="@drawable/edittext_shape"
        android:gravity="start"
        android:padding="5dp"
-       android:background="@drawable/edittext_shape"
-       android:textSize="@dimen/_16ssp"/>
+       android:textColor="?attr/text_color"
+       android:textSize="@dimen/_16ssp" />
 
    <androidx.appcompat.widget.AppCompatButton
        android:id="@+id/send_contact_btn"
-       android:layout_width="wrap_content"
+       android:layout_width="100dp"
        android:layout_height="wrap_content"
        android:layout_below="@id/text_contact_et"
        android:layout_centerHorizontal="true"

@@ -7,9 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
     android:background="?attr/background_color"
-
     tools:context=".mechanical.Fragments.Mechanical_Profile">
 
     <LinearLayout
@@ -25,7 +23,7 @@
             app:cardPreventCornerOverlap="false"
             app:cardCornerRadius="45dp"
             android:layout_gravity="center_vertical|start"
-            android:background="@color/grean"
+            android:background="?attr/background_green"
             android:elevation="8dp"
             app:cardElevation="10dp"
             >
@@ -34,7 +32,6 @@
                 android:id="@+id/image_mechanical"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-
                 app:civ_border_color="?attr/background_green"
                 android:clickable="false"
                 android:focusable="false"
@@ -52,7 +49,6 @@
                 <ImageView
 
                     android:id="@+id/mec_image_pr"
-
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -71,7 +67,6 @@
             <EditText
 
                 android:id="@+id/mec_name_pr"
-
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
@@ -79,15 +74,11 @@
                 android:textSize="18sp"
                 android:layout_marginBottom="2dp"
                 android:textAlignment="viewStart"
-
-                android:text="@string/user_name"
-
                 android:textColor="?attr/text_color"
                 android:background="@drawable/edittext_shape_profile"
                 android:enabled="false"/>
             <EditText
                 android:id="@+id/mec_id_pr"
-
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:paddingStart="10dp"
@@ -96,9 +87,6 @@
                 android:background="@drawable/edittext_shape_profile"
                 android:layout_marginBottom="2dp"
                 android:textAlignment="viewStart"
-
-                android:text="@string/id_235635638537843"
-
                 android:gravity="start"
                 android:enabled="false"
                 android:textColor="@android:color/darker_gray"/>
@@ -106,11 +94,10 @@
         <ImageButton
 
             android:id="@+id/image_edit_btn_mec_pr"
-
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:src="@drawable/ic_edit_green"
-            android:layout_margin="@dimen/_4sdp"
+            android:layout_margin="4dp"
             android:background="@android:color/transparent"/>
     </LinearLayout>
 
@@ -141,9 +128,6 @@
                 android:id="@+id/mec_email_pr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                
-                android:text="@string/email_mousdddddtafa03_gmail_com"
-
                 android:textSize="15sp"
                 android:maxLines="1"
                 android:background="@drawable/edittext_shape_profile"
@@ -181,11 +165,8 @@
             <EditText
 
                 android:id="@+id/mec_phone_pr"
-               
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/phone_201159088197"
-
                 android:textColor="@color/white"
                 android:maxLines="1"
                 android:enabled="false"
@@ -224,7 +205,7 @@
             </FrameLayout>
             <EditText
 
-                android:text="Show location"
+                android:text="@string/show_location"
                 android:id="@+id/mec_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -386,9 +367,6 @@
                 android:id="@+id/mec_date_pr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                
-                android:text="@string/join_in_25_nov_2022"
-
                 android:textColor="@color/white"
                 android:maxLines="1"
                 android:enabled="false"
@@ -417,7 +395,6 @@
     <ProgressBar
 
         android:id="@+id/update_progress_pr"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"

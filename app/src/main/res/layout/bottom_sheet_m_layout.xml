@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
+    android:background="?attr/background_color"
     >
 
     <RelativeLayout android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="?attr/background_color"
         >
         <TextView android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="-"
             android:textSize="50dp"
-            android:textColor="@color/black"
+            android:textColor="?attr/text_color"
             android:layout_gravity="center"
             android:gravity="center"
             android:id="@+id/m_icon"

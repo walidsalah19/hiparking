@@ -206,7 +206,7 @@ public class booking_fragment extends Fragment {
                        String id=document.get("id").toString();
                        if (userId.equals(id))
                        {
-                           pDialogerror.setTitleText("you have old booking ");
+                           pDialogerror.setTitleText(getString(R.string.old_booking));
                            pDialogerror.show();
                            garage_id=document.get("garage_id").toString();
                            found=true;
@@ -224,15 +224,15 @@ public class booking_fragment extends Fragment {
     private void check_date() {
         if( name.getText().equals(" "))
         {
-            Toast.makeText(getActivity(), "please enter you'r name", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.enter_your_name, Toast.LENGTH_SHORT).show();
         }
         else if( text_time.getText().equals("time"))
         {
-            Toast.makeText(getActivity(), "please choose time", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.choose_time, Toast.LENGTH_SHORT).show();
         }
         else if( text_date.getText().equals("Date"))
         {
-            Toast.makeText(getActivity(), "please choose date", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.choose_date, Toast.LENGTH_SHORT).show();
         }
         else if(permenent.isChecked())
         {
@@ -242,7 +242,7 @@ public class booking_fragment extends Fragment {
         {
             if(duration.getText().equals(""))
             {
-                Toast.makeText(getActivity(), "please enter duration", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), R.string.enter_duration, Toast.LENGTH_SHORT).show();
             }
             else
             {
@@ -263,12 +263,12 @@ public class booking_fragment extends Fragment {
             public void onComplete(@NonNull Task<DocumentReference> task) {
                 if (task.isSuccessful())
                 {
-                    pDialogSuccess.setTitleText("successful booking");
+                    pDialogSuccess.setTitleText(getString(R.string.booking));
                     pDialogSuccess.show();
                 }
                 else
                 {
-                    pDialogerror.setTitleText("error occur ");
+                    pDialogerror.setTitleText(getString(R.string.error));
                     pDialogerror.show();
                 }
             }

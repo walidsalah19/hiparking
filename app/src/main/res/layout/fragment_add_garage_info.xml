@@ -5,16 +5,18 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".garage_manager.add_garage_info"
-    android:background="@color/white">
+    android:background="?attr/background_color">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_margin="10dp"
+        android:background="?attr/background_color">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="?attr/background_color"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +34,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/garage_name"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -47,7 +49,7 @@
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/edittext_shape"
                     android:padding="8dp"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/add_garage_title"
@@ -60,7 +62,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/city"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/add_garage_username" />
@@ -74,7 +76,7 @@
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/edittext_shape"
                     android:padding="8dp"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/garage_city"
@@ -87,7 +89,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="8dp"
                     android:text="@string/number_of_garage_unit"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/add_garage_city" />
@@ -101,7 +103,7 @@
                     android:layout_marginEnd="8dp"
                     android:background="@drawable/edittext_shape"
                     android:inputType="phone"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:padding="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +117,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/unit_price_per_hour"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/add_garage_unit" />
@@ -130,7 +132,7 @@
                     android:background="@drawable/edittext_shape"
                     android:inputType="phone"
                     android:padding="8dp"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardGaManager"
@@ -143,7 +145,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="@string/location"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:textSize="18sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="8dp"
@@ -161,7 +163,7 @@
                     android:paddingBottom="5dp"
                     android:textAlignment="viewStart"
                     android:background="@drawable/button_shape"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/add_location"
                     app:srcCompat="@drawable/ic_baseline_my_location_24" />
@@ -173,7 +175,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="@string/licence_paper"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:textSize="18sp"
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="8dp"
@@ -191,7 +193,6 @@
                     android:paddingRight="10dp"
                     android:paddingBottom="5dp"
                     android:textAlignment="viewStart"
-                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/add_licence"
                     app:srcCompat="@drawable/ic_contact"

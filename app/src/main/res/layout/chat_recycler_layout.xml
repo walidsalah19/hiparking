@@ -11,16 +11,16 @@
         android:layout_marginTop="5dp"
         android:orientation="horizontal"
         android:layout_weight="1"
+        android:background="?attr/background_color"
          android:id="@+id/resever_layout"
         android:gravity="center_vertical">
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/profile_image"
-        android:id="@+id/reciver_image"
-        />
+        <ImageView
+            android:id="@+id/reciver_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/profile_image" />
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,8 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="3dp"
-            android:text="name"
-            android:textColor="@color/black"
+            android:textColor="?attr/text_color"
             android:textSize="14sp"
             android:id="@+id/recever_name"
             android:background="@drawable/bg_chat_you"/>
@@ -42,8 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="How are You ?"
-            android:textColor="@color/black"
+            android:textColor="?attr/text_color"
             android:textSize="16sp"
             android:background="@drawable/bg_chat_you"/>
         <TextView
@@ -52,8 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="8dp"
-            android:text="5:04pm"
-            android:textColor="@color/black"
+            android:textColor="?attr/text_color"
             android:textSize="16sp"
             android:layout_centerVertical="true"/>
     </LinearLayout>
@@ -65,6 +62,7 @@
             android:layout_weight="1"
             android:id="@+id/sender_layout"
             android:orientation="horizontal"
+            android:background="?attr/background_color"
             android:gravity="center_vertical">
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -77,8 +75,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="3dp"
-                    android:text="name"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:textSize="14sp"
                     android:id="@+id/sender_name"
                     android:background="@drawable/bg_chat_you"/>
@@ -86,8 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="How are You ?"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:textSize="16sp"
                     android:id="@+id/sender_message"
                     android:background="@drawable/bg_chat_you"/>
@@ -96,9 +92,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="8dp"
-                    android:text="5:04pm"
                     android:id="@+id/sender_time"
-                    android:textColor="@color/black"
+                    android:textColor="?attr/text_color"
                     android:textSize="16sp"
                     android:layout_centerVertical="true"/>
             </LinearLayout>
