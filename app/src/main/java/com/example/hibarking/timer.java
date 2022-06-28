@@ -42,14 +42,13 @@ public class timer {
                 if (e != null) {
                     return;
                 }
-
                 if (snapshot != null && snapshot.exists()) {
+                    start_timer();
                     timer.setText( snapshot.getString("arrival_time").toString());
                 } else {
                 }
             }
         });
-start_timer();
     }
     void start_timer()
     {

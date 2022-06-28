@@ -135,7 +135,6 @@ public class ProfileFragment extends Fragment {
 
         documentReference=db.collection("User").document(currentUser_id);
         storageReference= FirebaseStorage.getInstance().getReference("Profile images");
-        databaseReference=database.getReference("All Users");
 
         if(!TextUtils.isEmpty(name.getText().toString()) && !TextUtils.isEmpty(card.getText().toString()) && !TextUtils.isEmpty(license.getText().toString()) && !TextUtils.isEmpty(phone.getText().toString()) && imageUri!=null)
         {
@@ -199,14 +198,6 @@ public class ProfileFragment extends Fragment {
                                 Toast.makeText(getContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
-                        databaseReference.child(currentUser_id).setValue(create).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                progressBar.setVisibility(View.INVISIBLE);
-                                Toast.makeText(getContext(), ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
 
                     }
                 }

@@ -193,7 +193,6 @@ public class MapsFragment extends Fragment {
         new AlertDialog.Builder(getActivity())
                 .setTitle("GPS")
                 .setMessage("get Gps")
-                .setCancelable(false)
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
