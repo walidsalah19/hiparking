@@ -194,6 +194,7 @@ public class MapsFragment extends Fragment {
                 .setTitle("GPS")
                 .setMessage("open you'r Gps")
                 .setCancelable(false)
+
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

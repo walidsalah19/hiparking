@@ -51,8 +51,6 @@ public class create_account extends AppCompatActivity {
     Uri imageUri;
     UploadTask uploadTask;
     StorageReference storageReference;
-    FirebaseDatabase database =FirebaseDatabase.getInstance();
-    DatabaseReference databaseReference;
     FirebaseFirestore db =FirebaseFirestore.getInstance();
     DocumentReference documentReference;
     ProgressBar cpPar;
@@ -141,7 +139,6 @@ public class create_account extends AppCompatActivity {
 
         documentReference=db.collection("User").document(currentUser_id);
         storageReference= FirebaseStorage.getInstance().getReference("Profile images");
-        databaseReference=database.getReference("All Users");
 
         if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(id) && !TextUtils.isEmpty(license) && !TextUtils.isEmpty(phone) && imageUri!=null)
         {
@@ -203,13 +200,7 @@ public class create_account extends AppCompatActivity {
                                 Toast.makeText(create_account.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
-                        databaseReference.child(currentUser_id).setValue(create).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                cpPar.setVisibility(View.INVISIBLE);
-                                Toast.makeText(create_account.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        });
+
 
 
                     }

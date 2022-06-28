@@ -42,8 +42,8 @@ public class timer {
                 if (e != null) {
                     return;
                 }
-
                 if (snapshot != null && snapshot.exists()) {
+                    start_timer();
                     timer.setText( snapshot.getString("arrival_time").toString());
                     start_timer();
 
