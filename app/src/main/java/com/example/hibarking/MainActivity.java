@@ -1,6 +1,7 @@
 package com.example.hibarking;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -22,6 +24,7 @@ import com.example.hibarking.Fragments.ContactFragment;
 import com.example.hibarking.Fragments.EmergancyFragment;
 import com.example.hibarking.driver.profile.ProfileFragment;
 import com.example.hibarking.Fragments.SettingFragment;
+import com.example.hibarking.driver.qr_scanner.scanner;
 import com.example.hibarking.driver.user_account.create_account;
 import com.example.hibarking.driver.google_map.MapsFragment;
 import com.example.hibarking.user_acess.login;
@@ -35,7 +38,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -46,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private Toolbar toolbar;
     private DrawerLayout drawerLayout;
-    TextView headerName;
+    TextView headerName ,timer;
     NavigationView navigationView;
     CircleImageView circleImageView;
     SharedPref sharedPref;
@@ -65,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
         firebase_tool_intialize();
         start_google_maps("garage");
         navigation_items();
-
-
+        timer=(TextView) findViewById(R.id.timer);
+        timer t=new timer(this,timer);
+        t.get_timer_data();
     }
-
     @Override
     protected void onStart() {
         super.onStart();
@@ -166,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
         if(item.getItemId()==R.id.parking) {
             start_google_maps("garage");
             drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else if(item.getItemId()==R.id.scann) {
+            replace_fragment(new scanner());
         }
         else if(item.getItemId()==R.id.navigation_menu_profile) {
             replace_fragment(new ProfileFragment());

@@ -34,6 +34,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.UUID;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
@@ -258,9 +259,11 @@ public class booking_fragment extends Fragment {
         dataset.put("date",text_date.getText().toString());
         dataset.put("time",text_time.getText().toString());
         dataset.put("garage_id",garage_id);
-        database.collection("booking").add(dataset).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
+        dataset.put("status","not arrived");
+        dataset.put("arrival_time","10");
+        database.collection("booking").document(userId).set(dataset).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
-            public void onComplete(@NonNull Task<DocumentReference> task) {
+            public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
                 {
                     pDialogSuccess.setTitleText(getString(R.string.booking));

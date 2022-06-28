@@ -178,8 +178,8 @@ public class MapsFragment extends Fragment {
                         mMap.getMinZoomLevel();
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lat, 17));
                         // draw rout in map
-                      /*  map_routes rout=new map_routes(mMap,MapsFragment.this,location);
-                        rout.rout();*/
+                     map_routes rout=new map_routes(mMap,MapsFragment.this,location);
+                        rout.rout();
                     }
                 }
             });
