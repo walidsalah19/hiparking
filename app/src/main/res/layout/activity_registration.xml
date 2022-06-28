@@ -21,15 +21,16 @@
         android:layout_height="110dp"
         android:scaleType="fitXY"
         android:src="@drawable/image_registration" />
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/create_account_image"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_launcher_foreground"
-        app:civ_border_color="?attr/background_green"
-        app:civ_border_width="1dp"
-        android:layout_above="@id/cardview"
-        android:layout_alignParentRight="true"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/create_account_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_above="@id/cardview"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_launcher_foreground"
+            app:civ_border_color="?attr/background_green"
+            app:civ_border_width="1dp" />
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

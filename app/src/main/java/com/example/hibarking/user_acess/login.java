@@ -115,7 +115,7 @@ public class login extends AppCompatActivity {
 
         database=FirebaseFirestore.getInstance();
 
-           database.collection("Useri").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+           database.collection("User").document(id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                @Override
                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                    if (task.isSuccessful()) {
