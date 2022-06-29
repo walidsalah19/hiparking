@@ -160,7 +160,7 @@ public class add_garage_info extends Fragment {
         map.put("latitude",latitude);
         map.put("garage_paper",paper_str);
         map.put("city",city.getText().toString());
-        database.collection("garages").document(garage_id).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+        database.collection("garage_request").document(garage_id).set(map).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                    if (task.isSuccessful())
