@@ -1,5 +1,6 @@
 package com.example.hibarking.driver.booking_package;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.graphics.Color;
@@ -8,6 +9,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +24,22 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.example.hibarking.R;
+import com.example.hibarking.SendNotificationPack.APIService;
+import com.example.hibarking.SendNotificationPack.Client;
+import com.example.hibarking.SendNotificationPack.Data;
+import com.example.hibarking.SendNotificationPack.MyResponse;
+import com.example.hibarking.SendNotificationPack.NotificationSender;
 import com.example.hibarking.SharedPref;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -39,6 +51,9 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class booking_fragment extends Fragment {
 
@@ -55,6 +70,7 @@ public class booking_fragment extends Fragment {
     private FirebaseFirestore database;
     private SweetAlertDialog pDialogLoading,pDialogSuccess,pDialogerror;
 
+    private APIService apiService;
     SharedPref sharedPref;
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,6 +95,7 @@ public class booking_fragment extends Fragment {
         text_time_method(v);
         catagories(v);
         booking_garage(v);
+        apiService = Client.getClient("https://fcm.googleapis.com/").create(APIService.class);
          return v;
     }
     private void sweetalert()
@@ -277,6 +294,7 @@ public class booking_fragment extends Fragment {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful())
                 {
+                    getToken(userId,"booking","you booking");
                     pDialogSuccess.setTitleText(getString(R.string.booking));
                     pDialogSuccess.show();
                 }
@@ -289,78 +307,54 @@ public class booking_fragment extends Fragment {
         });
 
     }
-  /*  private boolean isMyServiceRunning() {
-        // The ACTIVITY_SERVICE is needed to retrieve a
-        // ActivityManager for interacting with the global system
-        // It has a constant String value "activity".
-        ActivityManager manager = (ActivityManager)getActivity().getSystemService(Context.ACTIVITY_SERVICE);
-
-        // A loop is needed to get Service information that
-        // are currently running in the System.
-        // So ActivityManager.RunningServiceInfo is used.
-        // It helps to retrieve a
-        // particular service information, here its this service.
-        // getRunningServices() method returns a list of the
-        // services that are currently running
-        // and MAX_VALUE is 2147483647. So at most this many services
-        // can be returned by this method.
-        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
-            // If this service is found as a running,
-            // it will return true or else false.
-            if (floating_window.class.getName().equals(service.service.getClassName())) {
-                return true;
-            }
-        }
-        return false;
-    }
-    private void requestOverlayDisplayPermission() {
-        // An AlertDialog is created
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
-        // This dialog can be closed, just by taping
-        // anywhere outside the dialog-box
-        builder.setCancelable(true);
-
-        // The title of the Dialog-box is set
-        builder.setTitle("Screen Overlay Permission Needed");
-
-        // The message of the Dialog-box is set
-        builder.setMessage("Enable 'Display over other apps' from System Settings.");
-
-        // The event of the Positive-Button is set
-        builder.setPositiveButton("Open Settings", new DialogInterface.OnClickListener() {
+    private void getToken(String userID, String title, String message) {
+        database.collection("User").document(userID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // The app will redirect to the 'Display over other apps' in Settings.
-                // This is an Implicit Intent. This is needed when any Action is needed
-                // to perform, here it is
-                // redirecting to an other app(Settings).
-                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + new Settings()));
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                       if (task.isSuccessful())
+                       {
+                           if (task.getResult().exists())
+                           {
+                               String usertoken = task.getResult().get("token").toString();
+                               sendNotifications(usertoken, title, message);
+                           }
 
-                // This method will start the intent. It takes two parameter, one is the Intent and the other is
-                // an requestCode Integer. Here it is -1.
-                startActivityForResult(intent, -1);
+                       }
             }
         });
-        dialog = builder.create();
-        // The Dialog will
-        // show in the screen
-        dialog.show();
-    }
-    private boolean checkOverlayDisplayPermission() {
-        // Android Version is lesser than Marshmallow or
-        // the API is lesser than 23
-        // doesn't need 'Display over other apps' permission enabling.
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            // If 'Display over other apps' is not enabled
-            // it will return false or else true
-            if (!Settings.canDrawOverlays(getActivity())) {
-                return false;
-            } else {
-                return true;
+        /*FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("token").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String usertoken = dataSnapshot.getValue(String.class);
+                sendNotifications(usertoken, title, message);
             }
-        } else {
-            return true;
-        }
-    }*/
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });*/
+    }
+    private void sendNotifications(String usertoken, String title, String message) {
+        Data data = new Data(title, message);
+        NotificationSender sender = new NotificationSender(data, usertoken);
+        apiService.sendNotifcation(sender).enqueue(new Callback<MyResponse>() {
+            @SuppressLint("ShowToast")
+            @Override
+            public void onResponse(@NonNull Call<MyResponse> call, @NonNull Response<MyResponse> response) {
+                if (response.code() == 200) {
+                    if (response.body() != null && response.body().success != 1) {
+                        Toast.makeText(getActivity(), "Failed ", Toast.LENGTH_LONG);
+                    } else {
+                        Log.e("success", response.code() + " success ya Fashel " + response.body().success + " Token " + usertoken);
+                    }
+                } else {
+                    Log.e("send Notifications", "Failed ya Fashel: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<MyResponse> call, @NonNull Throwable t) {
+            }
+        });
+    }
 }

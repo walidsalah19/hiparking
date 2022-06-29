@@ -6,11 +6,15 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -42,29 +46,40 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
+
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
-    private DatabaseReference databaseReference;
     private FirebaseAuth auth;
     private FirebaseUser firebaseUser;
     private Toolbar toolbar;
+
     CountDownTimer countDownTimer;
     long milliseconds , timeLeftInMilli;
     FirebaseFirestore db;
     String user_id;
+
+    private FirebaseFirestore database;
+
     private DrawerLayout drawerLayout;
     TextView headerName ,timer;
     NavigationView navigationView;
     CircleImageView circleImageView;
     SharedPref sharedPref;
-
+    String userToken;
+    Map<String ,String> profile=new HashMap<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedPref = new SharedPref(this);
@@ -81,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         navigation_items();
         timer=(TextView) findViewById(R.id.timer);
         get_timer_data();
+        
     }
     public void get_timer_data() {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
@@ -162,11 +178,21 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         if (task.getResult().exists()) {
                             String names = task.getResult().getString("name");
+                            profile.put("name",task.getResult().getString("name"));
+                            profile.put("id",task.getResult().getString("id"));
+                            profile.put("email",task.getResult().getString("email"));
+                            profile.put("license",task.getResult().getString("license"));
+                            profile.put("phone",task.getResult().getString("phone"));
+                            profile.put("uid",task.getResult().getString("uid"));
+                            profile.put("image",task.getResult().getString("image"));
+                            profile.put("date",task.getResult().getString("date"));
                             if (task.getResult().contains("uri")) {
+                                profile.put("uri",task.getResult().getString("uri"));
                                 String urls = task.getResult().getString("uri");
                                 Picasso.get().load(urls).into(circleImageView);
                             }
                             headerName.setText(names);
+                            updateToken();
 
                         } else {
 
@@ -197,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void firebase_tool_intialize() {
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        database = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
 
 
@@ -270,11 +296,59 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, fragment).addToBackStack(null).commitAllowingStateLoss();
         drawerLayout.closeDrawer(GravityCompat.START);
     }
+
     public void cancelBooking(){
         db=FirebaseFirestore.getInstance();
         auth=FirebaseAuth.getInstance();
         user_id=auth.getCurrentUser().getUid().toString();
         final DocumentReference docRef = db.collection("booking").document(user_id);
         docRef.delete();
+
+    private void updateToken() {
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w("TAG", "Fetching FCM registration token failed", task.getException());
+                        return;
+                    }
+                    // Get new FCM registration token
+                    userToken = task.getResult();
+                    System.out.println(userToken);
+                    profile.put("token",userToken);
+                    database.collection("User").document(FirebaseAuth.getInstance().getCurrentUser().getUid()).set(profile);
+                   // FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("token").setValue(userToken);
+                });
+    }
+
+    private static final int NOTIFICATION_PERMISSION_CODE = 123;
+
+    private void requestNotificationPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_NOTIFICATION_POLICY) == PackageManager.PERMISSION_GRANTED)
+            return;
+
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_NOTIFICATION_POLICY)) {
+
+        }
+
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_NOTIFICATION_POLICY}, NOTIFICATION_PERMISSION_CODE );
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        // Checking the request code of our request
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == NOTIFICATION_PERMISSION_CODE) {
+
+            // If permission is granted
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Displaying a toast
+                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
+            } else {
+                // Displaying another toast if permission is not granted
+                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
+            }
+        }
+
     }
 }

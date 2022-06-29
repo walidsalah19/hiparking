@@ -109,8 +109,13 @@ public class get_garage_data {
                                rate+=Double.parseDouble(document.get("rate").toString());
                            }
                        }
+                       double rate_value=rate/rate_count;
+                       if (rate==0.0)
+                       {
+                           rate_value=5.0;
+                       }
                        Bottom_Sheet_Menu m=new Bottom_Sheet_Menu(id,name,(Integer.parseInt(unit)-count)+" / "+unit,
-                               rate/rate_count+" ",hour+" ");
+                               rate_value+" ",hour+" ");
                        m.show(fragment.getChildFragmentManager(),"MapsFragment");
                        count=0;
                        rate=0.0;

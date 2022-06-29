@@ -155,9 +155,13 @@
     <string name="contain_small">Your password should contain small , large character and number</string>
     <string name="not_match">not match the password </string>
     <string name="registeration">registration successful</string>
+
     <string name="complaint">please enter your complaint</string>
     <string name="qr_scanner">Qr scanner</string>
     <string name="arrival">arrival time %s</string>
+
+    <string name="duration">Duration</string>
+
 
 
 </resources>

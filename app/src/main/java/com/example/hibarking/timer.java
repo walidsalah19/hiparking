@@ -33,7 +33,29 @@ public class timer {
         this.timer =timer;
     }
 
+    public void get_timer_data()
+    {
+        db=FirebaseFirestore.getInstance();
+        auth=FirebaseAuth.getInstance();
+        user_id=auth.getCurrentUser().getUid().toString();
+        final DocumentReference docRef = db.collection("booking").document(user_id);
+        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    return;
+                }
+                if (snapshot != null && snapshot.exists()) {
+                    start_timer();
+                    timer.setText( snapshot.getString("arrival_time").toString());
+                    start_timer();
 
+                } else {
+                }
+            }
+        });
+    }
     void start_timer()
     {
         if (timerunning)
