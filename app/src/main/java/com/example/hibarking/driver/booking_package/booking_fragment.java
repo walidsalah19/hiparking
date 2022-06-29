@@ -311,17 +311,6 @@ public class booking_fragment extends Fragment {
                        }
             }
         });
-        /*FirebaseDatabase.getInstance().getReference().child("Users").child(userID).child("token").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String usertoken = dataSnapshot.getValue(String.class);
-                sendNotifications(usertoken, title, message);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-            }
-        });*/
     }
     private void sendNotifications(String usertoken, String title, String message) {
         Data data = new Data(title, message);
