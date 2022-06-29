@@ -192,9 +192,7 @@ public class MapsFragment extends Fragment {
     {
         new AlertDialog.Builder(getActivity(),R.style.MyDialogTheme)
                 .setTitle("GPS")
-                .setMessage("open you'r Gps")
-                .setCancelable(false)
-
+                .setMessage("open your Gps")
                 .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
