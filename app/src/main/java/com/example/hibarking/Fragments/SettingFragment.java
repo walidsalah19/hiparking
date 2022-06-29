@@ -146,12 +146,12 @@ public class SettingFragment extends Fragment {
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, notificationIntent).addToBackStack(null).commitAllowingStateLoss();
                 }
                 else if (type.equals("manager")) {
-                    notificationIntent=new Mechanical_Profile();
-                   getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.machanical_framelayout,notificationIntent).addToBackStack(null).commitAllowingStateLoss();
+                    notificationIntent=new garage_manager_profile();
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.grarage_manager_frameLayout,notificationIntent).addToBackStack(null).commitAllowingStateLoss();
                 }
                 else if (type.equals("mechanical")) {
-                    notificationIntent=new garage_manager_profile();
-                   getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.grarage_manager_frameLayout,notificationIntent).addToBackStack(null).commitAllowingStateLoss();
+                    notificationIntent=new Mechanical_Profile();
+                   getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.machanical_framelayout,notificationIntent).addToBackStack(null).commitAllowingStateLoss();
                 }
 
             }
