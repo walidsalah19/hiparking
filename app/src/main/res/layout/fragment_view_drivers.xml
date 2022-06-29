@@ -3,12 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/background_color"
     tools:context=".mechanical.Fragments.ViewDrivers">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mechanical_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </RelativeLayout>

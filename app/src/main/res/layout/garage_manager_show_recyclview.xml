@@ -23,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="@dimen/_16sdp"
-            android:text="@string/city"
             android:id="@+id/grage_manager_gargae_city_recycler"
             android:layout_weight="1"
             android:textColor="?attr/background_green"

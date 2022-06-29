@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -82,6 +83,7 @@ public class ViewDrivers extends Fragment {
         recyclerview=getActivity().findViewById(R.id.mechanical_recyclerview);
         recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter =new adapter(driver,new main_mechanical());
+        adapter.notifyDataSetChanged();
         adapter.setOnItemClickListener(new adapter.OnItemClickListener() {
             @Override
             public void onItemUnRegister(String name, String uid, String date) {
@@ -104,7 +106,6 @@ public class ViewDrivers extends Fragment {
             fireStore.collection("User").document(drivers.get(i).getDriver()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-
                     driver.add(new Driver(task.getResult().getString("uid").toString(),task.getResult().getString("name").toString(),"","","","",drivers.get(finalI).getDate().toString()));
                     adapter.notifyDataSetChanged();
 
