@@ -13,10 +13,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,6 +29,11 @@ import android.widget.Toast;
 
 import com.example.hibarking.Fragments.ContactFragment;
 import com.example.hibarking.Fragments.EmergancyFragment;
+import com.example.hibarking.SendNotificationPack.APIService;
+import com.example.hibarking.SendNotificationPack.Client;
+import com.example.hibarking.SendNotificationPack.Data;
+import com.example.hibarking.SendNotificationPack.MyResponse;
+import com.example.hibarking.SendNotificationPack.NotificationSender;
 import com.example.hibarking.driver.profile.ProfileFragment;
 import com.example.hibarking.Fragments.SettingFragment;
 import com.example.hibarking.driver.qr_scanner.scanner;
@@ -48,17 +56,33 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseUser firebaseUser;
     private Toolbar toolbar;
+
+    CountDownTimer countDownTimer;
+    long milliseconds , timeLeftInMilli;
+    FirebaseFirestore db;
+    String user_id;
+
     private FirebaseFirestore database;
+
     private DrawerLayout drawerLayout;
     TextView headerName ,timer;
     NavigationView navigationView;
@@ -66,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
     SharedPref sharedPref;
     String userToken;
     Map<String ,String> profile=new HashMap<>();
+    private APIService apiService;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         sharedPref = new SharedPref(this);
@@ -81,8 +107,67 @@ public class MainActivity extends AppCompatActivity {
         start_google_maps("garage");
         navigation_items();
         timer=(TextView) findViewById(R.id.timer);
-        timer t=new timer(this,timer);
-        t.get_timer_data();
+        get_timer_data();
+        apiService = Client.getClient("https://fcm.googleapis.com/").create(APIService.class);
+    }
+    public void get_timer_data() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        String str = sdf.format(new Date());
+
+        long minutes =Long.parseLong(str.substring(3,5));
+        long hours   = Long.parseLong(str.substring(0,2));
+        long currentTime =(hours *60*60+minutes*60)*1000;
+
+
+        db=FirebaseFirestore.getInstance();
+        auth=FirebaseAuth.getInstance();
+        user_id=auth.getCurrentUser().getUid().toString();
+        timer.setText("");
+        final DocumentReference docRef = db.collection("booking").document(user_id);
+        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    return;
+                }
+
+                if (snapshot != null && snapshot.exists()) {
+                    timer.setText("");
+                    if(snapshot.getString("id").toString().equals(user_id) && snapshot.getString("status").toString().equals("not arrived")){
+
+                        long timeToArrive = Long.parseLong(snapshot.getString("arrival_time").toString());
+                        Toast.makeText(MainActivity.this, "to arrive : "+timeToArrive, Toast.LENGTH_SHORT).show();
+                        timeLeftInMilli = timeToArrive - currentTime;
+                        StartCountDownTimer();
+
+                    }else if(snapshot.getString("arrival_time").toString().equals("0")){
+                        countDownTimer.cancel();
+                    }
+                }
+            }
+        });
+
+    }
+    public void StartCountDownTimer(){
+        countDownTimer = new CountDownTimer(timeLeftInMilli,1000) {
+            @Override
+            public void onTick(long l) {
+                timeLeftInMilli = l;
+                int seconds = (int) (timeLeftInMilli / 1000) % 60 ;
+                int minutes = (int) ((timeLeftInMilli / (1000*60)) % 60);
+                int hours   = (int) ((timeLeftInMilli / (1000*60*60)) % 24);
+                String timeRemain = String.format(Locale.getDefault(),"%02d:%02d:%02d",hours,minutes,seconds);
+                timer.setText(String.format(getString(R.string.arrival), timeRemain));
+            }
+
+            @Override
+            public void onFinish() {
+                timer.setText("");
+                cancelBooking();
+            }
+        }.start();
+
     }
     @Override
     protected void onStart() {
@@ -226,7 +311,18 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, fragment).addToBackStack(null).commitAllowingStateLoss();
         drawerLayout.closeDrawer(GravityCompat.START);
     }
-    private void updateToken() {
+
+    public void cancelBooking() {
+
+        db = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        user_id = auth.getCurrentUser().getUid().toString();
+        final DocumentReference docRef = db.collection("booking").document(user_id);
+        docRef.delete();
+        getToken(user_id,"Booking","we canceled your booking");
+    }
+    private void updateToken()
+    {
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(task -> {
                     if (!task.isSuccessful()) {
@@ -241,5 +337,42 @@ public class MainActivity extends AppCompatActivity {
                    // FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("token").setValue(userToken);
                 });
     }
+    private void getToken(String userID, String title, String message) {
+        database.collection("User").document(userID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful())
+                {
+                    if (task.getResult().exists())
+                    {
+                        String usertoken = task.getResult().get("token").toString();
+                        sendNotifications(usertoken, title, message);
+                    }
+                }
+            }
+        });
+    }
+    private void sendNotifications(String usertoken, String title, String message) {
+        Data data = new Data(title, message);
+        NotificationSender sender = new NotificationSender(data, usertoken);
+        apiService.sendNotifcation(sender).enqueue(new Callback<MyResponse>() {
+            @SuppressLint("ShowToast")
+            @Override
+            public void onResponse(@NonNull Call<MyResponse> call, @NonNull Response<MyResponse> response) {
+                if (response.code() == 200) {
+                    if (response.body() != null && response.body().success != 1) {
+                        Toast.makeText(MainActivity.this, "Failed ", Toast.LENGTH_LONG);
+                    } else {
+                        Log.e("success", response.code() + " success ya Fashel " + response.body().success + " Token " + usertoken);
+                    }
+                } else {
+                    Log.e("send Notifications", "Failed ya Fashel: " + response.code());
+                }
+            }
 
+            @Override
+            public void onFailure(@NonNull Call<MyResponse> call, @NonNull Throwable t) {
+            }
+        });
+    }
 }

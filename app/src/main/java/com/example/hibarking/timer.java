@@ -1,11 +1,21 @@
 package com.example.hibarking;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.hibarking.SendNotificationPack.APIService;
+import com.example.hibarking.SendNotificationPack.Data;
+import com.example.hibarking.SendNotificationPack.MyResponse;
+import com.example.hibarking.SendNotificationPack.NotificationSender;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -13,7 +23,14 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class timer {
     MainActivity main;
@@ -22,13 +39,16 @@ public class timer {
     String user_id;
     TextView timer;
     CountDownTimer countDownTimer;
-    long milliseconds=400000;
+    long milliseconds , timeLeftInMilli;
     boolean timerunning;
+    private FirebaseFirestore database;
+    private APIService apiService;
 
     public timer(MainActivity main,TextView timer) {
         this.main = main;
         this.timer =timer;
     }
+
     public void get_timer_data()
     {
         db=FirebaseFirestore.getInstance();
