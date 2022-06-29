@@ -17,6 +17,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,9 +49,15 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -58,7 +65,14 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseUser firebaseUser;
     private Toolbar toolbar;
+
+    CountDownTimer countDownTimer;
+    long milliseconds , timeLeftInMilli;
+    FirebaseFirestore db;
+    String user_id;
+
     private FirebaseFirestore database;
+
     private DrawerLayout drawerLayout;
     TextView headerName ,timer;
     NavigationView navigationView;
@@ -81,9 +95,64 @@ public class MainActivity extends AppCompatActivity {
         start_google_maps("garage");
         navigation_items();
         timer=(TextView) findViewById(R.id.timer);
-        timer t=new timer(this,timer);
-        t.get_timer_data();
-        requestNotificationPermission();
+        get_timer_data();
+        
+    }
+    public void get_timer_data() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        String str = sdf.format(new Date());
+
+        long minutes =Long.parseLong(str.substring(3,5));
+        long hours   = Long.parseLong(str.substring(0,2));
+        long currentTime =(hours *60*60+minutes*60)*1000;
+
+
+        db=FirebaseFirestore.getInstance();
+        auth=FirebaseAuth.getInstance();
+        user_id=auth.getCurrentUser().getUid().toString();
+        timer.setText("");
+        final DocumentReference docRef = db.collection("booking").document(user_id);
+        docRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot snapshot,
+                                @Nullable FirebaseFirestoreException e) {
+                if (e != null) {
+                    return;
+                }
+
+                if (snapshot != null && snapshot.exists()) {
+                    timer.setText("");
+                    if(snapshot.getString("id").toString().equals(user_id) && snapshot.getString("status").toString().equals("not arrived")){
+                        long timeToArrive = Long.parseLong(snapshot.getString("arrival_time").toString());
+                        Toast.makeText(MainActivity.this, "to arrive : "+timeToArrive, Toast.LENGTH_SHORT).show();
+                        timeLeftInMilli = timeToArrive - currentTime;
+                        StartCountDownTimer();
+
+                    }
+                }
+            }
+        });
+
+    }
+    public void StartCountDownTimer(){
+        countDownTimer = new CountDownTimer(timeLeftInMilli,1000) {
+            @Override
+            public void onTick(long l) {
+                timeLeftInMilli = l;
+                int seconds = (int) (timeLeftInMilli / 1000) % 60 ;
+                int minutes = (int) ((timeLeftInMilli / (1000*60)) % 60);
+                int hours   = (int) ((timeLeftInMilli / (1000*60*60)) % 24);
+                String timeRemain = String.format(Locale.getDefault(),"%02d:%02d:%02d",hours,minutes,seconds);
+                timer.setText(String.format(getString(R.string.arrival), timeRemain));
+            }
+
+            @Override
+            public void onFinish() {
+                timer.setText("");
+                cancelBooking();
+            }
+        }.start();
+
     }
     @Override
     protected void onStart() {
@@ -227,6 +296,14 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, fragment).addToBackStack(null).commitAllowingStateLoss();
         drawerLayout.closeDrawer(GravityCompat.START);
     }
+
+    public void cancelBooking(){
+        db=FirebaseFirestore.getInstance();
+        auth=FirebaseAuth.getInstance();
+        user_id=auth.getCurrentUser().getUid().toString();
+        final DocumentReference docRef = db.collection("booking").document(user_id);
+        docRef.delete();
+
     private void updateToken() {
         FirebaseMessaging.getInstance().getToken()
                 .addOnCompleteListener(task -> {
@@ -272,5 +349,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
             }
         }
+
     }
 }

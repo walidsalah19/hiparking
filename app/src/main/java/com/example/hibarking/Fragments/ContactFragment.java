@@ -59,7 +59,7 @@ public class ContactFragment extends Fragment {
             public void onClick(View view) {
                 if (TextUtils.isEmpty(editText.getText().toString()))
                 {
-                    editText.setError("please enter you'r complaint");
+                    editText.setError(getString(R.string.complaint));
                 }
                 else {
                     HashMap <String, String> map=new HashMap<String, String>();

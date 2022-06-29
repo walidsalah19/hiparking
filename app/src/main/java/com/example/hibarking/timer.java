@@ -13,6 +13,9 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
 
 public class timer {
@@ -22,13 +25,14 @@ public class timer {
     String user_id;
     TextView timer;
     CountDownTimer countDownTimer;
-    long milliseconds=400000;
+    long milliseconds , timeLeftInMilli;
     boolean timerunning;
 
     public timer(MainActivity main,TextView timer) {
         this.main = main;
         this.timer =timer;
     }
+
     public void get_timer_data()
     {
         db=FirebaseFirestore.getInstance();
