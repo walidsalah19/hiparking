@@ -348,7 +348,6 @@ public class MainActivity extends AppCompatActivity {
                         String usertoken = task.getResult().get("token").toString();
                         sendNotifications(usertoken, title, message);
                     }
-
                 }
             }
         });
