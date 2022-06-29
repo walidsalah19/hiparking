@@ -113,6 +113,7 @@ public class scanner extends Fragment {
                              dataset.put("time",document.get("time").toString());
                              dataset.put("garage_id",document.get("garage_id").toString());
                              dataset.put("status","arrived");
+                             dataset.put("arrival_time","0");
                              dataset.put("booking_id",booking_id);
                              found=true;
                              break;
