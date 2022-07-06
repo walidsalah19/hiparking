@@ -30,6 +30,7 @@ import com.example.hibarking.SendNotificationPack.Data;
 import com.example.hibarking.SendNotificationPack.MyResponse;
 import com.example.hibarking.SendNotificationPack.NotificationSender;
 import com.example.hibarking.SharedPref;
+import com.example.hibarking.driver.payment_package.payment_faragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -119,6 +120,8 @@ public class booking_fragment extends Fragment {
         pDialogSuccess.setConfirmText(getString(R.string.dialog_ok));
         pDialogSuccess.setConfirmClickListener(sweetAlertDialog -> {
             pDialogSuccess.dismiss();
+           getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.main_framelayout, new payment_faragment()).addToBackStack(null).commitAllowingStateLoss();
+
         });
         pDialogSuccess.setCancelable(true);
     }

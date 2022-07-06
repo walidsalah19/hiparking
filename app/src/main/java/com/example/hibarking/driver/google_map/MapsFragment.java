@@ -2,6 +2,7 @@ package com.example.hibarking.driver.google_map;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -12,7 +13,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
 import android.location.Criteria;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -48,6 +51,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class MapsFragment extends Fragment {
     private GoogleMap mMap;
@@ -88,7 +92,7 @@ public class MapsFragment extends Fragment {
         map_search.search_method(v,mMap,MapsFragment.this);
         imagebottom_my_location(v);
         map_type_method(v);
-
+        search_method(v);
         return v;
     }
 
@@ -316,5 +320,43 @@ public class MapsFragment extends Fragment {
                 return false;
             }
         });
+    }
+    public   void search_method(View v)
+    {
+        SearchView search=(SearchView) v.findViewById(R.id.search_view);
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                go_to_search_location(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                // go_to_search_location(s);
+                return false;
+            }
+        });
+    }
+    private void go_to_search_location(String s)
+    {
+        List<Address> arr=new ArrayList<>();
+        Geocoder geocoder=new Geocoder(getActivity());
+        try {
+            arr = geocoder.getFromLocationName(s, 1);
+        }catch (Exception e)
+        {
+
+        }
+        if(arr.size()>0)
+        {
+            Address address=arr.get(0);
+            LatLng l=  new LatLng(address.getLatitude(),address.getLongitude());
+            // add_location_zoom_in_map(new LatLng(address.getLatitude(),address.getLongitude()),16,address.getAddressLine(0));
+            mMap.addMarker(new MarkerOptions().position(l).title(address.getAddressLine(0)));
+            //mMap.getMinZoomLevel();
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(l, 16));
+        }
+
     }
 }
